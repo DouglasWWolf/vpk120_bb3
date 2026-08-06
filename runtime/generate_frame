@@ -1,0 +1,13 @@
+# Bring in the API
+source api
+
+# Make sure the system isn't in sensor-emulation mode
+axi SEMU_SIM_SELECT 0
+
+# Configure mindy-core
+axi MC_FRAME_SIZE        0x40_0000
+axi MC_PACKET_SIZE       0x1000
+axi MC_PACKETS_PER_GROUP 4
+
+# And strobe RS0 on the chip
+pcireg 0x3000 0

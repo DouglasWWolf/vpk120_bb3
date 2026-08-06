@@ -1,0 +1,72 @@
+# Fetch our API and register definitions
+source api
+
+bus_type=""
+wait_for_abm=0
+
+# Does the user want to wait for an ABM and display the stats?
+if [ "$1" == "-wait" ]; then
+    shift
+    wait_for_abm=1
+else
+    wait_for_abm=0
+fi
+
+# Did the user select "Update SMEM via SPI"?
+if [ "$1" == "0" ] || [ "$1" == "spi" ]; then
+    bus_type=0
+    shift
+fi
+# Did the user select "Update SMEM via HSI"?
+if [ "$1" == "1" ] || [ "$1" == "hsi" ]; then
+    bus_type=1
+    shift
+fi
+
+# Make sure the user gave us a bus-type
+if [ -z $bus_type ]; then
+    echo "Must specify bus type spi or hsi"
+    exit 1
+fi
+
+# Does the user want to force all rows of SMEM/cache to be updated?
+force_smem=0
+if [ "$1" == "1" ] || [ "$1" == "force" ]; then
+    force_smem=1
+    shift
+fi
+
+# Tell the RTL which bus-type to use
+axi REG_SELECT_HSI $bus_type
+
+# Do we need to force an update of all SMEM rows?
+if [ $force_smem -eq 1 ]; then
+    axi REG_FORCE_SMEM 0
+    axi REG_FORCE_SMEM 1
+    axi REG_FORCE_SMEM 0
+fi
+
+# Make sure the chip is powered on!
+if [ $(get REG_CHIP_POWER_STATE) -ne 1 ]; then
+    echo "Turning on the sensor chip"
+    axi REG_CHIP_POWER_CTL 1
+    while [ $(get REG_CHIP_POWER_STATE) -eq 0 ]; do
+        sleep 1
+    done
+fi
+
+# Find out how many ABM's have been received so far
+abm_count=$(get REG_ABM_COUNT)
+
+# If the user told us to wait for an ABM to arrive...
+if [ $wait_for_abm -eq 1 ]; then
+
+    echo "Waiting for ABM to arrive"
+    while [ $(get REG_ABM_COUNT) -eq $abm_count ]; do
+        sleep 1
+    done
+
+    # How many SMEM rows and words were updated?
+    echo "SMEM rows  updated: $(get REG_SMEM_ROWS_UPD )"
+    echo "SMEM words updated: $(get REG_SMEM_WORDS_UPD)"
+fi

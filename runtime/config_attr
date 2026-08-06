@@ -1,0 +1,4 @@
+# Allow dump_smem to execute SUID as root
+sudo chown root dump_smem
+sudo chgrp root dump_smem
+sudo chmod 4777 dump_smem

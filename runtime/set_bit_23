@@ -1,0 +1,54 @@
+#!/bin/bash
+# This sets bit 23 of every big-endian 32-bit word in a binary file
+#
+#  This hack exists because bit 23 of the HSI bus on Doug's Indy
+#  board is stuck on!
+#
+
+
+# We don't have filenames yet
+input=
+output=
+same_file=0
+
+# Parse the command line
+while [ ! -z $1 ]; do
+    if [ -z $input ]; then
+        input=$1
+        shift
+        continue
+    fi
+    if [ -z $output ]; then
+        output=$1
+        shift
+        continue
+    fi
+    echo "Unexpected parameter:" $1 &1>2
+    exit 1
+done
+
+# Make sure they gave us an input filename
+if [ -z $input ]; then
+    echo "Missing input filename" &1>2
+    exit 1
+fi
+
+# If no output filename, then we're updating the existing file
+if [ -z $output ]; then
+    output=/tmp/set_bit_23.tmp
+    same_file=1
+fi
+
+# 1. hexdump -v -e '1/4 ">%08x" "\n"' reads 4 bytes as a Big-Endian hex string
+# 2. awk converts hex to decimal, ORs with 0x800000 (8388608), prints hex
+# 3. xxd -r -p converts that hex back into raw binary
+hexdump -v -e '1/4 "%08x" "\n"' "$input" | awk '
+{
+    val = strtonum("0x" $1)
+    val = or(val, 8388608)
+    printf "%08x", val
+}' | xxd -r -p > "$output"
+
+# If we're in "same file" mode, update the input file
+test $same_file -eq 1 && cp $output $input
+

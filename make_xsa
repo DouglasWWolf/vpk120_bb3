@@ -1,0 +1,79 @@
+cd project
+
+# Get the name of the destination folder
+dir=$1
+
+#==============================================================================
+# Display an error in red, then quit
+#==============================================================================
+fatal()
+{
+    local RED='\033[0;31m'
+    local NC='\033[0m'
+
+    echo
+    echo -e "${RED}$1 $2 $3 $4 $5 $6${NC}" 1>&2
+    exit 1
+}
+#==============================================================================
+
+
+#==============================================================================
+# This looks up the Vivado version number that was used to create the project
+# and ensures that the same version is used to process it here
+#==============================================================================
+get_vivado()
+{
+   version=
+   grep 2024.2 $1 >/dev/null && version=2024.2
+   grep 2021.1 $1 >/dev/null && version=2021.1
+   test -z $version && fault "Unable to determine Vivado version for $project"
+   read VIVADO _ <<<$VIVADO
+   echo $VIVADO | sed "s/Vivado\/20[0-9][0-9]\.[0-9]/Vivado\/${version}/g"
+}
+#==============================================================================
+
+
+#==============================================================================
+# This runs a Vivado script
+#==============================================================================
+run_script()
+{
+   local script=$1
+   local logfile=/tmp/make_xsa_$(basename $PWD).log
+   $VIVADO  2>&1 -nojournal -log $logfile -mode batch -source $script
+   rm $script
+}
+#==============================================================================
+
+# Determine the name of the Vivado project file
+project_file=$(ls *.xpr 2>/dev/null)
+
+# Does the project file exist?
+test -z $project_file && fatal "No Vivado project found"
+
+# Find the path to the correct version of Vivado
+VIVADO=$(get_vivado $project_file)
+
+# If the caller didn't give us a destination, see if we can find one
+test -z $dir && dir=$(ls -d *.runs/impl_1 2>/dev/null)
+
+# Does the folder exists?
+test -z $dir && fatal "No implementation folder found"
+
+# Ensure the target directory exists
+test -d $dir || fatal "Not found: $dir"
+ 
+# This is the name of the script we're going to create
+script_name=/tmp/write_hw_platform.tcl
+
+# Generate the script
+echo "open_project $project_file"                                 >$script_name
+echo "write_hw_platform -fixed -force -file ${dir}/platform.xsa" >>$script_name
+
+# Run the Vivado script
+run_script $script_name
+
+# And create the memory map
+cd ..
+./make_fpga_reg -map project/${dir}/memory.map

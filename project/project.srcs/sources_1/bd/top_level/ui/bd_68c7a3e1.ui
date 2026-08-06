@@ -1,0 +1,46 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-441,-208",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_CHIP_GPIO15_DIR -pg 1 -lvl 3 -x 480 -y 260 -defaultsOSRD
+preplace port port-id_CHIP_GPIO13 -pg 1 -lvl 3 -x 480 -y 40 -defaultsOSRD
+preplace port port-id_CHIP_GPIO15 -pg 1 -lvl 3 -x 480 -y 60 -defaultsOSRD
+preplace port port-id_CHIP_GPIO_BYTE_DIR -pg 1 -lvl 3 -x 480 -y 20 -defaultsOSRD
+preplace port port-id_CHIP_RS256 -pg 1 -lvl 3 -x 480 -y 100 -defaultsOSRD
+preplace port port-id_CHIP_RS0 -pg 1 -lvl 3 -x 480 -y 80 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_CHIP_PA_SYNC -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace inst one -pg 1 -lvl 2 -x 360 -y 240 -defaultsOSRD -pinBusDir dout right -pinBusY dout 20R
+preplace inst zero -pg 1 -lvl 1 -x 140 -y -20 -defaultsOSRD -pinBusDir dout right -pinBusY dout 20R
+preplace inst cdc_pa_sync -pg 1 -lvl 1 -x 140 -y 120 -defaultsOSRD -pinDir src_clk right -pinY src_clk 20R -pinDir dest_clk left -pinY dest_clk 20L -pinBusDir src_in left -pinBusY src_in 40L -pinBusDir dest_out right -pinBusY dest_out 40R
+preplace inst pa_sync_ila -pg 1 -lvl 2 -x 360 -y 60 -defaultsOSRD -pinDir clk left -pinY clk 20L -pinBusDir probe0 left -pinBusY probe0 100L
+preplace netloc one_dout 1 2 1 NJ 260
+preplace netloc zero_dout 1 1 2 260 20 460J
+preplace netloc clk_1 1 0 2 20 80 N
+preplace netloc cdc_pa_sync_dest_out 1 1 1 N 160
+preplace netloc CHIP_PA_SYNC_1 1 0 1 NJ 160
+levelinfo -pg 1 0 140 360 480
+pagesize -pg 1 -db -bbox -sgen -160 -60 690 320
+",
+   "No Loops_ScaleFactor":"1.0",
+   "No Loops_TopLeft":"-374,-138",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_CHIP_GPIO15_DIR -pg 1 -lvl 2 -x 200 -y 60 -defaultsOSRD
+preplace port port-id_CHIP_GPIO13 -pg 1 -lvl 2 -x 200 -y 140 -defaultsOSRD
+preplace port port-id_CHIP_GPIO15 -pg 1 -lvl 2 -x 200 -y 160 -defaultsOSRD
+preplace port port-id_CHIP_GPIO_BYTE_DIR -pg 1 -lvl 2 -x 200 -y 120 -defaultsOSRD
+preplace inst one -pg 1 -lvl 1 -x 90 -y 60 -defaultsOSRD
+preplace inst zero -pg 1 -lvl 1 -x 90 -y 160 -defaultsOSRD
+preplace netloc one_dout 1 1 1 NJ 60
+preplace netloc zero_dout 1 1 1 180J 120n
+levelinfo -pg 1 0 90 200
+pagesize -pg 1 -db -bbox -sgen 0 0 410 220
+"
+}
+

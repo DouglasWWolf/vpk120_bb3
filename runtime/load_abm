@@ -1,0 +1,50 @@
+source api
+
+# Configure the ABM and SMEM related registers
+source config_abm
+
+# The address of our reserved contiguous buffer
+contig=0x1_0000_0000
+
+# Fetch the filename we're going to load
+file=$1
+
+# If the user didn't give us a file, make a random one
+if [ -z $file ]; then
+    file=/tmp/random.tmp
+    dd if=/dev/random of=$file bs=$((1024 * 1024)) count=1 2>/dev/null
+
+    # HACK: Bit 23 of the the HSI bus on Doug's Indy board is stuck on!
+    test $(get REG_SELECT_HSI) -eq 1  && ./set_bit_23 $file
+fi
+
+# If the filename is "zero" create a file full of binary zero
+if [ "$file" == "zero" ]; then
+    file=/tmp/random.tmp
+    dd if=/dev/zero of=$file bs=$((1024 * 1024)) count=1 2>/dev/null
+fi
+
+# Store the ABM into the reserved contiguous area of RA
+physram $contig -load $file
+
+# Tell the RTL the address of ABM in host-RAM
+axi REG_ABM_HOST_ADDR $contig 
+
+# Tell the RTL to load our ABM from host-RAM
+axi REG_LOAD_ABM_VIA_PCI 3
+
+# Wait for SMEM to finish being updated
+while [ $(get REG_SMEM_BUSY) -eq 1 ]; do
+    sleep 1
+done
+
+# How many SMEM rows and words were updated?
+echo "SMEM rows  updated: $(get REG_SMEM_ROWS_UPD )"
+echo "SMEM words updated: $(get REG_SMEM_WORDS_UPD)"
+
+# Capture the contents of SMEM
+echo Dumping SMEM
+./dump_smem -file /tmp/smem.bin
+
+diff /tmp/smem.bin $file 2>/dev/null
+test $? -eq 0 && echo "Contents match" || echo "Mismatch!!"
