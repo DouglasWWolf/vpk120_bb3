@@ -2281,13 +2281,13 @@
             "value": "0x01FFF"
           },
           "USER_REG_DDR_DST_MAP0": {
-            "value": "0x200"
+            "value": "0x280"
           },
           "USER_REG_DDR_DST_MAP1": {
-            "value": "0x400"
+            "value": "0x380"
           },
           "USER_REG_DDR_DST_MAP2": {
-            "value": "0x300"
+            "value": "0x480"
           },
           "USER_REG_DDR_DST_MAP3": {
             "value": "0xFC0"
@@ -2536,7 +2536,7 @@
             "value": "0x00000"
           },
           "USER_REG_SRC": {
-            "value": "0x000"
+            "value": "0x080"
           },
           "USER_REG_TBASE_AXI_TIMEOUT": {
             "value": "0x1"
@@ -2906,7 +2906,7 @@
             "value": "0x01FFF"
           },
           "USER_REG_DDR_DST_MAP0": {
-            "value": "0x200"
+            "value": "0x280"
           },
           "USER_REG_DDR_DST_MAP1": {
             "value": "0xFC0"
@@ -3161,7 +3161,7 @@
             "value": "0x00000"
           },
           "USER_REG_SRC": {
-            "value": "0x080"
+            "value": "0x100"
           },
           "USER_REG_TBASE_AXI_TIMEOUT": {
             "value": "0x1"
@@ -3511,13 +3511,13 @@
             "value": "0x01FFF"
           },
           "USER_REG_DDR_DST_MAP0": {
-            "value": "0x2C0"
+            "value": "0x340"
           },
           "USER_REG_DDR_DST_MAP1": {
-            "value": "0x4C0"
+            "value": "0x440"
           },
           "USER_REG_DDR_DST_MAP2": {
-            "value": "0x3C0"
+            "value": "0x540"
           },
           "USER_REG_DDR_DST_MAP3": {
             "value": "0xFC0"
@@ -3766,7 +3766,7 @@
             "value": "0x00000"
           },
           "USER_REG_SRC": {
-            "value": "0x1C0"
+            "value": "0x240"
           },
           "USER_REG_TBASE_AXI_TIMEOUT": {
             "value": "0x1"
@@ -3781,7 +3781,7 @@
             "value": "0x1"
           },
           "USER_REG_VC_MAP": {
-            "value": "0x7AC"
+            "value": "0x6AC"
           },
           "USER_REG_WBUF_LAUNCH_SIZE": {
             "value": "0x10"
@@ -4116,7 +4116,7 @@
             "value": "0x01FFF"
           },
           "USER_REG_DDR_DST_MAP0": {
-            "value": "0x200"
+            "value": "0x280"
           },
           "USER_REG_DDR_DST_MAP1": {
             "value": "0xFC0"
@@ -4371,7 +4371,7 @@
             "value": "0x00000"
           },
           "USER_REG_SRC": {
-            "value": "0x040"
+            "value": "0x0C0"
           },
           "USER_REG_TBASE_AXI_TIMEOUT": {
             "value": "0x1"
@@ -4721,13 +4721,13 @@
             "value": "0x01FFF"
           },
           "USER_REG_DDR_DST_MAP0": {
-            "value": "0x280"
+            "value": "0x300"
           },
           "USER_REG_DDR_DST_MAP1": {
-            "value": "0x480"
+            "value": "0x400"
           },
           "USER_REG_DDR_DST_MAP2": {
-            "value": "0x380"
+            "value": "0x500"
           },
           "USER_REG_DDR_DST_MAP3": {
             "value": "0xFC0"
@@ -4976,7 +4976,7 @@
             "value": "0x00000"
           },
           "USER_REG_SRC": {
-            "value": "0x180"
+            "value": "0x200"
           },
           "USER_REG_TBASE_AXI_TIMEOUT": {
             "value": "0x1"
@@ -5326,7 +5326,7 @@
             "value": "0x01FFF"
           },
           "USER_REG_DDR_DST_MAP0": {
-            "value": "0x200"
+            "value": "0x280"
           },
           "USER_REG_DDR_DST_MAP1": {
             "value": "0xFC0"
@@ -5581,7 +5581,7 @@
             "value": "0x00000"
           },
           "USER_REG_SRC": {
-            "value": "0x0C0"
+            "value": "0x140"
           },
           "USER_REG_TBASE_AXI_TIMEOUT": {
             "value": "0x1"
@@ -5931,13 +5931,13 @@
             "value": "0x01FFF"
           },
           "USER_REG_DDR_DST_MAP0": {
-            "value": "0x240"
+            "value": "0x2C0"
           },
           "USER_REG_DDR_DST_MAP1": {
-            "value": "0x440"
+            "value": "0x3C0"
           },
           "USER_REG_DDR_DST_MAP2": {
-            "value": "0x340"
+            "value": "0x4C0"
           },
           "USER_REG_DDR_DST_MAP3": {
             "value": "0xFC0"
@@ -6186,7 +6186,7 @@
             "value": "0x00000"
           },
           "USER_REG_SRC": {
-            "value": "0x140"
+            "value": "0x1C0"
           },
           "USER_REG_TBASE_AXI_TIMEOUT": {
             "value": "0x1"
@@ -6536,13 +6536,13 @@
             "value": "0x01FFF"
           },
           "USER_REG_DDR_DST_MAP0": {
-            "value": "0x200"
+            "value": "0x280"
           },
           "USER_REG_DDR_DST_MAP1": {
-            "value": "0x400"
+            "value": "0x380"
           },
           "USER_REG_DDR_DST_MAP2": {
-            "value": "0x300"
+            "value": "0x480"
           },
           "USER_REG_DDR_DST_MAP3": {
             "value": "0xFC0"
@@ -6791,7 +6791,7 @@
             "value": "0x00000"
           },
           "USER_REG_SRC": {
-            "value": "0x100"
+            "value": "0x180"
           },
           "USER_REG_TBASE_AXI_TIMEOUT": {
             "value": "0x1"

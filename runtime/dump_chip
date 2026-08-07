@@ -1,4 +1,4 @@
-
+#!/bin/bnsh
 source api
 source bash_registers chip_reg.h
 

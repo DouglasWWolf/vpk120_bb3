@@ -372,6 +372,34 @@
       "ExternalConn": "noc_lpddr4_0/inst/DDR_INI[0] cips_noc/inst/M00_INI[0], noc_lpddr4_0/inst/DDR_INI[0] cips_noc/inst/M01_INI[0], noc_lpddr4_0/inst/DDR_INI[0] cips_noc/inst/M02_INI[0], noc_lpddr4_0/inst/DDR_INI[0] cips_noc/inst/M03_INI[0]"
     },
     {
+      "Name": "noc_lpddr4_0/inst/S00_AXI_nmu",
+      "DesignName": "/noc_lpddr4_0/S00_AXI",
+      "IsMaster": true,
+      "CompType": "PL_NMU",
+      "Protocol": "AXI_MM",
+      "ReadTC": "BE",
+      "WriteTC": "BE",
+      "AxiDataWidth": 512,
+      "SysAddresses": [],
+      "SimMetaData": {
+        "IPName": "bd_610c_S00_AXI_nmu_0"
+      }
+    },
+    {
+      "Name": "noc_lpddr4_0/inst/S01_AXI_nmu",
+      "DesignName": "/noc_lpddr4_0/S01_AXI",
+      "IsMaster": true,
+      "CompType": "PL_NMU",
+      "Protocol": "AXI_MM",
+      "ReadTC": "BE",
+      "WriteTC": "BE",
+      "AxiDataWidth": 512,
+      "SysAddresses": [],
+      "SimMetaData": {
+        "IPName": "bd_610c_S01_AXI_nmu_0"
+      }
+    },
+    {
       "Name": "noc_lpddr4_1/inst/MC0_ddrc",
       "DesignName": "/noc_lpddr4_1/ddrmc",
       "IsMaster": false,
@@ -1137,6 +1165,34 @@
       "ReadLatency": 300,
       "ReadAvgBurst": 4,
       "WriteBW": 5,
+      "WriteLatency": 300,
+      "WriteAvgBurst": 4,
+      "WriteOrder": "strict"
+    },
+    {
+      "Phase": 0,
+      "From": "noc_lpddr4_0/inst/S00_AXI_nmu",
+      "To": "noc_lpddr4_0/inst/MC0_ddrc",
+      "Port": "PORT0",
+      "CommType": "MM_ReadWrite",
+      "ReadBW": 500,
+      "ReadLatency": 300,
+      "ReadAvgBurst": 4,
+      "WriteBW": 500,
+      "WriteLatency": 300,
+      "WriteAvgBurst": 4,
+      "WriteOrder": "strict"
+    },
+    {
+      "Phase": 0,
+      "From": "noc_lpddr4_0/inst/S01_AXI_nmu",
+      "To": "noc_lpddr4_0/inst/MC0_ddrc",
+      "Port": "PORT0",
+      "CommType": "MM_ReadWrite",
+      "ReadBW": 500,
+      "ReadLatency": 300,
+      "ReadAvgBurst": 4,
+      "WriteBW": 500,
       "WriteLatency": 300,
       "WriteAvgBurst": 4,
       "WriteOrder": "strict"

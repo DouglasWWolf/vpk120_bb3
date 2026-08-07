@@ -1090,7 +1090,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:7c5fa666</spirit:value>
+            <spirit:value>9:bf5db756</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2955,7 +2955,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>REG_DDR_DST_MAP0</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.REG_DDR_DST_MAP0" spirit:bitStringLength="12">0x200</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.REG_DDR_DST_MAP0" spirit:bitStringLength="12">0x280</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>REG_DDR_DST_MAP1</spirit:name>
@@ -3303,7 +3303,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>REG_SRC</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.REG_SRC" spirit:bitStringLength="12">0x040</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.REG_SRC" spirit:bitStringLength="12">0x0C0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>REG_TBASE_AXI_TIMEOUT</spirit:name>
@@ -3904,7 +3904,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_REG_DDR_DST_MAP0</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_REG_DDR_DST_MAP0" spirit:order="112" spirit:bitStringLength="12">0x200</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_REG_DDR_DST_MAP0" spirit:order="112" spirit:bitStringLength="12">0x280</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_REG_DDR_DST_MAP1</spirit:name>
@@ -4252,7 +4252,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_REG_SRC</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_REG_SRC" spirit:order="199" spirit:bitStringLength="12">0x040</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_REG_SRC" spirit:order="199" spirit:bitStringLength="12">0x0C0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_REG_TBASE_AXI_TIMEOUT</spirit:name>

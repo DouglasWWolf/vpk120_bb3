@@ -1,4 +1,5 @@
-source ./api
+#!/bin/bash
+source api
 
 if [ -z $1 ]; then
     echo ""
@@ -55,6 +56,6 @@ fi
 
 
 # By default we perform a read or write of a chip register
-source ./api
+source api
 source bash_registers chip_reg.h
 chip_reg $1 $2 $3 $4 $5

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Fetch our register definitions
 source bash_registers fpga_reg.h
 

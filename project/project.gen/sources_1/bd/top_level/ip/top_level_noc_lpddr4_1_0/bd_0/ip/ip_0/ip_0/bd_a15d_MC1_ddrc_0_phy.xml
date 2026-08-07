@@ -4972,7 +4972,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_NPI_REG_MC_NSU_3_EGR</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_NPI_REG_MC_NSU_3_EGR" spirit:order="34" spirit:bitStringLength="32">0x00432610</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_NPI_REG_MC_NSU_3_EGR" spirit:order="34" spirit:bitStringLength="32">0x00434210</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_NPI_REG_MC_NSU_3_R_EGR</spirit:name>
@@ -5600,19 +5600,19 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_NSU0_PORT</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU0_PORT" spirit:order="191" spirit:bitStringLength="32">0x00000300</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU0_PORT" spirit:order="191" spirit:bitStringLength="32">0x00000480</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_NSU1_PORT</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU1_PORT" spirit:order="192" spirit:bitStringLength="32">0x00000340</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU1_PORT" spirit:order="192" spirit:bitStringLength="32">0x000004c0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_NSU2_PORT</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU2_PORT" spirit:order="193" spirit:bitStringLength="32">0x00000380</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU2_PORT" spirit:order="193" spirit:bitStringLength="32">0x00000500</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_NSU3_PORT</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU3_PORT" spirit:order="194" spirit:bitStringLength="32">0x000003c0</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU3_PORT" spirit:order="194" spirit:bitStringLength="32">0x00000540</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_UB_CLK_MUX</spirit:name>

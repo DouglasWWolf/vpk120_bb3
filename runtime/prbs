@@ -1,3 +1,4 @@
+#!/bin/bash
 source api
 source bash_registers "chip_reg.h"
 

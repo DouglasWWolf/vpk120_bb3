@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Wed Aug  5 21:52:56 2026
+//Date        : Thu Aug  6 19:37:45 2026
 //Host        : wolf-super-server running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target top_level.bd
 //Design      : top_level
@@ -362,6 +362,76 @@ module pl_rtl_imp_QFYSB7
     LVDS_CLK_clk_n,
     LVDS_CLK_clk_p,
     LVL_TRSL_OE_N,
+    M_AXI_RAM0_PCI_araddr,
+    M_AXI_RAM0_PCI_arburst,
+    M_AXI_RAM0_PCI_arcache,
+    M_AXI_RAM0_PCI_arid,
+    M_AXI_RAM0_PCI_arlen,
+    M_AXI_RAM0_PCI_arlock,
+    M_AXI_RAM0_PCI_arprot,
+    M_AXI_RAM0_PCI_arqos,
+    M_AXI_RAM0_PCI_arready,
+    M_AXI_RAM0_PCI_arsize,
+    M_AXI_RAM0_PCI_arvalid,
+    M_AXI_RAM0_PCI_awaddr,
+    M_AXI_RAM0_PCI_awburst,
+    M_AXI_RAM0_PCI_awcache,
+    M_AXI_RAM0_PCI_awid,
+    M_AXI_RAM0_PCI_awlen,
+    M_AXI_RAM0_PCI_awlock,
+    M_AXI_RAM0_PCI_awprot,
+    M_AXI_RAM0_PCI_awqos,
+    M_AXI_RAM0_PCI_awready,
+    M_AXI_RAM0_PCI_awsize,
+    M_AXI_RAM0_PCI_awvalid,
+    M_AXI_RAM0_PCI_bready,
+    M_AXI_RAM0_PCI_bresp,
+    M_AXI_RAM0_PCI_bvalid,
+    M_AXI_RAM0_PCI_rdata,
+    M_AXI_RAM0_PCI_rlast,
+    M_AXI_RAM0_PCI_rready,
+    M_AXI_RAM0_PCI_rresp,
+    M_AXI_RAM0_PCI_rvalid,
+    M_AXI_RAM0_PCI_wdata,
+    M_AXI_RAM0_PCI_wlast,
+    M_AXI_RAM0_PCI_wready,
+    M_AXI_RAM0_PCI_wstrb,
+    M_AXI_RAM0_PCI_wvalid,
+    M_AXI_RAM1_PCI_araddr,
+    M_AXI_RAM1_PCI_arburst,
+    M_AXI_RAM1_PCI_arcache,
+    M_AXI_RAM1_PCI_arid,
+    M_AXI_RAM1_PCI_arlen,
+    M_AXI_RAM1_PCI_arlock,
+    M_AXI_RAM1_PCI_arprot,
+    M_AXI_RAM1_PCI_arqos,
+    M_AXI_RAM1_PCI_arready,
+    M_AXI_RAM1_PCI_arsize,
+    M_AXI_RAM1_PCI_arvalid,
+    M_AXI_RAM1_PCI_awaddr,
+    M_AXI_RAM1_PCI_awburst,
+    M_AXI_RAM1_PCI_awcache,
+    M_AXI_RAM1_PCI_awid,
+    M_AXI_RAM1_PCI_awlen,
+    M_AXI_RAM1_PCI_awlock,
+    M_AXI_RAM1_PCI_awprot,
+    M_AXI_RAM1_PCI_awqos,
+    M_AXI_RAM1_PCI_awready,
+    M_AXI_RAM1_PCI_awsize,
+    M_AXI_RAM1_PCI_awvalid,
+    M_AXI_RAM1_PCI_bready,
+    M_AXI_RAM1_PCI_bresp,
+    M_AXI_RAM1_PCI_bvalid,
+    M_AXI_RAM1_PCI_rdata,
+    M_AXI_RAM1_PCI_rlast,
+    M_AXI_RAM1_PCI_rready,
+    M_AXI_RAM1_PCI_rresp,
+    M_AXI_RAM1_PCI_rvalid,
+    M_AXI_RAM1_PCI_wdata,
+    M_AXI_RAM1_PCI_wlast,
+    M_AXI_RAM1_PCI_wready,
+    M_AXI_RAM1_PCI_wstrb,
+    M_AXI_RAM1_PCI_wvalid,
     S00_AXI_araddr,
     S00_AXI_arburst,
     S00_AXI_arcache,
@@ -434,6 +504,76 @@ module pl_rtl_imp_QFYSB7
   output [0:0]LVDS_CLK_clk_n;
   output [0:0]LVDS_CLK_clk_p;
   output LVL_TRSL_OE_N;
+  output [63:0]M_AXI_RAM0_PCI_araddr;
+  output [1:0]M_AXI_RAM0_PCI_arburst;
+  output [3:0]M_AXI_RAM0_PCI_arcache;
+  output [3:0]M_AXI_RAM0_PCI_arid;
+  output [7:0]M_AXI_RAM0_PCI_arlen;
+  output [0:0]M_AXI_RAM0_PCI_arlock;
+  output [2:0]M_AXI_RAM0_PCI_arprot;
+  output [3:0]M_AXI_RAM0_PCI_arqos;
+  input [0:0]M_AXI_RAM0_PCI_arready;
+  output [2:0]M_AXI_RAM0_PCI_arsize;
+  output [0:0]M_AXI_RAM0_PCI_arvalid;
+  output [63:0]M_AXI_RAM0_PCI_awaddr;
+  output [1:0]M_AXI_RAM0_PCI_awburst;
+  output [3:0]M_AXI_RAM0_PCI_awcache;
+  output [3:0]M_AXI_RAM0_PCI_awid;
+  output [7:0]M_AXI_RAM0_PCI_awlen;
+  output [0:0]M_AXI_RAM0_PCI_awlock;
+  output [2:0]M_AXI_RAM0_PCI_awprot;
+  output [3:0]M_AXI_RAM0_PCI_awqos;
+  input [0:0]M_AXI_RAM0_PCI_awready;
+  output [2:0]M_AXI_RAM0_PCI_awsize;
+  output [0:0]M_AXI_RAM0_PCI_awvalid;
+  output [0:0]M_AXI_RAM0_PCI_bready;
+  input [1:0]M_AXI_RAM0_PCI_bresp;
+  input [0:0]M_AXI_RAM0_PCI_bvalid;
+  input [511:0]M_AXI_RAM0_PCI_rdata;
+  input [0:0]M_AXI_RAM0_PCI_rlast;
+  output [0:0]M_AXI_RAM0_PCI_rready;
+  input [1:0]M_AXI_RAM0_PCI_rresp;
+  input [0:0]M_AXI_RAM0_PCI_rvalid;
+  output [511:0]M_AXI_RAM0_PCI_wdata;
+  output [0:0]M_AXI_RAM0_PCI_wlast;
+  input [0:0]M_AXI_RAM0_PCI_wready;
+  output [63:0]M_AXI_RAM0_PCI_wstrb;
+  output [0:0]M_AXI_RAM0_PCI_wvalid;
+  output [63:0]M_AXI_RAM1_PCI_araddr;
+  output [1:0]M_AXI_RAM1_PCI_arburst;
+  output [3:0]M_AXI_RAM1_PCI_arcache;
+  output [3:0]M_AXI_RAM1_PCI_arid;
+  output [7:0]M_AXI_RAM1_PCI_arlen;
+  output [0:0]M_AXI_RAM1_PCI_arlock;
+  output [2:0]M_AXI_RAM1_PCI_arprot;
+  output [3:0]M_AXI_RAM1_PCI_arqos;
+  input [0:0]M_AXI_RAM1_PCI_arready;
+  output [2:0]M_AXI_RAM1_PCI_arsize;
+  output [0:0]M_AXI_RAM1_PCI_arvalid;
+  output [63:0]M_AXI_RAM1_PCI_awaddr;
+  output [1:0]M_AXI_RAM1_PCI_awburst;
+  output [3:0]M_AXI_RAM1_PCI_awcache;
+  output [3:0]M_AXI_RAM1_PCI_awid;
+  output [7:0]M_AXI_RAM1_PCI_awlen;
+  output [0:0]M_AXI_RAM1_PCI_awlock;
+  output [2:0]M_AXI_RAM1_PCI_awprot;
+  output [3:0]M_AXI_RAM1_PCI_awqos;
+  input [0:0]M_AXI_RAM1_PCI_awready;
+  output [2:0]M_AXI_RAM1_PCI_awsize;
+  output [0:0]M_AXI_RAM1_PCI_awvalid;
+  output [0:0]M_AXI_RAM1_PCI_bready;
+  input [1:0]M_AXI_RAM1_PCI_bresp;
+  input [0:0]M_AXI_RAM1_PCI_bvalid;
+  input [511:0]M_AXI_RAM1_PCI_rdata;
+  input [0:0]M_AXI_RAM1_PCI_rlast;
+  output [0:0]M_AXI_RAM1_PCI_rready;
+  input [1:0]M_AXI_RAM1_PCI_rresp;
+  input [0:0]M_AXI_RAM1_PCI_rvalid;
+  output [511:0]M_AXI_RAM1_PCI_wdata;
+  output [0:0]M_AXI_RAM1_PCI_wlast;
+  input [0:0]M_AXI_RAM1_PCI_wready;
+  output [63:0]M_AXI_RAM1_PCI_wstrb;
+  output [0:0]M_AXI_RAM1_PCI_wvalid;
   input [43:0]S00_AXI_araddr;
   input [1:0]S00_AXI_arburst;
   input [3:0]S00_AXI_arcache;
@@ -526,6 +666,76 @@ module pl_rtl_imp_QFYSB7
   wire [0:0]LVDS_CLK_clk_n;
   wire [0:0]LVDS_CLK_clk_p;
   wire LVL_TRSL_OE_N;
+  wire [63:0]M_AXI_RAM0_PCI_araddr;
+  wire [1:0]M_AXI_RAM0_PCI_arburst;
+  wire [3:0]M_AXI_RAM0_PCI_arcache;
+  wire [3:0]M_AXI_RAM0_PCI_arid;
+  wire [7:0]M_AXI_RAM0_PCI_arlen;
+  wire [0:0]M_AXI_RAM0_PCI_arlock;
+  wire [2:0]M_AXI_RAM0_PCI_arprot;
+  wire [3:0]M_AXI_RAM0_PCI_arqos;
+  wire [0:0]M_AXI_RAM0_PCI_arready;
+  wire [2:0]M_AXI_RAM0_PCI_arsize;
+  wire [0:0]M_AXI_RAM0_PCI_arvalid;
+  wire [63:0]M_AXI_RAM0_PCI_awaddr;
+  wire [1:0]M_AXI_RAM0_PCI_awburst;
+  wire [3:0]M_AXI_RAM0_PCI_awcache;
+  wire [3:0]M_AXI_RAM0_PCI_awid;
+  wire [7:0]M_AXI_RAM0_PCI_awlen;
+  wire [0:0]M_AXI_RAM0_PCI_awlock;
+  wire [2:0]M_AXI_RAM0_PCI_awprot;
+  wire [3:0]M_AXI_RAM0_PCI_awqos;
+  wire [0:0]M_AXI_RAM0_PCI_awready;
+  wire [2:0]M_AXI_RAM0_PCI_awsize;
+  wire [0:0]M_AXI_RAM0_PCI_awvalid;
+  wire [0:0]M_AXI_RAM0_PCI_bready;
+  wire [1:0]M_AXI_RAM0_PCI_bresp;
+  wire [0:0]M_AXI_RAM0_PCI_bvalid;
+  wire [511:0]M_AXI_RAM0_PCI_rdata;
+  wire [0:0]M_AXI_RAM0_PCI_rlast;
+  wire [0:0]M_AXI_RAM0_PCI_rready;
+  wire [1:0]M_AXI_RAM0_PCI_rresp;
+  wire [0:0]M_AXI_RAM0_PCI_rvalid;
+  wire [511:0]M_AXI_RAM0_PCI_wdata;
+  wire [0:0]M_AXI_RAM0_PCI_wlast;
+  wire [0:0]M_AXI_RAM0_PCI_wready;
+  wire [63:0]M_AXI_RAM0_PCI_wstrb;
+  wire [0:0]M_AXI_RAM0_PCI_wvalid;
+  wire [63:0]M_AXI_RAM1_PCI_araddr;
+  wire [1:0]M_AXI_RAM1_PCI_arburst;
+  wire [3:0]M_AXI_RAM1_PCI_arcache;
+  wire [3:0]M_AXI_RAM1_PCI_arid;
+  wire [7:0]M_AXI_RAM1_PCI_arlen;
+  wire [0:0]M_AXI_RAM1_PCI_arlock;
+  wire [2:0]M_AXI_RAM1_PCI_arprot;
+  wire [3:0]M_AXI_RAM1_PCI_arqos;
+  wire [0:0]M_AXI_RAM1_PCI_arready;
+  wire [2:0]M_AXI_RAM1_PCI_arsize;
+  wire [0:0]M_AXI_RAM1_PCI_arvalid;
+  wire [63:0]M_AXI_RAM1_PCI_awaddr;
+  wire [1:0]M_AXI_RAM1_PCI_awburst;
+  wire [3:0]M_AXI_RAM1_PCI_awcache;
+  wire [3:0]M_AXI_RAM1_PCI_awid;
+  wire [7:0]M_AXI_RAM1_PCI_awlen;
+  wire [0:0]M_AXI_RAM1_PCI_awlock;
+  wire [2:0]M_AXI_RAM1_PCI_awprot;
+  wire [3:0]M_AXI_RAM1_PCI_awqos;
+  wire [0:0]M_AXI_RAM1_PCI_awready;
+  wire [2:0]M_AXI_RAM1_PCI_awsize;
+  wire [0:0]M_AXI_RAM1_PCI_awvalid;
+  wire [0:0]M_AXI_RAM1_PCI_bready;
+  wire [1:0]M_AXI_RAM1_PCI_bresp;
+  wire [0:0]M_AXI_RAM1_PCI_bvalid;
+  wire [511:0]M_AXI_RAM1_PCI_rdata;
+  wire [0:0]M_AXI_RAM1_PCI_rlast;
+  wire [0:0]M_AXI_RAM1_PCI_rready;
+  wire [1:0]M_AXI_RAM1_PCI_rresp;
+  wire [0:0]M_AXI_RAM1_PCI_rvalid;
+  wire [511:0]M_AXI_RAM1_PCI_wdata;
+  wire [0:0]M_AXI_RAM1_PCI_wlast;
+  wire [0:0]M_AXI_RAM1_PCI_wready;
+  wire [63:0]M_AXI_RAM1_PCI_wstrb;
+  wire [0:0]M_AXI_RAM1_PCI_wvalid;
   wire [43:0]S00_AXI_araddr;
   wire [1:0]S00_AXI_arburst;
   wire [3:0]S00_AXI_arcache;
@@ -716,6 +926,76 @@ module pl_rtl_imp_QFYSB7
         .AXI_CLOCK_CTL_wready(AXI_CLOCK_CTL_1_WREADY),
         .AXI_CLOCK_CTL_wstrb(AXI_CLOCK_CTL_1_WSTRB),
         .AXI_CLOCK_CTL_wvalid(AXI_CLOCK_CTL_1_WVALID),
+        .M_AXI_RAM0_PCI_araddr(M_AXI_RAM0_PCI_araddr),
+        .M_AXI_RAM0_PCI_arburst(M_AXI_RAM0_PCI_arburst),
+        .M_AXI_RAM0_PCI_arcache(M_AXI_RAM0_PCI_arcache),
+        .M_AXI_RAM0_PCI_arid(M_AXI_RAM0_PCI_arid),
+        .M_AXI_RAM0_PCI_arlen(M_AXI_RAM0_PCI_arlen),
+        .M_AXI_RAM0_PCI_arlock(M_AXI_RAM0_PCI_arlock),
+        .M_AXI_RAM0_PCI_arprot(M_AXI_RAM0_PCI_arprot),
+        .M_AXI_RAM0_PCI_arqos(M_AXI_RAM0_PCI_arqos),
+        .M_AXI_RAM0_PCI_arready(M_AXI_RAM0_PCI_arready),
+        .M_AXI_RAM0_PCI_arsize(M_AXI_RAM0_PCI_arsize),
+        .M_AXI_RAM0_PCI_arvalid(M_AXI_RAM0_PCI_arvalid),
+        .M_AXI_RAM0_PCI_awaddr(M_AXI_RAM0_PCI_awaddr),
+        .M_AXI_RAM0_PCI_awburst(M_AXI_RAM0_PCI_awburst),
+        .M_AXI_RAM0_PCI_awcache(M_AXI_RAM0_PCI_awcache),
+        .M_AXI_RAM0_PCI_awid(M_AXI_RAM0_PCI_awid),
+        .M_AXI_RAM0_PCI_awlen(M_AXI_RAM0_PCI_awlen),
+        .M_AXI_RAM0_PCI_awlock(M_AXI_RAM0_PCI_awlock),
+        .M_AXI_RAM0_PCI_awprot(M_AXI_RAM0_PCI_awprot),
+        .M_AXI_RAM0_PCI_awqos(M_AXI_RAM0_PCI_awqos),
+        .M_AXI_RAM0_PCI_awready(M_AXI_RAM0_PCI_awready),
+        .M_AXI_RAM0_PCI_awsize(M_AXI_RAM0_PCI_awsize),
+        .M_AXI_RAM0_PCI_awvalid(M_AXI_RAM0_PCI_awvalid),
+        .M_AXI_RAM0_PCI_bready(M_AXI_RAM0_PCI_bready),
+        .M_AXI_RAM0_PCI_bresp(M_AXI_RAM0_PCI_bresp),
+        .M_AXI_RAM0_PCI_bvalid(M_AXI_RAM0_PCI_bvalid),
+        .M_AXI_RAM0_PCI_rdata(M_AXI_RAM0_PCI_rdata),
+        .M_AXI_RAM0_PCI_rlast(M_AXI_RAM0_PCI_rlast),
+        .M_AXI_RAM0_PCI_rready(M_AXI_RAM0_PCI_rready),
+        .M_AXI_RAM0_PCI_rresp(M_AXI_RAM0_PCI_rresp),
+        .M_AXI_RAM0_PCI_rvalid(M_AXI_RAM0_PCI_rvalid),
+        .M_AXI_RAM0_PCI_wdata(M_AXI_RAM0_PCI_wdata),
+        .M_AXI_RAM0_PCI_wlast(M_AXI_RAM0_PCI_wlast),
+        .M_AXI_RAM0_PCI_wready(M_AXI_RAM0_PCI_wready),
+        .M_AXI_RAM0_PCI_wstrb(M_AXI_RAM0_PCI_wstrb),
+        .M_AXI_RAM0_PCI_wvalid(M_AXI_RAM0_PCI_wvalid),
+        .M_AXI_RAM1_PCI_araddr(M_AXI_RAM1_PCI_araddr),
+        .M_AXI_RAM1_PCI_arburst(M_AXI_RAM1_PCI_arburst),
+        .M_AXI_RAM1_PCI_arcache(M_AXI_RAM1_PCI_arcache),
+        .M_AXI_RAM1_PCI_arid(M_AXI_RAM1_PCI_arid),
+        .M_AXI_RAM1_PCI_arlen(M_AXI_RAM1_PCI_arlen),
+        .M_AXI_RAM1_PCI_arlock(M_AXI_RAM1_PCI_arlock),
+        .M_AXI_RAM1_PCI_arprot(M_AXI_RAM1_PCI_arprot),
+        .M_AXI_RAM1_PCI_arqos(M_AXI_RAM1_PCI_arqos),
+        .M_AXI_RAM1_PCI_arready(M_AXI_RAM1_PCI_arready),
+        .M_AXI_RAM1_PCI_arsize(M_AXI_RAM1_PCI_arsize),
+        .M_AXI_RAM1_PCI_arvalid(M_AXI_RAM1_PCI_arvalid),
+        .M_AXI_RAM1_PCI_awaddr(M_AXI_RAM1_PCI_awaddr),
+        .M_AXI_RAM1_PCI_awburst(M_AXI_RAM1_PCI_awburst),
+        .M_AXI_RAM1_PCI_awcache(M_AXI_RAM1_PCI_awcache),
+        .M_AXI_RAM1_PCI_awid(M_AXI_RAM1_PCI_awid),
+        .M_AXI_RAM1_PCI_awlen(M_AXI_RAM1_PCI_awlen),
+        .M_AXI_RAM1_PCI_awlock(M_AXI_RAM1_PCI_awlock),
+        .M_AXI_RAM1_PCI_awprot(M_AXI_RAM1_PCI_awprot),
+        .M_AXI_RAM1_PCI_awqos(M_AXI_RAM1_PCI_awqos),
+        .M_AXI_RAM1_PCI_awready(M_AXI_RAM1_PCI_awready),
+        .M_AXI_RAM1_PCI_awsize(M_AXI_RAM1_PCI_awsize),
+        .M_AXI_RAM1_PCI_awvalid(M_AXI_RAM1_PCI_awvalid),
+        .M_AXI_RAM1_PCI_bready(M_AXI_RAM1_PCI_bready),
+        .M_AXI_RAM1_PCI_bresp(M_AXI_RAM1_PCI_bresp),
+        .M_AXI_RAM1_PCI_bvalid(M_AXI_RAM1_PCI_bvalid),
+        .M_AXI_RAM1_PCI_rdata(M_AXI_RAM1_PCI_rdata),
+        .M_AXI_RAM1_PCI_rlast(M_AXI_RAM1_PCI_rlast),
+        .M_AXI_RAM1_PCI_rready(M_AXI_RAM1_PCI_rready),
+        .M_AXI_RAM1_PCI_rresp(M_AXI_RAM1_PCI_rresp),
+        .M_AXI_RAM1_PCI_rvalid(M_AXI_RAM1_PCI_rvalid),
+        .M_AXI_RAM1_PCI_wdata(M_AXI_RAM1_PCI_wdata),
+        .M_AXI_RAM1_PCI_wlast(M_AXI_RAM1_PCI_wlast),
+        .M_AXI_RAM1_PCI_wready(M_AXI_RAM1_PCI_wready),
+        .M_AXI_RAM1_PCI_wstrb(M_AXI_RAM1_PCI_wstrb),
+        .M_AXI_RAM1_PCI_wvalid(M_AXI_RAM1_PCI_wvalid),
         .S_AXI_CTL_araddr(S_AXI_CTL_1_ARADDR),
         .S_AXI_CTL_arprot(S_AXI_CTL_1_ARPROT),
         .S_AXI_CTL_arready(S_AXI_CTL_1_ARREADY),
@@ -761,15 +1041,6 @@ module pl_rtl_imp_QFYSB7
         .S_AXI_RAM0_ETH_wlast(1'b0),
         .S_AXI_RAM0_ETH_wstrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1}),
         .S_AXI_RAM0_ETH_wvalid(1'b0),
-        .S_AXI_RAM0_PCI_arready(1'b0),
-        .S_AXI_RAM0_PCI_awready(1'b0),
-        .S_AXI_RAM0_PCI_bresp({1'b0,1'b0}),
-        .S_AXI_RAM0_PCI_bvalid(1'b0),
-        .S_AXI_RAM0_PCI_rdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_RAM0_PCI_rlast(1'b0),
-        .S_AXI_RAM0_PCI_rresp({1'b0,1'b0}),
-        .S_AXI_RAM0_PCI_rvalid(1'b0),
-        .S_AXI_RAM0_PCI_wready(1'b0),
         .S_AXI_RAM1_ETH_araddr({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .S_AXI_RAM1_ETH_arburst({1'b0,1'b1}),
         .S_AXI_RAM1_ETH_arcache({1'b0,1'b0,1'b1,1'b1}),
@@ -796,15 +1067,6 @@ module pl_rtl_imp_QFYSB7
         .S_AXI_RAM1_ETH_wlast(1'b0),
         .S_AXI_RAM1_ETH_wstrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1}),
         .S_AXI_RAM1_ETH_wvalid(1'b0),
-        .S_AXI_RAM1_PCI_arready(1'b0),
-        .S_AXI_RAM1_PCI_awready(1'b0),
-        .S_AXI_RAM1_PCI_bresp({1'b0,1'b0}),
-        .S_AXI_RAM1_PCI_bvalid(1'b0),
-        .S_AXI_RAM1_PCI_rdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_RAM1_PCI_rlast(1'b0),
-        .S_AXI_RAM1_PCI_rresp({1'b0,1'b0}),
-        .S_AXI_RAM1_PCI_rvalid(1'b0),
-        .S_AXI_RAM1_PCI_wready(1'b0),
         .pin_hsi_cmd(pin_hsi_cmd),
         .pin_hsi_data(pin_hsi_data),
         .pin_hsi_pclk(pin_hsi_pclk),
@@ -1962,6 +2224,76 @@ module top_level
   wire lpddr4_clk2_clk_p;
   wire lpddr4_clk3_clk_n;
   wire lpddr4_clk3_clk_p;
+  wire [63:0]pl_rtl_M_AXI_RAM1_PCI_ARADDR;
+  wire [1:0]pl_rtl_M_AXI_RAM1_PCI_ARBURST;
+  wire [3:0]pl_rtl_M_AXI_RAM1_PCI_ARCACHE;
+  wire [3:0]pl_rtl_M_AXI_RAM1_PCI_ARID;
+  wire [7:0]pl_rtl_M_AXI_RAM1_PCI_ARLEN;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_ARLOCK;
+  wire [2:0]pl_rtl_M_AXI_RAM1_PCI_ARPROT;
+  wire [3:0]pl_rtl_M_AXI_RAM1_PCI_ARQOS;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_ARREADY;
+  wire [2:0]pl_rtl_M_AXI_RAM1_PCI_ARSIZE;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_ARVALID;
+  wire [63:0]pl_rtl_M_AXI_RAM1_PCI_AWADDR;
+  wire [1:0]pl_rtl_M_AXI_RAM1_PCI_AWBURST;
+  wire [3:0]pl_rtl_M_AXI_RAM1_PCI_AWCACHE;
+  wire [3:0]pl_rtl_M_AXI_RAM1_PCI_AWID;
+  wire [7:0]pl_rtl_M_AXI_RAM1_PCI_AWLEN;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_AWLOCK;
+  wire [2:0]pl_rtl_M_AXI_RAM1_PCI_AWPROT;
+  wire [3:0]pl_rtl_M_AXI_RAM1_PCI_AWQOS;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_AWREADY;
+  wire [2:0]pl_rtl_M_AXI_RAM1_PCI_AWSIZE;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_AWVALID;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_BREADY;
+  wire [1:0]pl_rtl_M_AXI_RAM1_PCI_BRESP;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_BVALID;
+  wire [511:0]pl_rtl_M_AXI_RAM1_PCI_RDATA;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_RLAST;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_RREADY;
+  wire [1:0]pl_rtl_M_AXI_RAM1_PCI_RRESP;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_RVALID;
+  wire [511:0]pl_rtl_M_AXI_RAM1_PCI_WDATA;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_WLAST;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_WREADY;
+  wire [63:0]pl_rtl_M_AXI_RAM1_PCI_WSTRB;
+  wire [0:0]pl_rtl_M_AXI_RAM1_PCI_WVALID;
+  wire [63:0]pl_rtl_M_AXI_SYSRAM_ARADDR;
+  wire [1:0]pl_rtl_M_AXI_SYSRAM_ARBURST;
+  wire [3:0]pl_rtl_M_AXI_SYSRAM_ARCACHE;
+  wire [3:0]pl_rtl_M_AXI_SYSRAM_ARID;
+  wire [7:0]pl_rtl_M_AXI_SYSRAM_ARLEN;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_ARLOCK;
+  wire [2:0]pl_rtl_M_AXI_SYSRAM_ARPROT;
+  wire [3:0]pl_rtl_M_AXI_SYSRAM_ARQOS;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_ARREADY;
+  wire [2:0]pl_rtl_M_AXI_SYSRAM_ARSIZE;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_ARVALID;
+  wire [63:0]pl_rtl_M_AXI_SYSRAM_AWADDR;
+  wire [1:0]pl_rtl_M_AXI_SYSRAM_AWBURST;
+  wire [3:0]pl_rtl_M_AXI_SYSRAM_AWCACHE;
+  wire [3:0]pl_rtl_M_AXI_SYSRAM_AWID;
+  wire [7:0]pl_rtl_M_AXI_SYSRAM_AWLEN;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_AWLOCK;
+  wire [2:0]pl_rtl_M_AXI_SYSRAM_AWPROT;
+  wire [3:0]pl_rtl_M_AXI_SYSRAM_AWQOS;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_AWREADY;
+  wire [2:0]pl_rtl_M_AXI_SYSRAM_AWSIZE;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_AWVALID;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_BREADY;
+  wire [1:0]pl_rtl_M_AXI_SYSRAM_BRESP;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_BVALID;
+  wire [511:0]pl_rtl_M_AXI_SYSRAM_RDATA;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_RLAST;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_RREADY;
+  wire [1:0]pl_rtl_M_AXI_SYSRAM_RRESP;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_RVALID;
+  wire [511:0]pl_rtl_M_AXI_SYSRAM_WDATA;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_WLAST;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_WREADY;
+  wire [63:0]pl_rtl_M_AXI_SYSRAM_WSTRB;
+  wire [0:0]pl_rtl_M_AXI_SYSRAM_WVALID;
   wire pl_rtl_irq;
   wire [0:0]proc_sys_reset_0_peripheral_aresetn;
 
@@ -2793,10 +3125,85 @@ module top_level
         .CH1_LPDDR4_0_dqs_t_a(ch1_lpddr4_trip1_dqs_t_a),
         .CH1_LPDDR4_0_dqs_t_b(ch1_lpddr4_trip1_dqs_t_b),
         .CH1_LPDDR4_0_reset_n(\^ch1_lpddr4_trip1_reset_n ),
+        .S00_AXI_araddr(pl_rtl_M_AXI_SYSRAM_ARADDR),
+        .S00_AXI_arburst(pl_rtl_M_AXI_SYSRAM_ARBURST),
+        .S00_AXI_arcache(pl_rtl_M_AXI_SYSRAM_ARCACHE),
+        .S00_AXI_arid(pl_rtl_M_AXI_SYSRAM_ARID),
+        .S00_AXI_arlen(pl_rtl_M_AXI_SYSRAM_ARLEN),
+        .S00_AXI_arlock(pl_rtl_M_AXI_SYSRAM_ARLOCK),
+        .S00_AXI_arprot(pl_rtl_M_AXI_SYSRAM_ARPROT),
+        .S00_AXI_arqos(pl_rtl_M_AXI_SYSRAM_ARQOS),
+        .S00_AXI_arready(pl_rtl_M_AXI_SYSRAM_ARREADY),
+        .S00_AXI_arregion({1'b0,1'b0,1'b0,1'b0}),
+        .S00_AXI_arsize(pl_rtl_M_AXI_SYSRAM_ARSIZE),
+        .S00_AXI_arvalid(pl_rtl_M_AXI_SYSRAM_ARVALID),
+        .S00_AXI_awaddr(pl_rtl_M_AXI_SYSRAM_AWADDR),
+        .S00_AXI_awburst(pl_rtl_M_AXI_SYSRAM_AWBURST),
+        .S00_AXI_awcache(pl_rtl_M_AXI_SYSRAM_AWCACHE),
+        .S00_AXI_awid(pl_rtl_M_AXI_SYSRAM_AWID),
+        .S00_AXI_awlen(pl_rtl_M_AXI_SYSRAM_AWLEN),
+        .S00_AXI_awlock(pl_rtl_M_AXI_SYSRAM_AWLOCK),
+        .S00_AXI_awprot(pl_rtl_M_AXI_SYSRAM_AWPROT),
+        .S00_AXI_awqos(pl_rtl_M_AXI_SYSRAM_AWQOS),
+        .S00_AXI_awready(pl_rtl_M_AXI_SYSRAM_AWREADY),
+        .S00_AXI_awregion({1'b0,1'b0,1'b0,1'b0}),
+        .S00_AXI_awsize(pl_rtl_M_AXI_SYSRAM_AWSIZE),
+        .S00_AXI_awvalid(pl_rtl_M_AXI_SYSRAM_AWVALID),
+        .S00_AXI_bready(pl_rtl_M_AXI_SYSRAM_BREADY),
+        .S00_AXI_bresp(pl_rtl_M_AXI_SYSRAM_BRESP),
+        .S00_AXI_bvalid(pl_rtl_M_AXI_SYSRAM_BVALID),
+        .S00_AXI_rdata(pl_rtl_M_AXI_SYSRAM_RDATA),
+        .S00_AXI_rlast(pl_rtl_M_AXI_SYSRAM_RLAST),
+        .S00_AXI_rready(pl_rtl_M_AXI_SYSRAM_RREADY),
+        .S00_AXI_rresp(pl_rtl_M_AXI_SYSRAM_RRESP),
+        .S00_AXI_rvalid(pl_rtl_M_AXI_SYSRAM_RVALID),
+        .S00_AXI_wdata(pl_rtl_M_AXI_SYSRAM_WDATA),
+        .S00_AXI_wlast(pl_rtl_M_AXI_SYSRAM_WLAST),
+        .S00_AXI_wready(pl_rtl_M_AXI_SYSRAM_WREADY),
+        .S00_AXI_wstrb(pl_rtl_M_AXI_SYSRAM_WSTRB),
+        .S00_AXI_wvalid(pl_rtl_M_AXI_SYSRAM_WVALID),
         .S00_INI_internoc(cips_noc_M00_INI_INTERNOC),
+        .S01_AXI_araddr(pl_rtl_M_AXI_RAM1_PCI_ARADDR),
+        .S01_AXI_arburst(pl_rtl_M_AXI_RAM1_PCI_ARBURST),
+        .S01_AXI_arcache(pl_rtl_M_AXI_RAM1_PCI_ARCACHE),
+        .S01_AXI_arid(pl_rtl_M_AXI_RAM1_PCI_ARID),
+        .S01_AXI_arlen(pl_rtl_M_AXI_RAM1_PCI_ARLEN),
+        .S01_AXI_arlock(pl_rtl_M_AXI_RAM1_PCI_ARLOCK),
+        .S01_AXI_arprot(pl_rtl_M_AXI_RAM1_PCI_ARPROT),
+        .S01_AXI_arqos(pl_rtl_M_AXI_RAM1_PCI_ARQOS),
+        .S01_AXI_arready(pl_rtl_M_AXI_RAM1_PCI_ARREADY),
+        .S01_AXI_arregion({1'b0,1'b0,1'b0,1'b0}),
+        .S01_AXI_arsize(pl_rtl_M_AXI_RAM1_PCI_ARSIZE),
+        .S01_AXI_arvalid(pl_rtl_M_AXI_RAM1_PCI_ARVALID),
+        .S01_AXI_awaddr(pl_rtl_M_AXI_RAM1_PCI_AWADDR),
+        .S01_AXI_awburst(pl_rtl_M_AXI_RAM1_PCI_AWBURST),
+        .S01_AXI_awcache(pl_rtl_M_AXI_RAM1_PCI_AWCACHE),
+        .S01_AXI_awid(pl_rtl_M_AXI_RAM1_PCI_AWID),
+        .S01_AXI_awlen(pl_rtl_M_AXI_RAM1_PCI_AWLEN),
+        .S01_AXI_awlock(pl_rtl_M_AXI_RAM1_PCI_AWLOCK),
+        .S01_AXI_awprot(pl_rtl_M_AXI_RAM1_PCI_AWPROT),
+        .S01_AXI_awqos(pl_rtl_M_AXI_RAM1_PCI_AWQOS),
+        .S01_AXI_awready(pl_rtl_M_AXI_RAM1_PCI_AWREADY),
+        .S01_AXI_awregion({1'b0,1'b0,1'b0,1'b0}),
+        .S01_AXI_awsize(pl_rtl_M_AXI_RAM1_PCI_AWSIZE),
+        .S01_AXI_awvalid(pl_rtl_M_AXI_RAM1_PCI_AWVALID),
+        .S01_AXI_bready(pl_rtl_M_AXI_RAM1_PCI_BREADY),
+        .S01_AXI_bresp(pl_rtl_M_AXI_RAM1_PCI_BRESP),
+        .S01_AXI_bvalid(pl_rtl_M_AXI_RAM1_PCI_BVALID),
+        .S01_AXI_rdata(pl_rtl_M_AXI_RAM1_PCI_RDATA),
+        .S01_AXI_rlast(pl_rtl_M_AXI_RAM1_PCI_RLAST),
+        .S01_AXI_rready(pl_rtl_M_AXI_RAM1_PCI_RREADY),
+        .S01_AXI_rresp(pl_rtl_M_AXI_RAM1_PCI_RRESP),
+        .S01_AXI_rvalid(pl_rtl_M_AXI_RAM1_PCI_RVALID),
+        .S01_AXI_wdata(pl_rtl_M_AXI_RAM1_PCI_WDATA),
+        .S01_AXI_wlast(pl_rtl_M_AXI_RAM1_PCI_WLAST),
+        .S01_AXI_wready(pl_rtl_M_AXI_RAM1_PCI_WREADY),
+        .S01_AXI_wstrb(pl_rtl_M_AXI_RAM1_PCI_WSTRB),
+        .S01_AXI_wvalid(pl_rtl_M_AXI_RAM1_PCI_WVALID),
         .S01_INI_internoc(cips_noc_M01_INI_INTERNOC),
         .S02_INI_internoc(cips_noc_M02_INI_INTERNOC),
         .S03_INI_internoc(cips_noc_M03_INI_INTERNOC),
+        .aclk0(clk_wizard_0_clk_out1),
         .sys_clk0_clk_n(lpddr4_clk1_clk_n),
         .sys_clk0_clk_p(lpddr4_clk1_clk_p));
   top_level_noc_lpddr4_1_0 noc_lpddr4_1
@@ -2900,6 +3307,76 @@ module top_level
         .LVDS_CLK_clk_n(LVDS_CLK_clk_n),
         .LVDS_CLK_clk_p(LVDS_CLK_clk_p),
         .LVL_TRSL_OE_N(LVL_TRSL_OE_N),
+        .M_AXI_RAM0_PCI_araddr(pl_rtl_M_AXI_SYSRAM_ARADDR),
+        .M_AXI_RAM0_PCI_arburst(pl_rtl_M_AXI_SYSRAM_ARBURST),
+        .M_AXI_RAM0_PCI_arcache(pl_rtl_M_AXI_SYSRAM_ARCACHE),
+        .M_AXI_RAM0_PCI_arid(pl_rtl_M_AXI_SYSRAM_ARID),
+        .M_AXI_RAM0_PCI_arlen(pl_rtl_M_AXI_SYSRAM_ARLEN),
+        .M_AXI_RAM0_PCI_arlock(pl_rtl_M_AXI_SYSRAM_ARLOCK),
+        .M_AXI_RAM0_PCI_arprot(pl_rtl_M_AXI_SYSRAM_ARPROT),
+        .M_AXI_RAM0_PCI_arqos(pl_rtl_M_AXI_SYSRAM_ARQOS),
+        .M_AXI_RAM0_PCI_arready(pl_rtl_M_AXI_SYSRAM_ARREADY),
+        .M_AXI_RAM0_PCI_arsize(pl_rtl_M_AXI_SYSRAM_ARSIZE),
+        .M_AXI_RAM0_PCI_arvalid(pl_rtl_M_AXI_SYSRAM_ARVALID),
+        .M_AXI_RAM0_PCI_awaddr(pl_rtl_M_AXI_SYSRAM_AWADDR),
+        .M_AXI_RAM0_PCI_awburst(pl_rtl_M_AXI_SYSRAM_AWBURST),
+        .M_AXI_RAM0_PCI_awcache(pl_rtl_M_AXI_SYSRAM_AWCACHE),
+        .M_AXI_RAM0_PCI_awid(pl_rtl_M_AXI_SYSRAM_AWID),
+        .M_AXI_RAM0_PCI_awlen(pl_rtl_M_AXI_SYSRAM_AWLEN),
+        .M_AXI_RAM0_PCI_awlock(pl_rtl_M_AXI_SYSRAM_AWLOCK),
+        .M_AXI_RAM0_PCI_awprot(pl_rtl_M_AXI_SYSRAM_AWPROT),
+        .M_AXI_RAM0_PCI_awqos(pl_rtl_M_AXI_SYSRAM_AWQOS),
+        .M_AXI_RAM0_PCI_awready(pl_rtl_M_AXI_SYSRAM_AWREADY),
+        .M_AXI_RAM0_PCI_awsize(pl_rtl_M_AXI_SYSRAM_AWSIZE),
+        .M_AXI_RAM0_PCI_awvalid(pl_rtl_M_AXI_SYSRAM_AWVALID),
+        .M_AXI_RAM0_PCI_bready(pl_rtl_M_AXI_SYSRAM_BREADY),
+        .M_AXI_RAM0_PCI_bresp(pl_rtl_M_AXI_SYSRAM_BRESP),
+        .M_AXI_RAM0_PCI_bvalid(pl_rtl_M_AXI_SYSRAM_BVALID),
+        .M_AXI_RAM0_PCI_rdata(pl_rtl_M_AXI_SYSRAM_RDATA),
+        .M_AXI_RAM0_PCI_rlast(pl_rtl_M_AXI_SYSRAM_RLAST),
+        .M_AXI_RAM0_PCI_rready(pl_rtl_M_AXI_SYSRAM_RREADY),
+        .M_AXI_RAM0_PCI_rresp(pl_rtl_M_AXI_SYSRAM_RRESP),
+        .M_AXI_RAM0_PCI_rvalid(pl_rtl_M_AXI_SYSRAM_RVALID),
+        .M_AXI_RAM0_PCI_wdata(pl_rtl_M_AXI_SYSRAM_WDATA),
+        .M_AXI_RAM0_PCI_wlast(pl_rtl_M_AXI_SYSRAM_WLAST),
+        .M_AXI_RAM0_PCI_wready(pl_rtl_M_AXI_SYSRAM_WREADY),
+        .M_AXI_RAM0_PCI_wstrb(pl_rtl_M_AXI_SYSRAM_WSTRB),
+        .M_AXI_RAM0_PCI_wvalid(pl_rtl_M_AXI_SYSRAM_WVALID),
+        .M_AXI_RAM1_PCI_araddr(pl_rtl_M_AXI_RAM1_PCI_ARADDR),
+        .M_AXI_RAM1_PCI_arburst(pl_rtl_M_AXI_RAM1_PCI_ARBURST),
+        .M_AXI_RAM1_PCI_arcache(pl_rtl_M_AXI_RAM1_PCI_ARCACHE),
+        .M_AXI_RAM1_PCI_arid(pl_rtl_M_AXI_RAM1_PCI_ARID),
+        .M_AXI_RAM1_PCI_arlen(pl_rtl_M_AXI_RAM1_PCI_ARLEN),
+        .M_AXI_RAM1_PCI_arlock(pl_rtl_M_AXI_RAM1_PCI_ARLOCK),
+        .M_AXI_RAM1_PCI_arprot(pl_rtl_M_AXI_RAM1_PCI_ARPROT),
+        .M_AXI_RAM1_PCI_arqos(pl_rtl_M_AXI_RAM1_PCI_ARQOS),
+        .M_AXI_RAM1_PCI_arready(pl_rtl_M_AXI_RAM1_PCI_ARREADY),
+        .M_AXI_RAM1_PCI_arsize(pl_rtl_M_AXI_RAM1_PCI_ARSIZE),
+        .M_AXI_RAM1_PCI_arvalid(pl_rtl_M_AXI_RAM1_PCI_ARVALID),
+        .M_AXI_RAM1_PCI_awaddr(pl_rtl_M_AXI_RAM1_PCI_AWADDR),
+        .M_AXI_RAM1_PCI_awburst(pl_rtl_M_AXI_RAM1_PCI_AWBURST),
+        .M_AXI_RAM1_PCI_awcache(pl_rtl_M_AXI_RAM1_PCI_AWCACHE),
+        .M_AXI_RAM1_PCI_awid(pl_rtl_M_AXI_RAM1_PCI_AWID),
+        .M_AXI_RAM1_PCI_awlen(pl_rtl_M_AXI_RAM1_PCI_AWLEN),
+        .M_AXI_RAM1_PCI_awlock(pl_rtl_M_AXI_RAM1_PCI_AWLOCK),
+        .M_AXI_RAM1_PCI_awprot(pl_rtl_M_AXI_RAM1_PCI_AWPROT),
+        .M_AXI_RAM1_PCI_awqos(pl_rtl_M_AXI_RAM1_PCI_AWQOS),
+        .M_AXI_RAM1_PCI_awready(pl_rtl_M_AXI_RAM1_PCI_AWREADY),
+        .M_AXI_RAM1_PCI_awsize(pl_rtl_M_AXI_RAM1_PCI_AWSIZE),
+        .M_AXI_RAM1_PCI_awvalid(pl_rtl_M_AXI_RAM1_PCI_AWVALID),
+        .M_AXI_RAM1_PCI_bready(pl_rtl_M_AXI_RAM1_PCI_BREADY),
+        .M_AXI_RAM1_PCI_bresp(pl_rtl_M_AXI_RAM1_PCI_BRESP),
+        .M_AXI_RAM1_PCI_bvalid(pl_rtl_M_AXI_RAM1_PCI_BVALID),
+        .M_AXI_RAM1_PCI_rdata(pl_rtl_M_AXI_RAM1_PCI_RDATA),
+        .M_AXI_RAM1_PCI_rlast(pl_rtl_M_AXI_RAM1_PCI_RLAST),
+        .M_AXI_RAM1_PCI_rready(pl_rtl_M_AXI_RAM1_PCI_RREADY),
+        .M_AXI_RAM1_PCI_rresp(pl_rtl_M_AXI_RAM1_PCI_RRESP),
+        .M_AXI_RAM1_PCI_rvalid(pl_rtl_M_AXI_RAM1_PCI_RVALID),
+        .M_AXI_RAM1_PCI_wdata(pl_rtl_M_AXI_RAM1_PCI_WDATA),
+        .M_AXI_RAM1_PCI_wlast(pl_rtl_M_AXI_RAM1_PCI_WLAST),
+        .M_AXI_RAM1_PCI_wready(pl_rtl_M_AXI_RAM1_PCI_WREADY),
+        .M_AXI_RAM1_PCI_wstrb(pl_rtl_M_AXI_RAM1_PCI_WSTRB),
+        .M_AXI_RAM1_PCI_wvalid(pl_rtl_M_AXI_RAM1_PCI_WVALID),
         .S00_AXI_araddr(CIPS_0_M_AXI_GP0_ARADDR),
         .S00_AXI_arburst(CIPS_0_M_AXI_GP0_ARBURST),
         .S00_AXI_arcache(CIPS_0_M_AXI_GP0_ARCACHE),

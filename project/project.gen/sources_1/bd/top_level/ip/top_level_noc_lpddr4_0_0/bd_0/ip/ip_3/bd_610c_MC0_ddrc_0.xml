@@ -2340,11 +2340,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 06 05:00:09 UTC 2026</spirit:value>
+            <spirit:value>Fri Aug 07 02:44:45 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:17ac59e9</spirit:value>
+            <spirit:value>9:1b07dd77</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5085,7 +5085,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>NPI_REG_DDRMC_NSU_3_EGR</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NPI_REG_DDRMC_NSU_3_EGR" spirit:bitStringLength="32">0x00432610</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NPI_REG_DDRMC_NSU_3_EGR" spirit:bitStringLength="32">0x00434210</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>NPI_REG_DDRMC_NSU_3_R_EGR</spirit:name>
@@ -6391,7 +6391,7 @@ _DQS_A_WIDTH 2 MC_LP4_DQS_B_WIDTH 2 MC_LP4_DMI_A_WIDTH 2 MC_LP4_DMI_B_WIDTH 2 MC
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_NPI_REG_MC_NSU_3_EGR</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_NPI_REG_MC_NSU_3_EGR" spirit:order="16" spirit:bitStringLength="32">0x00432610</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_NPI_REG_MC_NSU_3_EGR" spirit:order="16" spirit:bitStringLength="32">0x00434210</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_NPI_REG_MC_NSU_3_R_EGR</spirit:name>
@@ -6479,15 +6479,15 @@ _DQS_A_WIDTH 2 MC_LP4_DQS_B_WIDTH 2 MC_LP4_DMI_A_WIDTH 2 MC_LP4_DMI_B_WIDTH 2 MC
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_RD_DRR_TKN_P1</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_RD_DRR_TKN_P1" spirit:order="38" spirit:bitStringLength="32">0x00dd0404</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_RD_DRR_TKN_P1" spirit:order="38" spirit:bitStringLength="32">0x001c0404</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_RD_DRR_TKN_P2</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_RD_DRR_TKN_P2" spirit:order="39" spirit:bitStringLength="32">0x00dd0404</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_RD_DRR_TKN_P2" spirit:order="39" spirit:bitStringLength="32">0x001c0404</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_RD_DRR_TKN_P3</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_RD_DRR_TKN_P3" spirit:order="40" spirit:bitStringLength="32">0x00dd0404</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_RD_DRR_TKN_P3" spirit:order="40" spirit:bitStringLength="32">0x001c0404</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_WR_DRR_TKN_P0</spirit:name>
@@ -6495,15 +6495,15 @@ _DQS_A_WIDTH 2 MC_LP4_DQS_B_WIDTH 2 MC_LP4_DMI_A_WIDTH 2 MC_LP4_DMI_B_WIDTH 2 MC
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_WR_DRR_TKN_P1</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_WR_DRR_TKN_P1" spirit:order="42" spirit:bitStringLength="32">0x0000dd04</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_WR_DRR_TKN_P1" spirit:order="42" spirit:bitStringLength="32">0x00001c04</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_WR_DRR_TKN_P2</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_WR_DRR_TKN_P2" spirit:order="43" spirit:bitStringLength="32">0x0000dd04</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_WR_DRR_TKN_P2" spirit:order="43" spirit:bitStringLength="32">0x00001c04</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_WR_DRR_TKN_P3</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_WR_DRR_TKN_P3" spirit:order="44" spirit:bitStringLength="32">0x0000dd04</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_WR_DRR_TKN_P3" spirit:order="44" spirit:bitStringLength="32">0x00001c04</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_QOS0</spirit:name>
@@ -7091,19 +7091,19 @@ _DQS_A_WIDTH 2 MC_LP4_DQS_B_WIDTH 2 MC_LP4_DMI_A_WIDTH 2 MC_LP4_DMI_B_WIDTH 2 MC
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_NSU0_PORT</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU0_PORT" spirit:order="191" spirit:bitStringLength="32">0x00000200</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU0_PORT" spirit:order="191" spirit:bitStringLength="32">0x00000280</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_NSU1_PORT</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU1_PORT" spirit:order="192" spirit:bitStringLength="32">0x00000240</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU1_PORT" spirit:order="192" spirit:bitStringLength="32">0x000002c0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_NSU2_PORT</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU2_PORT" spirit:order="193" spirit:bitStringLength="32">0x00000280</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU2_PORT" spirit:order="193" spirit:bitStringLength="32">0x00000300</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_REG_NSU3_PORT</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU3_PORT" spirit:order="194" spirit:bitStringLength="32">0x000002c0</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MC_REG_NSU3_PORT" spirit:order="194" spirit:bitStringLength="32">0x00000340</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MC_UB_CLK_MUX</spirit:name>

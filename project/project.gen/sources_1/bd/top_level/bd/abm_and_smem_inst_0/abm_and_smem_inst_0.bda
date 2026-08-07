@@ -280,6 +280,42 @@
             },
             "V8": {
                 "VT": "AC",
+                "BA": "0x0000000000000000",
+                "HA": "0x000000007FFFFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "PCI_AXI",
+                "MX": "/abm_manager/abm_loader_0",
+                "MI": "PCI_AXI",
+                "MS": "SEG_noc_lpddr4_0_C0_DDR_LOW0",
+                "MV": "xilinx.com:module_ref:abm_loader:1.0",
+                "SX": "/",
+                "SI": "M_AXI_RAM0_PCI",
+                "SS": ":noc_lpddr4_0:S00_AXI:C0_DDR_LOW0",
+                "SV": "::abm_and_smem_inst_0_imp:",
+                "TM": "both",
+                "TU": "memory"
+            },
+            "V9": {
+                "VT": "AC",
+                "BA": "0x0000000000000000",
+                "HA": "0x000000007FFFFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "PCI_AXI",
+                "MX": "/abm_manager/abm_loader_1",
+                "MI": "PCI_AXI",
+                "MS": "SEG_noc_lpddr4_0_C0_DDR_LOW0",
+                "MV": "xilinx.com:module_ref:abm_loader:1.0",
+                "SX": "/",
+                "SI": "M_AXI_RAM1_PCI",
+                "SS": ":noc_lpddr4_0:S01_AXI:C0_DDR_LOW0",
+                "SV": "::abm_and_smem_inst_0_imp:",
+                "TM": "both",
+                "TU": "memory"
+            },
+            "V10": {
+                "VT": "AC",
                 "BA": "0x1000",
                 "HA": "0x1FFF",
                 "BP": "C_BASEADDR",
@@ -296,7 +332,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V9": {
+            "V11": {
                 "VT": "AC",
                 "BA": "0x3000",
                 "HA": "0x3FFF",
@@ -313,6 +349,42 @@
                 "SV": "xilinx.com:module_ref:clock_mgr_ctl:1.0",
                 "TM": "both",
                 "TU": "register"
+            },
+            "V12": {
+                "VT": "AC",
+                "BA": "0x0000000800000000",
+                "HA": "0x000000087FFFFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "PCI_AXI",
+                "MX": "/abm_manager/abm_loader_0",
+                "MI": "PCI_AXI",
+                "MS": "SEG_noc_lpddr4_0_C0_DDR_LOW1",
+                "MV": "xilinx.com:module_ref:abm_loader:1.0",
+                "SX": "/",
+                "SI": "M_AXI_RAM0_PCI",
+                "SS": ":noc_lpddr4_0:S00_AXI:C0_DDR_LOW1",
+                "SV": "::abm_and_smem_inst_0_imp:",
+                "TM": "both",
+                "TU": "memory"
+            },
+            "V13": {
+                "VT": "AC",
+                "BA": "0x0000000800000000",
+                "HA": "0x000000087FFFFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "PCI_AXI",
+                "MX": "/abm_manager/abm_loader_1",
+                "MI": "PCI_AXI",
+                "MS": "SEG_noc_lpddr4_0_C0_DDR_LOW1",
+                "MV": "xilinx.com:module_ref:abm_loader:1.0",
+                "SX": "/",
+                "SI": "M_AXI_RAM1_PCI",
+                "SS": ":noc_lpddr4_0:S01_AXI:C0_DDR_LOW1",
+                "SV": "::abm_and_smem_inst_0_imp:",
+                "TM": "both",
+                "TU": "memory"
             }
         },
         "edges": [
@@ -356,6 +428,26 @@
             },
             {
                 "src": "V9",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V10",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V11",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V12",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V13",
                 "trg": "V2",
                 "EH": "2"
             }

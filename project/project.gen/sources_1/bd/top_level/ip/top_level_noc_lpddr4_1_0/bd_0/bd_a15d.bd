@@ -1334,7 +1334,7 @@
             "value": "0"
           },
           "MC_PHYS_NAME": {
-            "value": "DDRMC_X1Y0"
+            "value": "DDRMC_X2Y0"
           },
           "MC_PIN_LOC": {
             "value": "None"
@@ -1433,16 +1433,16 @@
             "value": "0x003ffc0f"
           },
           "MC_REG_NSU0_PORT": {
-            "value": "0x00000300"
+            "value": "0x00000480"
           },
           "MC_REG_NSU1_PORT": {
-            "value": "0x00000340"
+            "value": "0x000004c0"
           },
           "MC_REG_NSU2_PORT": {
-            "value": "0x00000380"
+            "value": "0x00000500"
           },
           "MC_REG_NSU3_PORT": {
-            "value": "0x000003c0"
+            "value": "0x00000540"
           },
           "MC_REG_P0_BER_RATE_CTRL": {
             "value": "0x003ffc0f"
@@ -2309,7 +2309,7 @@
             "value": "0x00010100"
           },
           "USER_NPI_REG_MC_NSU_3_EGR": {
-            "value": "0x00432610"
+            "value": "0x00434210"
           },
           "USER_NPI_REG_MC_NSU_3_ING": {
             "value": "0x04534101"
@@ -3427,7 +3427,7 @@
             "value": "0"
           },
           "MC_PHYS_NAME": {
-            "value": "DDRMC_X2Y0"
+            "value": "DDRMC_X1Y0"
           },
           "MC_PIN_LOC": {
             "value": "None"
@@ -3526,16 +3526,16 @@
             "value": "0x003ffc0f"
           },
           "MC_REG_NSU0_PORT": {
-            "value": "0x00000400"
+            "value": "0x00000380"
           },
           "MC_REG_NSU1_PORT": {
-            "value": "0x00000440"
+            "value": "0x000003c0"
           },
           "MC_REG_NSU2_PORT": {
-            "value": "0x00000480"
+            "value": "0x00000400"
           },
           "MC_REG_NSU3_PORT": {
-            "value": "0x000004c0"
+            "value": "0x00000440"
           },
           "MC_REG_P0_BER_RATE_CTRL": {
             "value": "0x003ffc0f"
@@ -4402,7 +4402,7 @@
             "value": "0x00010100"
           },
           "USER_NPI_REG_MC_NSU_3_EGR": {
-            "value": "0x00432610"
+            "value": "0x00434210"
           },
           "USER_NPI_REG_MC_NSU_3_ING": {
             "value": "0x04534101"

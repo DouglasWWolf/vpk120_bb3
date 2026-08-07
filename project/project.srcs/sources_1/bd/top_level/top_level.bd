@@ -1673,6 +1673,16 @@
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
             "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0"
+          },
+          "M_AXI_RAM1_PCI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M_AXI_RAM0_PCI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           }
         },
         "ports": {
@@ -3200,7 +3210,7 @@
                   }
                 }
               },
-              "S_AXI_RAM0_PCI": {
+              "M_AXI_RAM0_PCI": {
                 "mode": "Master",
                 "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
                 "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
@@ -3332,186 +3342,214 @@
                 },
                 "port_maps": {
                   "AWID": {
-                    "physical_name": "S_AXI_RAM0_PCI_awid",
+                    "physical_name": "M_AXI_RAM0_PCI_awid",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "AWADDR": {
-                    "physical_name": "S_AXI_RAM0_PCI_awaddr",
+                    "physical_name": "M_AXI_RAM0_PCI_awaddr",
                     "direction": "O",
                     "left": "63",
                     "right": "0"
                   },
                   "AWLEN": {
-                    "physical_name": "S_AXI_RAM0_PCI_awlen",
+                    "physical_name": "M_AXI_RAM0_PCI_awlen",
                     "direction": "O",
                     "left": "7",
                     "right": "0"
                   },
                   "AWSIZE": {
-                    "physical_name": "S_AXI_RAM0_PCI_awsize",
+                    "physical_name": "M_AXI_RAM0_PCI_awsize",
                     "direction": "O",
                     "left": "2",
                     "right": "0"
                   },
                   "AWBURST": {
-                    "physical_name": "S_AXI_RAM0_PCI_awburst",
+                    "physical_name": "M_AXI_RAM0_PCI_awburst",
                     "direction": "O",
                     "left": "1",
                     "right": "0"
                   },
                   "AWLOCK": {
-                    "physical_name": "S_AXI_RAM0_PCI_awlock",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM0_PCI_awlock",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "AWCACHE": {
-                    "physical_name": "S_AXI_RAM0_PCI_awcache",
+                    "physical_name": "M_AXI_RAM0_PCI_awcache",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "AWPROT": {
-                    "physical_name": "S_AXI_RAM0_PCI_awprot",
+                    "physical_name": "M_AXI_RAM0_PCI_awprot",
                     "direction": "O",
                     "left": "2",
                     "right": "0"
                   },
                   "AWQOS": {
-                    "physical_name": "S_AXI_RAM0_PCI_awqos",
+                    "physical_name": "M_AXI_RAM0_PCI_awqos",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "AWVALID": {
-                    "physical_name": "S_AXI_RAM0_PCI_awvalid",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM0_PCI_awvalid",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "AWREADY": {
-                    "physical_name": "S_AXI_RAM0_PCI_awready",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM0_PCI_awready",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "WDATA": {
-                    "physical_name": "S_AXI_RAM0_PCI_wdata",
+                    "physical_name": "M_AXI_RAM0_PCI_wdata",
                     "direction": "O",
                     "left": "511",
                     "right": "0"
                   },
                   "WSTRB": {
-                    "physical_name": "S_AXI_RAM0_PCI_wstrb",
+                    "physical_name": "M_AXI_RAM0_PCI_wstrb",
                     "direction": "O",
                     "left": "63",
                     "right": "0"
                   },
                   "WLAST": {
-                    "physical_name": "S_AXI_RAM0_PCI_wlast",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM0_PCI_wlast",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "WVALID": {
-                    "physical_name": "S_AXI_RAM0_PCI_wvalid",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM0_PCI_wvalid",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "WREADY": {
-                    "physical_name": "S_AXI_RAM0_PCI_wready",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM0_PCI_wready",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "BRESP": {
-                    "physical_name": "S_AXI_RAM0_PCI_bresp",
+                    "physical_name": "M_AXI_RAM0_PCI_bresp",
                     "direction": "I",
                     "left": "1",
                     "right": "0"
                   },
                   "BVALID": {
-                    "physical_name": "S_AXI_RAM0_PCI_bvalid",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM0_PCI_bvalid",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "BREADY": {
-                    "physical_name": "S_AXI_RAM0_PCI_bready",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM0_PCI_bready",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "ARID": {
-                    "physical_name": "S_AXI_RAM0_PCI_arid",
+                    "physical_name": "M_AXI_RAM0_PCI_arid",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "ARADDR": {
-                    "physical_name": "S_AXI_RAM0_PCI_araddr",
+                    "physical_name": "M_AXI_RAM0_PCI_araddr",
                     "direction": "O",
                     "left": "63",
                     "right": "0"
                   },
                   "ARLEN": {
-                    "physical_name": "S_AXI_RAM0_PCI_arlen",
+                    "physical_name": "M_AXI_RAM0_PCI_arlen",
                     "direction": "O",
                     "left": "7",
                     "right": "0"
                   },
                   "ARSIZE": {
-                    "physical_name": "S_AXI_RAM0_PCI_arsize",
+                    "physical_name": "M_AXI_RAM0_PCI_arsize",
                     "direction": "O",
                     "left": "2",
                     "right": "0"
                   },
                   "ARBURST": {
-                    "physical_name": "S_AXI_RAM0_PCI_arburst",
+                    "physical_name": "M_AXI_RAM0_PCI_arburst",
                     "direction": "O",
                     "left": "1",
                     "right": "0"
                   },
                   "ARLOCK": {
-                    "physical_name": "S_AXI_RAM0_PCI_arlock",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM0_PCI_arlock",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "ARCACHE": {
-                    "physical_name": "S_AXI_RAM0_PCI_arcache",
+                    "physical_name": "M_AXI_RAM0_PCI_arcache",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "ARPROT": {
-                    "physical_name": "S_AXI_RAM0_PCI_arprot",
+                    "physical_name": "M_AXI_RAM0_PCI_arprot",
                     "direction": "O",
                     "left": "2",
                     "right": "0"
                   },
                   "ARQOS": {
-                    "physical_name": "S_AXI_RAM0_PCI_arqos",
+                    "physical_name": "M_AXI_RAM0_PCI_arqos",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "ARVALID": {
-                    "physical_name": "S_AXI_RAM0_PCI_arvalid",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM0_PCI_arvalid",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "ARREADY": {
-                    "physical_name": "S_AXI_RAM0_PCI_arready",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM0_PCI_arready",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "RDATA": {
-                    "physical_name": "S_AXI_RAM0_PCI_rdata",
+                    "physical_name": "M_AXI_RAM0_PCI_rdata",
                     "direction": "I",
                     "left": "511",
                     "right": "0"
                   },
                   "RRESP": {
-                    "physical_name": "S_AXI_RAM0_PCI_rresp",
+                    "physical_name": "M_AXI_RAM0_PCI_rresp",
                     "direction": "I",
                     "left": "1",
                     "right": "0"
                   },
                   "RLAST": {
-                    "physical_name": "S_AXI_RAM0_PCI_rlast",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM0_PCI_rlast",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "RVALID": {
-                    "physical_name": "S_AXI_RAM0_PCI_rvalid",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM0_PCI_rvalid",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "RREADY": {
-                    "physical_name": "S_AXI_RAM0_PCI_rready",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM0_PCI_rready",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   }
                 }
               },
@@ -3830,7 +3868,7 @@
                   }
                 }
               },
-              "S_AXI_RAM1_PCI": {
+              "M_AXI_RAM1_PCI": {
                 "mode": "Master",
                 "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
                 "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
@@ -3962,186 +4000,214 @@
                 },
                 "port_maps": {
                   "AWID": {
-                    "physical_name": "S_AXI_RAM1_PCI_awid",
+                    "physical_name": "M_AXI_RAM1_PCI_awid",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "AWADDR": {
-                    "physical_name": "S_AXI_RAM1_PCI_awaddr",
+                    "physical_name": "M_AXI_RAM1_PCI_awaddr",
                     "direction": "O",
                     "left": "63",
                     "right": "0"
                   },
                   "AWLEN": {
-                    "physical_name": "S_AXI_RAM1_PCI_awlen",
+                    "physical_name": "M_AXI_RAM1_PCI_awlen",
                     "direction": "O",
                     "left": "7",
                     "right": "0"
                   },
                   "AWSIZE": {
-                    "physical_name": "S_AXI_RAM1_PCI_awsize",
+                    "physical_name": "M_AXI_RAM1_PCI_awsize",
                     "direction": "O",
                     "left": "2",
                     "right": "0"
                   },
                   "AWBURST": {
-                    "physical_name": "S_AXI_RAM1_PCI_awburst",
+                    "physical_name": "M_AXI_RAM1_PCI_awburst",
                     "direction": "O",
                     "left": "1",
                     "right": "0"
                   },
                   "AWLOCK": {
-                    "physical_name": "S_AXI_RAM1_PCI_awlock",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM1_PCI_awlock",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "AWCACHE": {
-                    "physical_name": "S_AXI_RAM1_PCI_awcache",
+                    "physical_name": "M_AXI_RAM1_PCI_awcache",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "AWPROT": {
-                    "physical_name": "S_AXI_RAM1_PCI_awprot",
+                    "physical_name": "M_AXI_RAM1_PCI_awprot",
                     "direction": "O",
                     "left": "2",
                     "right": "0"
                   },
                   "AWQOS": {
-                    "physical_name": "S_AXI_RAM1_PCI_awqos",
+                    "physical_name": "M_AXI_RAM1_PCI_awqos",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "AWVALID": {
-                    "physical_name": "S_AXI_RAM1_PCI_awvalid",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM1_PCI_awvalid",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "AWREADY": {
-                    "physical_name": "S_AXI_RAM1_PCI_awready",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM1_PCI_awready",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "WDATA": {
-                    "physical_name": "S_AXI_RAM1_PCI_wdata",
+                    "physical_name": "M_AXI_RAM1_PCI_wdata",
                     "direction": "O",
                     "left": "511",
                     "right": "0"
                   },
                   "WSTRB": {
-                    "physical_name": "S_AXI_RAM1_PCI_wstrb",
+                    "physical_name": "M_AXI_RAM1_PCI_wstrb",
                     "direction": "O",
                     "left": "63",
                     "right": "0"
                   },
                   "WLAST": {
-                    "physical_name": "S_AXI_RAM1_PCI_wlast",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM1_PCI_wlast",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "WVALID": {
-                    "physical_name": "S_AXI_RAM1_PCI_wvalid",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM1_PCI_wvalid",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "WREADY": {
-                    "physical_name": "S_AXI_RAM1_PCI_wready",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM1_PCI_wready",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "BRESP": {
-                    "physical_name": "S_AXI_RAM1_PCI_bresp",
+                    "physical_name": "M_AXI_RAM1_PCI_bresp",
                     "direction": "I",
                     "left": "1",
                     "right": "0"
                   },
                   "BVALID": {
-                    "physical_name": "S_AXI_RAM1_PCI_bvalid",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM1_PCI_bvalid",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "BREADY": {
-                    "physical_name": "S_AXI_RAM1_PCI_bready",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM1_PCI_bready",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "ARID": {
-                    "physical_name": "S_AXI_RAM1_PCI_arid",
+                    "physical_name": "M_AXI_RAM1_PCI_arid",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "ARADDR": {
-                    "physical_name": "S_AXI_RAM1_PCI_araddr",
+                    "physical_name": "M_AXI_RAM1_PCI_araddr",
                     "direction": "O",
                     "left": "63",
                     "right": "0"
                   },
                   "ARLEN": {
-                    "physical_name": "S_AXI_RAM1_PCI_arlen",
+                    "physical_name": "M_AXI_RAM1_PCI_arlen",
                     "direction": "O",
                     "left": "7",
                     "right": "0"
                   },
                   "ARSIZE": {
-                    "physical_name": "S_AXI_RAM1_PCI_arsize",
+                    "physical_name": "M_AXI_RAM1_PCI_arsize",
                     "direction": "O",
                     "left": "2",
                     "right": "0"
                   },
                   "ARBURST": {
-                    "physical_name": "S_AXI_RAM1_PCI_arburst",
+                    "physical_name": "M_AXI_RAM1_PCI_arburst",
                     "direction": "O",
                     "left": "1",
                     "right": "0"
                   },
                   "ARLOCK": {
-                    "physical_name": "S_AXI_RAM1_PCI_arlock",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM1_PCI_arlock",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "ARCACHE": {
-                    "physical_name": "S_AXI_RAM1_PCI_arcache",
+                    "physical_name": "M_AXI_RAM1_PCI_arcache",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "ARPROT": {
-                    "physical_name": "S_AXI_RAM1_PCI_arprot",
+                    "physical_name": "M_AXI_RAM1_PCI_arprot",
                     "direction": "O",
                     "left": "2",
                     "right": "0"
                   },
                   "ARQOS": {
-                    "physical_name": "S_AXI_RAM1_PCI_arqos",
+                    "physical_name": "M_AXI_RAM1_PCI_arqos",
                     "direction": "O",
                     "left": "3",
                     "right": "0"
                   },
                   "ARVALID": {
-                    "physical_name": "S_AXI_RAM1_PCI_arvalid",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM1_PCI_arvalid",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   },
                   "ARREADY": {
-                    "physical_name": "S_AXI_RAM1_PCI_arready",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM1_PCI_arready",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "RDATA": {
-                    "physical_name": "S_AXI_RAM1_PCI_rdata",
+                    "physical_name": "M_AXI_RAM1_PCI_rdata",
                     "direction": "I",
                     "left": "511",
                     "right": "0"
                   },
                   "RRESP": {
-                    "physical_name": "S_AXI_RAM1_PCI_rresp",
+                    "physical_name": "M_AXI_RAM1_PCI_rresp",
                     "direction": "I",
                     "left": "1",
                     "right": "0"
                   },
                   "RLAST": {
-                    "physical_name": "S_AXI_RAM1_PCI_rlast",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM1_PCI_rlast",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "RVALID": {
-                    "physical_name": "S_AXI_RAM1_PCI_rvalid",
-                    "direction": "I"
+                    "physical_name": "M_AXI_RAM1_PCI_rvalid",
+                    "direction": "I",
+                    "left": "0",
+                    "right": "0"
                   },
                   "RREADY": {
-                    "physical_name": "S_AXI_RAM1_PCI_rready",
-                    "direction": "O"
+                    "physical_name": "M_AXI_RAM1_PCI_rready",
+                    "direction": "O",
+                    "left": "0",
+                    "right": "0"
                   }
                 }
               },
@@ -4626,7 +4692,7 @@
                 "direction": "I",
                 "parameters": {
                   "ASSOCIATED_BUSIF": {
-                    "value": "S_AXI_CTL:S_AXI_RAM0_ETH:S_AXI_RAM0_PCI:S_AXI_RAM1_ETH:S_AXI_RAM1_PCI:AXI_CLOCK_CTL",
+                    "value": "S_AXI_CTL:S_AXI_RAM0_ETH:M_AXI_RAM0_PCI:S_AXI_RAM1_ETH:M_AXI_RAM1_PCI:AXI_CLOCK_CTL",
                     "value_src": "strong"
                   },
                   "ASSOCIATED_RESET": {
@@ -4720,7 +4786,7 @@
             "variant_info": {
               "abm_and_smem.bd": {
                 "scoped_diagram": "abm_and_smem_inst_0.bd",
-                "design_checksum": "0x21F7EDCC72D75876",
+                "design_checksum": "0x6312337DD7B1968F",
                 "ref_name": "abm_and_smem",
                 "ref_subinst_path": "top_level_abm_and_smem_0",
                 "ref_type": "Block Design",
@@ -5737,6 +5803,18 @@
               "icn_ctrl/M02_AXI"
             ]
           },
+          "abm_and_smem_M_AXI_RAM0_PCI": {
+            "interface_ports": [
+              "M_AXI_RAM0_PCI",
+              "abm_and_smem/M_AXI_RAM0_PCI"
+            ]
+          },
+          "abm_and_smem_M_AXI_RAM1_PCI": {
+            "interface_ports": [
+              "M_AXI_RAM1_PCI",
+              "abm_and_smem/M_AXI_RAM1_PCI"
+            ]
+          },
           "axi_uart_bridge_M_AXI": {
             "interface_ports": [
               "axi_uart_bridge/M_AXI",
@@ -6265,13 +6343,41 @@
             "value": "4"
           },
           "NUM_SI": {
-            "value": "0"
+            "value": "2"
           },
           "sys_clk0_BOARD_INTERFACE": {
             "value": "lpddr4_clk1"
           }
         },
         "interface_ports": {
+          "S00_AXI": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "CATEGORY": {
+                "value": "pl"
+              },
+              "CONNECTIONS": {
+                "value": "MC_0 {read_bw {500} write_bw {500} read_avg_burst {4} write_avg_burst {4}}"
+              }
+            },
+            "memory_map_ref": "S00_AXI"
+          },
+          "S01_AXI": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "CATEGORY": {
+                "value": "pl"
+              },
+              "CONNECTIONS": {
+                "value": "MC_0 {read_bw {500} write_bw {500} read_avg_burst {4} write_avg_burst {4}}"
+              }
+            },
+            "memory_map_ref": "S01_AXI"
+          },
           "S00_INI": {
             "mode": "Slave",
             "vlnv_bus_definition": "xilinx.com:interface:inimm:1.0",
@@ -6334,6 +6440,38 @@
         },
         "addressing": {
           "memory_maps": {
+            "S00_AXI": {
+              "address_blocks": {
+                "C0_DDR_LOW0": {
+                  "base_address": "0x000000000",
+                  "range": "2G",
+                  "width": "31",
+                  "usage": "memory",
+                  "bank_blocks": {
+                    "S00_AXI;C0_DDR_LOW0;xilinx.com:boundary:axi_slave:1.0;/;S00_AXI;NONE;NONE": {
+                      "base_address": "0x000000000",
+                      "range": "2G",
+                      "width": "31",
+                      "usage": "memory"
+                    }
+                  }
+                },
+                "C0_DDR_LOW1": {
+                  "base_address": "0x800000000",
+                  "range": "32G",
+                  "width": "36",
+                  "usage": "memory",
+                  "bank_blocks": {
+                    "S00_AXI;C0_DDR_LOW1;xilinx.com:boundary:axi_slave:1.0;/;S00_AXI;NONE;NONE": {
+                      "base_address": "0x800000000",
+                      "range": "32G",
+                      "width": "35",
+                      "usage": "memory"
+                    }
+                  }
+                }
+              }
+            },
             "S00_INI": {
               "address_blocks": {
                 "C0_DDR_LOW0": {
@@ -6357,6 +6495,38 @@
                   "usage": "memory",
                   "bank_blocks": {
                     "S00_INI;C0_DDR_LOW1;xilinx.com:boundary:axi_slave:1.0;/;S00_INI;NONE;NONE": {
+                      "base_address": "0x800000000",
+                      "range": "32G",
+                      "width": "35",
+                      "usage": "memory"
+                    }
+                  }
+                }
+              }
+            },
+            "S01_AXI": {
+              "address_blocks": {
+                "C0_DDR_LOW0": {
+                  "base_address": "0x000000000",
+                  "range": "2G",
+                  "width": "31",
+                  "usage": "memory",
+                  "bank_blocks": {
+                    "S01_AXI;C0_DDR_LOW0;xilinx.com:boundary:axi_slave:1.0;/;S01_AXI;NONE;NONE": {
+                      "base_address": "0x000000000",
+                      "range": "2G",
+                      "width": "31",
+                      "usage": "memory"
+                    }
+                  }
+                },
+                "C0_DDR_LOW1": {
+                  "base_address": "0x800000000",
+                  "range": "32G",
+                  "width": "36",
+                  "usage": "memory",
+                  "bank_blocks": {
+                    "S01_AXI;C0_DDR_LOW1;xilinx.com:boundary:axi_slave:1.0;/;S01_AXI;NONE;NONE": {
                       "base_address": "0x800000000",
                       "range": "32G",
                       "width": "35",
@@ -6465,7 +6635,7 @@
           }
         },
         "pfm_attributes": {
-          "AXI_PORT": "S00_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S01_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S02_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S03_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S04_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S05_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S06_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S07_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S08_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S09_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S10_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S11_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S12_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S13_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S14_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S15_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S16_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S17_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S18_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S19_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S20_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S21_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S22_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S23_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S24_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S25_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S26_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"} S27_AXI {memport \"S_AXI_NOC\" sptag \"DDR\"}"
+          "AXI_PORT": "S02_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S03_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S04_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S05_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S06_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S07_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S08_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S09_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S10_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S11_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S12_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S13_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S14_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S15_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S16_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S17_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S18_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S19_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S20_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S21_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S22_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S23_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S24_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S25_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S26_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } S27_AXI { memport \"S_AXI_NOC\" sptag \"DDR\" } "
         }
       },
       "noc_lpddr4_1": {
@@ -6836,6 +7006,18 @@
           "LVDS_CLK"
         ]
       },
+      "pl_rtl_M_AXI_RAM1_PCI": {
+        "interface_ports": [
+          "pl_rtl/M_AXI_RAM1_PCI",
+          "noc_lpddr4_0/S01_AXI"
+        ]
+      },
+      "pl_rtl_M_AXI_SYSRAM": {
+        "interface_ports": [
+          "pl_rtl/M_AXI_RAM0_PCI",
+          "noc_lpddr4_0/S00_AXI"
+        ]
+      },
       "pl_rtl_UART": {
         "interface_ports": [
           "pl_rtl/UART",
@@ -6923,7 +7105,8 @@
           "CIPS/m_axi_fpd_aclk",
           "cips_noc/aclk0",
           "proc_sys_reset/slowest_sync_clk",
-          "pl_rtl/clk_250"
+          "pl_rtl/clk_250",
+          "noc_lpddr4_0/aclk0"
         ]
       },
       "clk_wizard_0_locked": {
@@ -7304,6 +7487,20 @@
                 "range": "1M"
               }
             }
+          },
+          "PCI_AXI": {
+            "segments": {
+              "SEG_noc_lpddr4_0_C0_DDR_LOW0": {
+                "address_block": "/noc_lpddr4_0/S00_AXI/C0_DDR_LOW0",
+                "offset": "0x0000000000000000",
+                "range": "2G"
+              },
+              "SEG_noc_lpddr4_0_C0_DDR_LOW1": {
+                "address_block": "/noc_lpddr4_0/S00_AXI/C0_DDR_LOW1",
+                "offset": "0x0000000800000000",
+                "range": "2G"
+              }
+            }
           }
         }
       },
@@ -7315,6 +7512,20 @@
                 "address_block": "/pl_rtl/abm_and_smem/abm_manager/muxed_sdp_ram_if_1/S1_AXI/reg0",
                 "offset": "0x0000000000000000",
                 "range": "1M"
+              }
+            }
+          },
+          "PCI_AXI": {
+            "segments": {
+              "SEG_noc_lpddr4_0_C0_DDR_LOW0": {
+                "address_block": "/noc_lpddr4_0/S01_AXI/C0_DDR_LOW0",
+                "offset": "0x0000000000000000",
+                "range": "2G"
+              },
+              "SEG_noc_lpddr4_0_C0_DDR_LOW1": {
+                "address_block": "/noc_lpddr4_0/S01_AXI/C0_DDR_LOW1",
+                "offset": "0x0000000800000000",
+                "range": "2G"
               }
             }
           }

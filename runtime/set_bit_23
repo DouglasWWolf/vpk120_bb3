@@ -1,4 +1,4 @@
-#!/bin/bash
+#
 # This sets bit 23 of every big-endian 32-bit word in a binary file
 #
 #  This hack exists because bit 23 of the HSI bus on Doug's Indy

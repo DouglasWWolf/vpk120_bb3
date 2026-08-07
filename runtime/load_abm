@@ -1,10 +1,11 @@
+#!/bin/bash
 source api
 
 # Configure the ABM and SMEM related registers
 source config_abm
 
 # The address of our reserved contiguous buffer
-contig=0x1_0000_0000
+contig=0x8_0000_0000
 
 # Fetch the filename we're going to load
 file=$1
@@ -15,7 +16,7 @@ if [ -z $file ]; then
     dd if=/dev/random of=$file bs=$((1024 * 1024)) count=1 2>/dev/null
 
     # HACK: Bit 23 of the the HSI bus on Doug's Indy board is stuck on!
-    test $(get REG_SELECT_HSI) -eq 1  && ./set_bit_23 $file
+    #test $(get REG_SELECT_HSI) -eq 1  && ./set_bit_23 $file
 fi
 
 # If the filename is "zero" create a file full of binary zero
