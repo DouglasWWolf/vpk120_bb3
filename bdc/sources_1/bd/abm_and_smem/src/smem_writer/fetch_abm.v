@@ -39,10 +39,10 @@ module fetch_abm # ( parameter AW=20, DW=512, IW=2, BRAM_SIZE=32'h10_0000)
     // wioccur over the HSI bus.  0 = perform SMEM-write over the SPI bus
     input select_hsi,
 
-    // A rising-edge means "the next time we fetch an ABM, force all chunks
+    // A strobe means "the next time we fetch an ABM, force all chunks
     // to be written to cache/SMEM, regardless of whether the ABM and the
     // cache already match.
-    input force_smem_update,
+    input force_smem_update_stb,
 
     // This strobes high to write a chunk to SMEM via HSI
     output write_smem_via_hsi,
@@ -240,12 +240,6 @@ wire cache_write_complete;
 // When this strobes high, the state machine that is responsible for receiving
 // cache data knows that it can fetch the next chunk of data from cache
 reg fetch_next_cache_chunk;
-
-// The history of the "force_smem_update" input (for edge dection)
-reg[1:0] r_force_smem_update;
-
-// Detect the rising edge of the "force_smem_update"
-wire force_smem_update_edge = (r_force_smem_update == 2'b01);
 
 // If this is asserted, all chunks of SMEM/cache are updated instead
 // of just the changed chunks
@@ -470,8 +464,8 @@ end
 //=============================================================================
 // This state machine receives rows of data from the ABM BRAM
 //
-// The "update_all_chunks" flag is asserted when we see the rising edge of the
-// input signal "force_smem_update".  When "update_all_chunks" is asserted, it 
+// The "update_all_chunks" flag is asserted when we see a strobe on input
+// signal "force_smem_update_stb".  When "update_all_chunks" is asserted, it 
 // causes all rows of data to be written to SMEM and cache instead of just the
 // changed rows.  We clear the "update_all_chunks" flag after a complete update
 // of the cache/SMEM
@@ -489,10 +483,9 @@ always @(posedge clk) begin
     fetch_next_cache_chunk <= 0;
     start_smem_write       <= 0;
 
-    // If we sense a rising edge on "force_smem_update", the next ABM
-    // that we fetch is going to force all rows to be written to cache
-    // and SMEM
-    if (force_smem_update_edge)
+    // If we see "force_smem_update_stb", asserted, the next ABM that we
+    // fetch is going to force all rows to be written to cache and SMEM
+    if (force_smem_update_stb)
         update_all_chunks <= 1;
 
     // The SMEM writers will strobe this signal high every time 
@@ -585,16 +578,6 @@ always @(posedge clk) begin
 
 end
 assign busy = (abm_r_state != ABM_R_IDLE) | start_stb;
-//=============================================================================
-
-
-//=============================================================================
-// Keep a history of the "force_smem_update" input
-//=============================================================================
-always @(posedge clk) begin
-    r_force_smem_update[1] <= r_force_smem_update[0];
-    r_force_smem_update[0] <= force_smem_update;
-end
 //=============================================================================
 
 

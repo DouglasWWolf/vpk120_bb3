@@ -51,7 +51,7 @@
         "start_stb": [ { "direction": "in" } ],
         "busy": [ { "direction": "out" } ],
         "select_hsi": [ { "direction": "in" } ],
-        "force_smem_update": [ { "direction": "in" } ],
+        "force_smem_update_stb": [ { "direction": "in" } ],
         "write_smem_via_hsi": [ { "direction": "out" } ],
         "write_smem_via_spi": [ { "direction": "out" } ],
         "smem_hsi_ready": [ { "direction": "in" } ],

@@ -45,9 +45,9 @@
 // Register:    REG_FORCE_SMEM
 // Size:        32-bits
 // Type:        Read/Write
-// Description: A rising edge = all rows of the next received ABM
-//              will be written to cache and SMEM
-//              Rising edge sensitive:  write a 0 then a 1
+// Description: Write a 1 to force all rows of the next received ABM
+//              to be written to cache and SMEM.
+//              Auto-clears to 0.
 //
 #define REG_FORCE_SMEM                                               0x00000000a4001010ULL
 

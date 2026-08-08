@@ -689,7 +689,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>force_smem_update</spirit:name>
+        <spirit:name>force_smem_update_stb</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>

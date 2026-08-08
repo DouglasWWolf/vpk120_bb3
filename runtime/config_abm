@@ -40,11 +40,7 @@ fi
 axi REG_SELECT_HSI $bus_type
 
 # Do we need to force an update of all SMEM rows?
-if [ $force_smem -eq 1 ]; then
-    axi REG_FORCE_SMEM 0
-    axi REG_FORCE_SMEM 1
-    axi REG_FORCE_SMEM 0
-fi
+test $force_smem -eq 1 && axi REG_FORCE_SMEM 1
 
 # Make sure the chip is powered on!
 if [ $(get REG_CHIP_POWER_STATE) -ne 1 ]; then

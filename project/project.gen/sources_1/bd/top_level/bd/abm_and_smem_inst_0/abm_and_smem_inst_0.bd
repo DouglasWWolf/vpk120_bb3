@@ -2254,7 +2254,7 @@
           "select_hsi": {
             "direction": "O"
           },
-          "force_smem_update": {
+          "force_smem_update_stb": {
             "direction": "O"
           },
           "abm_ready_stb": {
@@ -7150,7 +7150,7 @@
           "select_hsi": {
             "direction": "I"
           },
-          "force_smem_update": {
+          "force_smem_update_stb": {
             "direction": "I"
           },
           "spi_addr": {
@@ -7890,7 +7890,7 @@
               "select_hsi": {
                 "direction": "I"
               },
-              "force_smem_update": {
+              "force_smem_update_stb": {
                 "direction": "I"
               },
               "write_smem_via_hsi": {
@@ -8488,10 +8488,10 @@
             "ports": [
               "clk",
               "cache/clk",
-              "fetch_abm/clk",
               "smem_extra_flops/clk",
               "smem_writer_hsi/clk",
-              "smem_writer_spi/clk"
+              "smem_writer_spi/clk",
+              "fetch_abm/clk"
             ]
           },
           "fetch_abm_busy": {
@@ -8546,8 +8546,8 @@
           },
           "force_smem_update_1": {
             "ports": [
-              "force_smem_update",
-              "fetch_abm/force_smem_update"
+              "force_smem_update_stb",
+              "fetch_abm/force_smem_update_stb"
             ]
           },
           "hier_0_done": {
@@ -8566,10 +8566,10 @@
             "ports": [
               "resetn",
               "cache/resetn",
-              "fetch_abm/resetn",
               "smem_extra_flops/resetn",
               "smem_writer_hsi/resetn",
-              "smem_writer_spi/resetn"
+              "smem_writer_spi/resetn",
+              "fetch_abm/resetn"
             ]
           },
           "select_hsi_1": {
@@ -10928,8 +10928,8 @@
           "chipif_cdc/chipif_clk",
           "smem_writer/clk",
           "chip_spi_mux/clk",
-          "abm_and_smem_ctl/clk",
-          "axis_ila_0/clk"
+          "axis_ila_0/clk",
+          "abm_and_smem_ctl/clk"
         ]
       },
       "clock_manager_chipif_resetn": {
@@ -10937,8 +10937,8 @@
           "chipif_cdc/chipif_resetn",
           "smem_writer/resetn",
           "chip_spi_mux/resetn",
-          "abm_and_smem_ctl/resetn",
-          "axis_ila_0/probe4"
+          "axis_ila_0/probe4",
+          "abm_and_smem_ctl/resetn"
         ]
       },
       "ext_spi_miso_1": {
@@ -10949,8 +10949,8 @@
       },
       "force_smem_update_1": {
         "ports": [
-          "abm_and_smem_ctl/force_smem_update",
-          "smem_writer/force_smem_update"
+          "abm_and_smem_ctl/force_smem_update_stb",
+          "smem_writer/force_smem_update_stb"
         ]
       },
       "load_abm_0_1": {

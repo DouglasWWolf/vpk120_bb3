@@ -32,7 +32,7 @@ module abm_and_smem_ctl # (parameter AW=8)
     // A high-going edge on this port tells the smem_writer that when
     // the next ABM is received, all rows should be written to SMEM 
     // and cache
-    output reg force_smem_update,
+    output reg force_smem_update_stb,
 
     // This strobes high every time the ABM-manager notifies us that
     // an ABM has arrived
@@ -110,9 +110,9 @@ localparam REG_ABM_HOST_ADDR_L =  2;
 localparam REG_SELECT_HSI     =  3;
 
 /* 
-    @register A rising edge = all rows of the next received ABM
-    @rdesc                    will be written to cache and SMEM
-    @rdesc    Rising edge sensitive:  write a 0 then a 1
+    @register Write a 1 to force all rows of the next received ABM
+    @rdesc    to be written to cache and SMEM.
+    @rdesc    Auto-clears to 0.
 */ 
 localparam REG_FORCE_SMEM     =  4;
 
@@ -243,9 +243,10 @@ endfunction
 always @(posedge clk) begin
 
     // These strobes high for a single cycle at a time
-    load_abm_wstrobe    <= 0;
-    chipio_write_stb    <= 0;
-    chipio_read_stb     <= 0;
+    load_abm_wstrobe      <= 0;
+    chipio_write_stb      <= 0;
+    chipio_read_stb       <= 0;
+    force_smem_update_stb <= 0;
 
     // Keep track of how many ABMs arrives
     if (abm_ready_stb) abm_count <= abm_count + 1;
@@ -257,7 +258,6 @@ always @(posedge clk) begin
         load_abm_1        <= 0;
         abm_host_addr     <= 64'h1_0000_0000;
         select_hsi        <= 1;
-        force_smem_update <= 0;
         abm_count         <= 0;
     end
     
@@ -306,11 +306,11 @@ always @(posedge clk) begin
                             if (ashi_wdata[2]) chipio_addr <= chipio_addr + 4;
                         end
 
-                    REG_ABM_HOST_ADDR_H: abm_host_addr[63:32] <= ashi_wdata;
-                    REG_ABM_HOST_ADDR_L: abm_host_addr[31:00] <= ashi_wdata;
-                    REG_SELECT_HSI:      select_hsi           <= ashi_wdata;
-                    REG_FORCE_SMEM:      force_smem_update    <= ashi_wdata;
-                    REG_ABM_COUNT:       abm_count            <= 0;
+                    REG_ABM_HOST_ADDR_H: abm_host_addr[63:32]  <= ashi_wdata;
+                    REG_ABM_HOST_ADDR_L: abm_host_addr[31:00]  <= ashi_wdata;
+                    REG_SELECT_HSI:      select_hsi            <= ashi_wdata;
+                    REG_FORCE_SMEM:      force_smem_update_stb <= ashi_wdata;
+                    REG_ABM_COUNT:       abm_count             <= 0;
 
                     // Writes to any other register are a decode-error
                     default: ashi_wresp <= DECERR;
@@ -354,7 +354,7 @@ always @(posedge clk) begin
                     REG_ABM_HOST_ADDR_H: ashi_rdata <= abm_host_addr[63:32];
                     REG_ABM_HOST_ADDR_L: ashi_rdata <= abm_host_addr[31:00];
                     REG_SELECT_HSI:      ashi_rdata <= select_hsi;
-                    REG_FORCE_SMEM:      ashi_rdata <= force_smem_update;
+                    REG_FORCE_SMEM:      ashi_rdata <= 0;
                     REG_SMEM_ROWS_UPD:   ashi_rdata <= smem_rows_updated;
                     REG_SMEM_WORDS_UPD:  ashi_rdata <= smem_words_updated;
                     REG_SMEM_BUSY:       ashi_rdata <= smem_writer_busy;

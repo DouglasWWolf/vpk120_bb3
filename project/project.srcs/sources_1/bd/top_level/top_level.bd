@@ -4786,7 +4786,7 @@
             "variant_info": {
               "abm_and_smem.bd": {
                 "scoped_diagram": "abm_and_smem_inst_0.bd",
-                "design_checksum": "0x6312337DD7B1968F",
+                "design_checksum": "0x8C91CB6AD7B1968F",
                 "ref_name": "abm_and_smem",
                 "ref_subinst_path": "top_level_abm_and_smem_0",
                 "ref_type": "Block Design",

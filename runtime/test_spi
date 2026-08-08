@@ -41,13 +41,13 @@ count_test()
 
             if [ $rba -ne $va ]; then
                 echo "Expected $va, got $rba"
-                echo "Addr = $(pcireg -dec 0x1000)"
+                echo "Addr = $(pcireg -dec REG_CHIPIO_ADDR)"
                 exit 1
             fi
 
             if [ $rbb -ne $vb ]; then
                 echo "Expected $vb, got $rbb"
-                echo "Addr = $(pcireg -dec 0x1000)"
+                echo "Addr = $(pcireg -dec REG_CHIPIO_ADDR)"
                 exit 1
             fi
 

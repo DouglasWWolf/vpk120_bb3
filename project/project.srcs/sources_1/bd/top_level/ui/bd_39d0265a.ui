@@ -118,8 +118,8 @@ preplace netloc pl_rtl_UART 1 3 2 NJ 620 NJ
 levelinfo -pg 1 0 80 430 1010 1350 1550
 pagesize -pg 1 -db -bbox -sgen 0 0 1790 1170
 ",
-   "No Loops_ScaleFactor":"0.504721",
-   "No Loops_TopLeft":"-402,4",
+   "No Loops_ScaleFactor":"0.660453",
+   "No Loops_TopLeft":"-55,3",
    "commentid":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
