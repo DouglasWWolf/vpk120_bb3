@@ -165,6 +165,48 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/src/lvds/lvds_startup.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/src/lvds/lvds_advio_reset_mgr.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/src/lvds/lvds_ctl.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/src/lvds/lvds_advio_mgr.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/src/lvds/lvds_bitslip.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/src/lvds/lvds_align_detect.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../bdc/sources_1/bd/abm_and_smem/src/chip_spi/chip_spi_if.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -339,6 +381,9 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_advanced_io_wizard_0_0/top_level_advanced_io_wizard_0_0.xci">
+          <Proxy FileSetName="top_level_advanced_io_wizard_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_axi_adc_bank_0_0/top_level_axi_adc_bank_0_0.xci">
           <Proxy FileSetName="top_level_axi_adc_bank_0_0"/>
         </CompFileExtendedInfo>
@@ -354,14 +399,11 @@
         <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_axi_uartlite_0_0/top_level_axi_uartlite_0_0.xci">
           <Proxy FileSetName="top_level_axi_uartlite_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_axis_ila_0_1/top_level_axis_ila_0_1.xci">
-          <Proxy FileSetName="top_level_axis_ila_0_1"/>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_axis_ila_0_4/top_level_axis_ila_0_4.xci">
+          <Proxy FileSetName="top_level_axis_ila_0_4"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_chip_power_ctl_0_0/top_level_chip_power_ctl_0_0.xci">
           <Proxy FileSetName="top_level_chip_power_ctl_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_cips_noc_0/top_level_cips_noc_0.xci">
-          <Proxy FileSetName="top_level_cips_noc_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_clk_wizard_0_0/top_level_clk_wizard_0_0.xci">
           <Proxy FileSetName="top_level_clk_wizard_0_0"/>
@@ -369,17 +411,29 @@
         <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_clk_wizard_0_1/top_level_clk_wizard_0_1.xci">
           <Proxy FileSetName="top_level_clk_wizard_0_1"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_icn_ctrl_0/top_level_icn_ctrl_0.xci">
-          <Proxy FileSetName="top_level_icn_ctrl_0"/>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_clk_wizard_0_2/top_level_clk_wizard_0_2.xci">
+          <Proxy FileSetName="top_level_clk_wizard_0_2"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_ltc1867l_0_0/top_level_ltc1867l_0_0.xci">
           <Proxy FileSetName="top_level_ltc1867l_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_noc_lpddr4_0_0/top_level_noc_lpddr4_0_0.xci">
-          <Proxy FileSetName="top_level_noc_lpddr4_0_0"/>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_lvds_advio_mgr_0_0/top_level_lvds_advio_mgr_0_0.xci">
+          <Proxy FileSetName="top_level_lvds_advio_mgr_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_noc_lpddr4_1_0/top_level_noc_lpddr4_1_0.xci">
-          <Proxy FileSetName="top_level_noc_lpddr4_1_0"/>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_lvds_advio_reset_mgr_0_0/top_level_lvds_advio_reset_mgr_0_0.xci">
+          <Proxy FileSetName="top_level_lvds_advio_reset_mgr_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_lvds_align_detect_0_0/top_level_lvds_align_detect_0_0.xci">
+          <Proxy FileSetName="top_level_lvds_align_detect_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_lvds_bitslip_0_0/top_level_lvds_bitslip_0_0.xci">
+          <Proxy FileSetName="top_level_lvds_bitslip_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_lvds_ctl_0_0/top_level_lvds_ctl_0_0.xci">
+          <Proxy FileSetName="top_level_lvds_ctl_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_lvds_startup_0_0/top_level_lvds_startup_0_0.xci">
+          <Proxy FileSetName="top_level_lvds_startup_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_proc_sys_reset_0_0/top_level_proc_sys_reset_0_0.xci">
           <Proxy FileSetName="top_level_proc_sys_reset_0_0"/>
@@ -396,6 +450,14 @@
       </File>
       <File Path="$PGENDIR/sources_1/bd/top_level/hdl/top_level_wrapper.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/src/lvds/lvds_advio_fifo_mgr.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -481,24 +543,6 @@
         <Option Name="CosimElf" Val=""/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_clk_wizard_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_clk_wizard_0_0" RelGenDir="$PGENDIR/top_level_clk_wizard_0_0">
-      <Config>
-        <Option Name="TopModule" Val="top_level_clk_wizard_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="top_level_proc_sys_reset_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_proc_sys_reset_0_0" RelGenDir="$PGENDIR/top_level_proc_sys_reset_0_0">
-      <Config>
-        <Option Name="TopModule" Val="top_level_proc_sys_reset_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="top_level_axi_intc_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axi_intc_0_0" RelGenDir="$PGENDIR/top_level_axi_intc_0_0">
-      <Config>
-        <Option Name="TopModule" Val="top_level_axi_intc_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
       <Filter Type="Utils"/>
       <File Path="$PSRCDIR/utils_1/imports/synth_1/top_level_wrapper.dcp">
@@ -516,12 +560,6 @@
     <FileSet Name="top_level_axi_uart_bridge_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axi_uart_bridge_0_0" RelGenDir="$PGENDIR/top_level_axi_uart_bridge_0_0">
       <Config>
         <Option Name="TopModule" Val="top_level_axi_uart_bridge_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="top_level_axi_uartlite_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axi_uartlite_0_0" RelGenDir="$PGENDIR/top_level_axi_uartlite_0_0">
-      <Config>
-        <Option Name="TopModule" Val="top_level_axi_uartlite_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -545,18 +583,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_xpm_cdc_gen_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_xpm_cdc_gen_0_0" RelGenDir="$PGENDIR/top_level_xpm_cdc_gen_0_0">
-      <Config>
-        <Option Name="TopModule" Val="top_level_xpm_cdc_gen_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="top_level_clk_wizard_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_clk_wizard_0_1" RelGenDir="$PGENDIR/top_level_clk_wizard_0_1">
-      <Config>
-        <Option Name="TopModule" Val="top_level_clk_wizard_0_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="top_level_axi_adc_bank_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axi_adc_bank_0_0" RelGenDir="$PGENDIR/top_level_axi_adc_bank_0_0">
       <Config>
         <Option Name="TopModule" Val="top_level_axi_adc_bank_0_0"/>
@@ -575,6 +601,60 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="top_level_lvds_startup_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_lvds_startup_0_0" RelGenDir="$PGENDIR/top_level_lvds_startup_0_0">
+      <Config>
+        <Option Name="TopModule" Val="top_level_lvds_startup_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="top_level_lvds_bitslip_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_lvds_bitslip_0_0" RelGenDir="$PGENDIR/top_level_lvds_bitslip_0_0">
+      <Config>
+        <Option Name="TopModule" Val="top_level_lvds_bitslip_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="top_level_lvds_align_detect_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_lvds_align_detect_0_0" RelGenDir="$PGENDIR/top_level_lvds_align_detect_0_0">
+      <Config>
+        <Option Name="TopModule" Val="top_level_lvds_align_detect_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="top_level_lvds_advio_mgr_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_lvds_advio_mgr_0_0" RelGenDir="$PGENDIR/top_level_lvds_advio_mgr_0_0">
+      <Config>
+        <Option Name="TopModule" Val="top_level_lvds_advio_mgr_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="top_level_lvds_ctl_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_lvds_ctl_0_0" RelGenDir="$PGENDIR/top_level_lvds_ctl_0_0">
+      <Config>
+        <Option Name="TopModule" Val="top_level_lvds_ctl_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="top_level_axi_uartlite_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axi_uartlite_0_0" RelGenDir="$PGENDIR/top_level_axi_uartlite_0_0">
+      <Config>
+        <Option Name="TopModule" Val="top_level_axi_uartlite_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="top_level_axi_intc_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axi_intc_0_0" RelGenDir="$PGENDIR/top_level_axi_intc_0_0">
+      <Config>
+        <Option Name="TopModule" Val="top_level_axi_intc_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="top_level_clk_wizard_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_clk_wizard_0_1" RelGenDir="$PGENDIR/top_level_clk_wizard_0_1">
+      <Config>
+        <Option Name="TopModule" Val="top_level_clk_wizard_0_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="top_level_xpm_cdc_gen_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_xpm_cdc_gen_0_0" RelGenDir="$PGENDIR/top_level_xpm_cdc_gen_0_0">
+      <Config>
+        <Option Name="TopModule" Val="top_level_xpm_cdc_gen_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="top_level_util_ds_buf_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_util_ds_buf_0_0" RelGenDir="$PGENDIR/top_level_util_ds_buf_0_0">
       <Config>
         <Option Name="TopModule" Val="top_level_util_ds_buf_0_0"/>
@@ -587,33 +667,39 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_noc_lpddr4_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_noc_lpddr4_1_0" RelGenDir="$PGENDIR/top_level_noc_lpddr4_1_0">
+    <FileSet Name="top_level_advanced_io_wizard_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_advanced_io_wizard_0_0" RelGenDir="$PGENDIR/top_level_advanced_io_wizard_0_0">
       <Config>
-        <Option Name="TopModule" Val="top_level_noc_lpddr4_1_0"/>
+        <Option Name="TopModule" Val="top_level_advanced_io_wizard_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_noc_lpddr4_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_noc_lpddr4_0_0" RelGenDir="$PGENDIR/top_level_noc_lpddr4_0_0">
+    <FileSet Name="top_level_clk_wizard_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_clk_wizard_0_0" RelGenDir="$PGENDIR/top_level_clk_wizard_0_0">
       <Config>
-        <Option Name="TopModule" Val="top_level_noc_lpddr4_0_0"/>
+        <Option Name="TopModule" Val="top_level_clk_wizard_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_axis_ila_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axis_ila_0_1" RelGenDir="$PGENDIR/top_level_axis_ila_0_1">
+    <FileSet Name="top_level_proc_sys_reset_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_proc_sys_reset_0_0" RelGenDir="$PGENDIR/top_level_proc_sys_reset_0_0">
       <Config>
-        <Option Name="TopModule" Val="top_level_axis_ila_0_1"/>
+        <Option Name="TopModule" Val="top_level_proc_sys_reset_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_icn_ctrl_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_icn_ctrl_0" RelGenDir="$PGENDIR/top_level_icn_ctrl_0">
+    <FileSet Name="top_level_clk_wizard_0_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_clk_wizard_0_2" RelGenDir="$PGENDIR/top_level_clk_wizard_0_2">
       <Config>
-        <Option Name="TopModule" Val="top_level_icn_ctrl_0"/>
+        <Option Name="TopModule" Val="top_level_clk_wizard_0_2"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_cips_noc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_cips_noc_0" RelGenDir="$PGENDIR/top_level_cips_noc_0">
+    <FileSet Name="top_level_lvds_advio_reset_mgr_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_lvds_advio_reset_mgr_0_0" RelGenDir="$PGENDIR/top_level_lvds_advio_reset_mgr_0_0">
       <Config>
-        <Option Name="TopModule" Val="top_level_cips_noc_0"/>
+        <Option Name="TopModule" Val="top_level_lvds_advio_reset_mgr_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="top_level_axis_ila_0_4" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axis_ila_0_4" RelGenDir="$PGENDIR/top_level_axis_ila_0_4">
+      <Config>
+        <Option Name="TopModule" Val="top_level_axis_ila_0_4"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -649,33 +735,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_clk_wizard_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_clk_wizard_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_clk_wizard_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_proc_sys_reset_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_proc_sys_reset_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_proc_sys_reset_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_axi_intc_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_axi_intc_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_intc_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_intc_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_intc_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="top_level_axi_uart_bridge_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_axi_uart_bridge_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_uart_bridge_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_uart_bridge_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_uart_bridge_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
@@ -685,34 +744,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_axi_uartlite_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_axi_uartlite_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_uartlite_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_uartlite_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_uartlite_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="top_level_axi_revision_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_axi_revision_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_revision_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_revision_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_revision_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_xpm_cdc_gen_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_xpm_cdc_gen_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_xpm_cdc_gen_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_xpm_cdc_gen_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_xpm_cdc_gen_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_clk_wizard_0_1_synth_1" Type="Ft3:Synth" SrcSet="top_level_clk_wizard_0_1" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_clk_wizard_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_1_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
         <Step Id="synth_design"/>
@@ -748,6 +780,87 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
+    <Run Id="top_level_lvds_startup_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_lvds_startup_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_startup_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_startup_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_startup_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_lvds_bitslip_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_lvds_bitslip_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_bitslip_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_bitslip_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_bitslip_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_lvds_align_detect_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_lvds_align_detect_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_align_detect_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_align_detect_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_align_detect_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_lvds_advio_mgr_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_lvds_advio_mgr_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_advio_mgr_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_advio_mgr_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_advio_mgr_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_lvds_ctl_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_lvds_ctl_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_ctl_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_ctl_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_ctl_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_axi_uartlite_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_axi_uartlite_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_uartlite_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_uartlite_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_uartlite_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_axi_intc_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_axi_intc_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_intc_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_intc_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_intc_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_clk_wizard_0_1_synth_1" Type="Ft3:Synth" SrcSet="top_level_clk_wizard_0_1" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_clk_wizard_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_1_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_xpm_cdc_gen_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_xpm_cdc_gen_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_xpm_cdc_gen_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_xpm_cdc_gen_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_xpm_cdc_gen_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
     <Run Id="top_level_util_ds_buf_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_util_ds_buf_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_util_ds_buf_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_util_ds_buf_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_util_ds_buf_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
@@ -766,7 +879,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_noc_lpddr4_1_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_noc_lpddr4_1_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_noc_lpddr4_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_noc_lpddr4_1_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_noc_lpddr4_1_0_synth_1" ParallelReportGen="true">
+    <Run Id="top_level_advanced_io_wizard_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_advanced_io_wizard_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_advanced_io_wizard_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_advanced_io_wizard_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_advanced_io_wizard_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
         <Step Id="synth_design"/>
@@ -775,7 +888,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_noc_lpddr4_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_noc_lpddr4_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_noc_lpddr4_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_noc_lpddr4_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_noc_lpddr4_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="top_level_clk_wizard_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_clk_wizard_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_clk_wizard_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
         <Step Id="synth_design"/>
@@ -784,7 +897,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_axis_ila_0_1_synth_1" Type="Ft3:Synth" SrcSet="top_level_axis_ila_0_1" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axis_ila_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axis_ila_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axis_ila_0_1_synth_1" ParallelReportGen="true">
+    <Run Id="top_level_proc_sys_reset_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_proc_sys_reset_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_proc_sys_reset_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
         <Step Id="synth_design"/>
@@ -793,7 +906,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_icn_ctrl_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_icn_ctrl_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_icn_ctrl_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_icn_ctrl_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_icn_ctrl_0_synth_1" ParallelReportGen="true">
+    <Run Id="top_level_clk_wizard_0_2_synth_1" Type="Ft3:Synth" SrcSet="top_level_clk_wizard_0_2" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_clk_wizard_0_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_2_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_2_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
         <Step Id="synth_design"/>
@@ -802,7 +915,16 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_cips_noc_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_cips_noc_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_cips_noc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_cips_noc_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_cips_noc_0_synth_1" ParallelReportGen="true">
+    <Run Id="top_level_lvds_advio_reset_mgr_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_lvds_advio_reset_mgr_0_0" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_advio_reset_mgr_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_advio_reset_mgr_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_advio_reset_mgr_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_axis_ila_0_4_synth_1" Type="Ft3:Synth" SrcSet="top_level_axis_ila_0_4" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axis_ila_0_4" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axis_ila_0_4_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axis_ila_0_4_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
         <Step Id="synth_design"/>
@@ -812,57 +934,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="constrs_1" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 32 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_device_image"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_clk_wizard_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_clk_wizard_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_clk_wizard_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_device_image"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_proc_sys_reset_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_proc_sys_reset_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_proc_sys_reset_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_device_image"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_axi_intc_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_intc_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_axi_intc_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_intc_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_intc_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
         <Step Id="init_design"/>
@@ -896,58 +967,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_axi_uartlite_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_uartlite_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_axi_uartlite_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_uartlite_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_uartlite_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_device_image"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="top_level_axi_revision_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_revision_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_axi_revision_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_revision_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_revision_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_device_image"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_xpm_cdc_gen_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_xpm_cdc_gen_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_xpm_cdc_gen_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_xpm_cdc_gen_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_xpm_cdc_gen_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_device_image"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_clk_wizard_0_1_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_clk_wizard_0_1" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_clk_wizard_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_1_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
         <Step Id="init_design"/>
@@ -1015,6 +1035,159 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
+    <Run Id="top_level_lvds_startup_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_startup_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_lvds_startup_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_startup_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_startup_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_device_image"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_lvds_bitslip_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_bitslip_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_lvds_bitslip_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_bitslip_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_bitslip_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_device_image"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_lvds_align_detect_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_align_detect_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_lvds_align_detect_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_align_detect_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_align_detect_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_device_image"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_lvds_advio_mgr_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_advio_mgr_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_lvds_advio_mgr_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_advio_mgr_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_advio_mgr_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_device_image"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_lvds_ctl_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_ctl_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_lvds_ctl_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_ctl_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_ctl_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_device_image"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_axi_uartlite_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_uartlite_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_axi_uartlite_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_uartlite_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_uartlite_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_device_image"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_axi_intc_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axi_intc_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_axi_intc_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_intc_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axi_intc_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_device_image"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_clk_wizard_0_1_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_clk_wizard_0_1" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_clk_wizard_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_1_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_device_image"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_xpm_cdc_gen_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_xpm_cdc_gen_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_xpm_cdc_gen_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_xpm_cdc_gen_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_xpm_cdc_gen_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_device_image"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
     <Run Id="top_level_util_ds_buf_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_util_ds_buf_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_util_ds_buf_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_util_ds_buf_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_util_ds_buf_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
@@ -1049,7 +1222,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_noc_lpddr4_1_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_noc_lpddr4_1_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_noc_lpddr4_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_noc_lpddr4_1_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_noc_lpddr4_1_0_impl_1" ParallelReportGen="true">
+    <Run Id="top_level_advanced_io_wizard_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_advanced_io_wizard_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_advanced_io_wizard_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_advanced_io_wizard_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_advanced_io_wizard_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
         <Step Id="init_design"/>
@@ -1066,7 +1239,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_noc_lpddr4_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_noc_lpddr4_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_noc_lpddr4_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_noc_lpddr4_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_noc_lpddr4_0_0_impl_1" ParallelReportGen="true">
+    <Run Id="top_level_clk_wizard_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_clk_wizard_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_clk_wizard_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
         <Step Id="init_design"/>
@@ -1083,7 +1256,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_axis_ila_0_1_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axis_ila_0_1" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_axis_ila_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axis_ila_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axis_ila_0_1_impl_1" ParallelReportGen="true">
+    <Run Id="top_level_proc_sys_reset_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_proc_sys_reset_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_proc_sys_reset_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
         <Step Id="init_design"/>
@@ -1100,7 +1273,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_icn_ctrl_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_icn_ctrl_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_icn_ctrl_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_icn_ctrl_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_icn_ctrl_0_impl_1" ParallelReportGen="true">
+    <Run Id="top_level_clk_wizard_0_2_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_clk_wizard_0_2" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_clk_wizard_0_2_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_2_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_clk_wizard_0_2_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
         <Step Id="init_design"/>
@@ -1117,7 +1290,24 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_cips_noc_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_cips_noc_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_cips_noc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_cips_noc_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_cips_noc_0_impl_1" ParallelReportGen="true">
+    <Run Id="top_level_lvds_advio_reset_mgr_0_0_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_lvds_advio_reset_mgr_0_0" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_lvds_advio_reset_mgr_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_lvds_advio_reset_mgr_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_lvds_advio_reset_mgr_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_device_image"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Advanced Implementation Default Reports" Flow="Vivado Advanced Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="top_level_axis_ila_0_4_impl_1" Type="Ft8:AdvanceImpl" Part="xcvp1202-vsva2785-2MP-e-S" ConstrsSet="top_level_axis_ila_0_4" Description="Default settings for Advanced Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_axis_ila_0_4_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axis_ila_0_4_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/top_level_axis_ila_0_4_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Advanced Implementation Defaults" Flow="Vivado Advanced Implementation 2024"/>
         <Step Id="init_design"/>

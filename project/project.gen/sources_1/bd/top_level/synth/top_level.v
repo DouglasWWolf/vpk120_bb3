@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Fri Aug  7 18:44:45 2026
+//Date        : Sat Sep 12 17:40:10 2026
 //Host        : wolf-super-server running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target top_level.bd
 //Design      : top_level
@@ -120,6 +120,119 @@ module adc_bank_imp_1TWLDZ5
         .spi_miso(spi_miso),
         .spi_mosi(spi_mosi),
         .spi_sclk(spi_sclk));
+endmodule
+
+module advio_imp_1LMY484
+   (LVDS_BANKA_clk_n,
+    LVDS_BANKA_clk_p,
+    LVDS_DN,
+    LVDS_DP,
+    clk_192,
+    data_to_fabric_data_a,
+    rxen_vtc_data_a,
+    rxtx_cntvaluein_data_a,
+    rxtx_ld_data_a,
+    soft_reset);
+  input [0:0]LVDS_BANKA_clk_n;
+  input [0:0]LVDS_BANKA_clk_p;
+  input [7:0]LVDS_DN;
+  input [7:0]LVDS_DP;
+  input clk_192;
+  output [63:0]data_to_fabric_data_a;
+  input [7:0]rxen_vtc_data_a;
+  input [71:0]rxtx_cntvaluein_data_a;
+  input [7:0]rxtx_ld_data_a;
+  input soft_reset;
+
+  wire [0:0]LVDS_BANKA_clk_n;
+  wire [0:0]LVDS_BANKA_clk_p;
+  wire [7:0]LVDS_DN;
+  wire [7:0]LVDS_DP;
+  wire advanced_io_wizard_0_bank0_pll_clkout0;
+  wire advanced_io_wizard_0_intf_rdy;
+  wire advanced_io_wizard_bank0_pll_locked;
+  wire [8:0]advanced_io_wizard_dly_rdy;
+  wire [8:0]advanced_io_wizard_fifo_empty;
+  wire [8:0]advanced_io_wizard_phy_rdy;
+  wire clk_192_1;
+  wire [63:0]data_to_fabric_data_a;
+  wire [1:0]lvds_advio_reset_mgr_dbg_fsm_state;
+  wire lvds_advio_reset_mgr_en_vtc;
+  wire [8:0]lvds_advio_reset_mgr_fifo_rd_en;
+  wire lvds_advio_reset_mgr_rst;
+  wire rst_1;
+  wire [7:0]rxen_vtc_data_a;
+  wire [71:0]rxtx_cntvaluein_data_a;
+  wire [7:0]rxtx_ld_data_a;
+  wire [0:0]zero_0_dout;
+  wire [7:0]zero_8_dout;
+  wire [8:0]zero_9_dout;
+  wire zero_dout;
+
+  assign clk_192_1 = clk_192;
+  assign rst_1 = soft_reset;
+  top_level_advanced_io_wizard_0_0 advanced_io_wizard
+       (.Strobe_0_n(LVDS_BANKA_clk_n),
+        .Strobe_0_p(LVDS_BANKA_clk_p),
+        .bank0_pll_clkin(clk_192_1),
+        .bank0_pll_clkout0(advanced_io_wizard_0_bank0_pll_clkout0),
+        .bank0_pll_locked(advanced_io_wizard_bank0_pll_locked),
+        .bank0_pll_rst_pll(zero_dout),
+        .ctrl_clk(advanced_io_wizard_0_bank0_pll_clkout0),
+        .data_a_n(LVDS_DN),
+        .data_a_p(LVDS_DP),
+        .data_to_fabric_data_a(data_to_fabric_data_a),
+        .dly_rdy(advanced_io_wizard_dly_rdy),
+        .en_vtc(lvds_advio_reset_mgr_en_vtc),
+        .fifo_empty(advanced_io_wizard_fifo_empty),
+        .fifo_rd_clk(clk_192_1),
+        .fifo_rd_en(lvds_advio_reset_mgr_fifo_rd_en),
+        .intf_rdy(advanced_io_wizard_0_intf_rdy),
+        .phy_rdy(advanced_io_wizard_phy_rdy),
+        .rst(lvds_advio_reset_mgr_rst),
+        .rxen_vtc_Strobe_0(zero_0_dout),
+        .rxen_vtc_data_a(rxen_vtc_data_a),
+        .rxtx_ce_Strobe_0(zero_0_dout),
+        .rxtx_ce_data_a(zero_8_dout),
+        .rxtx_cntvaluein_Strobe_0(zero_9_dout),
+        .rxtx_cntvaluein_data_a(rxtx_cntvaluein_data_a),
+        .rxtx_inc_Strobe_0(zero_0_dout),
+        .rxtx_inc_data_a(zero_8_dout),
+        .rxtx_ld_Strobe_0(zero_0_dout),
+        .rxtx_ld_data_a(rxtx_ld_data_a),
+        .rxtx_sel_Strobe_0(zero_0_dout),
+        .rxtx_sel_data_a(zero_8_dout),
+        .txen_vtc_Strobe_0(zero_0_dout),
+        .txen_vtc_data_a(zero_8_dout));
+  top_level_axis_ila_0_4 axis_ila_0
+       (.clk(clk_192_1),
+        .probe0(rst_1),
+        .probe1(lvds_advio_reset_mgr_dbg_fsm_state),
+        .probe2(advanced_io_wizard_0_intf_rdy),
+        .probe3(lvds_advio_reset_mgr_en_vtc),
+        .probe4(advanced_io_wizard_bank0_pll_locked),
+        .probe5(lvds_advio_reset_mgr_rst),
+        .probe6(lvds_advio_reset_mgr_fifo_rd_en),
+        .probe7(advanced_io_wizard_fifo_empty),
+        .probe8(advanced_io_wizard_phy_rdy),
+        .probe9(advanced_io_wizard_dly_rdy));
+  top_level_lvds_advio_reset_mgr_0_0 lvds_advio_reset_mgr
+       (.async_bank0_pll_locked(advanced_io_wizard_bank0_pll_locked),
+        .async_dly_rdy(advanced_io_wizard_dly_rdy),
+        .async_fifo_empty(advanced_io_wizard_fifo_empty),
+        .async_intf_rdy(advanced_io_wizard_0_intf_rdy),
+        .clk(clk_192_1),
+        .dbg_fsm_state(lvds_advio_reset_mgr_dbg_fsm_state),
+        .en_vtc(lvds_advio_reset_mgr_en_vtc),
+        .fifo_rd_en(lvds_advio_reset_mgr_fifo_rd_en),
+        .rst(lvds_advio_reset_mgr_rst),
+        .soft_reset(rst_1));
+  top_level_lvds_startup_0_0 lvds_startup
+       (.clk(clk_192_1),
+        .reset_out(zero_dout));
+  assign zero_0_dout = 1'h0;
+  assign zero_8_dout = 8'h00;
+  assign zero_9_dout = 9'h000;
 endmodule
 
 module axi_uart_bridge_imp_SLJY4W
@@ -291,9 +404,11 @@ module clk_192_imp_1JPME8P
   wire resetn;
   wire resetn_192;
 
-  top_level_clk_wizard_0_1 clk_wizard
+  top_level_clk_wizard_0_2 clk_wizard_192
        (.clk_192(clk_192),
-        .clk_768(clk_wizard_clk_768),
+        .clk_in1(clk_wizard_clk_768));
+  top_level_clk_wizard_0_1 clk_wizard_768
+       (.clk_768(clk_wizard_clk_768),
         .clk_in1(clk_200));
   top_level_util_ds_buf_0_0 util_ds_buf
        (.OBUF_DS_N(LVDS_CLK_clk_n),
@@ -346,6 +461,188 @@ module constants_imp_RUOC73
   assign CHIP_RS256 = 1'h0;
 endmodule
 
+module lvds_imp_1LT6GK4
+   (LVDS_BANKA_clk_n,
+    LVDS_BANKA_clk_p,
+    LVDS_DN,
+    LVDS_DP,
+    S_AXI_araddr,
+    S_AXI_arprot,
+    S_AXI_arready,
+    S_AXI_arvalid,
+    S_AXI_awaddr,
+    S_AXI_awprot,
+    S_AXI_awready,
+    S_AXI_awvalid,
+    S_AXI_bready,
+    S_AXI_bresp,
+    S_AXI_bvalid,
+    S_AXI_rdata,
+    S_AXI_rready,
+    S_AXI_rresp,
+    S_AXI_rvalid,
+    S_AXI_wdata,
+    S_AXI_wready,
+    S_AXI_wstrb,
+    S_AXI_wvalid,
+    clk_192,
+    resetn_192);
+  input [0:0]LVDS_BANKA_clk_n;
+  input [0:0]LVDS_BANKA_clk_p;
+  input [7:0]LVDS_DN;
+  input [7:0]LVDS_DP;
+  input [7:0]S_AXI_araddr;
+  input [2:0]S_AXI_arprot;
+  output S_AXI_arready;
+  input S_AXI_arvalid;
+  input [7:0]S_AXI_awaddr;
+  input [2:0]S_AXI_awprot;
+  output S_AXI_awready;
+  input S_AXI_awvalid;
+  input S_AXI_bready;
+  output [1:0]S_AXI_bresp;
+  output S_AXI_bvalid;
+  output [31:0]S_AXI_rdata;
+  input S_AXI_rready;
+  output [1:0]S_AXI_rresp;
+  output S_AXI_rvalid;
+  input [31:0]S_AXI_wdata;
+  output S_AXI_wready;
+  input [3:0]S_AXI_wstrb;
+  input S_AXI_wvalid;
+  input clk_192;
+  input resetn_192;
+
+  wire [0:0]LVDS_BANKA_clk_n;
+  wire [0:0]LVDS_BANKA_clk_p;
+  wire [7:0]LVDS_DN;
+  wire [7:0]LVDS_DP;
+  wire [7:0]S_AXI_araddr;
+  wire [2:0]S_AXI_arprot;
+  wire S_AXI_arready;
+  wire S_AXI_arvalid;
+  wire [7:0]S_AXI_awaddr;
+  wire [2:0]S_AXI_awprot;
+  wire S_AXI_awready;
+  wire S_AXI_awvalid;
+  wire S_AXI_bready;
+  wire [1:0]S_AXI_bresp;
+  wire S_AXI_bvalid;
+  wire [31:0]S_AXI_rdata;
+  wire S_AXI_rready;
+  wire [1:0]S_AXI_rresp;
+  wire S_AXI_rvalid;
+  wire [31:0]S_AXI_wdata;
+  wire S_AXI_wready;
+  wire [3:0]S_AXI_wstrb;
+  wire S_AXI_wvalid;
+  wire [63:0]advanced_io_wizard_0_data_to_fabric_data_a;
+  wire clk_192_1;
+  wire [2:0]lvds_advio_mgr_cal_write_en;
+  wire [71:0]lvds_advio_mgr_rx_cntvaluein;
+  wire [7:0]lvds_advio_mgr_rx_ld;
+  wire [7:0]lvds_advio_mgr_rxen_vtc;
+  wire [7:0]lvds_align_detect_0_align_err;
+  wire [2:0]lvds_bitslip_0_bitslip_rd;
+  wire [7:0]lvds_bitslip_0_dbg_lvds_lane;
+  wire [63:0]lvds_bitslip_0_lvds_bus;
+  wire [63:0]lvds_ctl_0_cal_mask;
+  wire [11:0]lvds_ctl_0_cal_word;
+  wire lvds_ctl_0_cal_word_wstb;
+  wire lvds_ctl_clear_errors_stb;
+  wire [5:0]lvds_ctl_lane_select;
+  wire lvds_ctl_reset_hssio;
+  wire resetn_192;
+
+  assign clk_192_1 = clk_192;
+  advio_imp_1LMY484 advio
+       (.LVDS_BANKA_clk_n(LVDS_BANKA_clk_n),
+        .LVDS_BANKA_clk_p(LVDS_BANKA_clk_p),
+        .LVDS_DN(LVDS_DN),
+        .LVDS_DP(LVDS_DP),
+        .clk_192(clk_192_1),
+        .data_to_fabric_data_a(advanced_io_wizard_0_data_to_fabric_data_a),
+        .rxen_vtc_data_a(lvds_advio_mgr_rxen_vtc),
+        .rxtx_cntvaluein_data_a(lvds_advio_mgr_rx_cntvaluein),
+        .rxtx_ld_data_a(lvds_advio_mgr_rx_ld),
+        .soft_reset(lvds_ctl_reset_hssio));
+  top_level_axis_ila_0_2 axis_ila_0
+       (.clk(clk_192_1),
+        .probe0(1'b0),
+        .probe1(lvds_bitslip_0_dbg_lvds_lane),
+        .probe2({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .probe3({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .probe4({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .probe5(advanced_io_wizard_0_data_to_fabric_data_a),
+        .probe6(1'b0),
+        .probe7(lvds_ctl_0_cal_word_wstb),
+        .probe8(lvds_bitslip_0_lvds_bus));
+  top_level_lvds_advio_mgr_0_0 lvds_advio_mgr
+       (.cal_mask(lvds_ctl_0_cal_mask),
+        .cal_word(lvds_ctl_0_cal_word),
+        .cal_word_wstb(lvds_ctl_0_cal_word_wstb),
+        .cal_write_en(lvds_advio_mgr_cal_write_en),
+        .clk(clk_192_1),
+        .resetn(resetn_192),
+        .rx_cntvaluein(lvds_advio_mgr_rx_cntvaluein),
+        .rx_ld(lvds_advio_mgr_rx_ld),
+        .rxen_vtc(lvds_advio_mgr_rxen_vtc));
+  top_level_lvds_align_detect_0_0 lvds_align_detect
+       (.align_err(lvds_align_detect_0_align_err),
+        .clear_errors(lvds_ctl_clear_errors_stb),
+        .clk(clk_192_1),
+        .lvds_bus(lvds_bitslip_0_lvds_bus));
+  top_level_lvds_bitslip_0_0 lvds_bitslip
+       (.bitslip_rd(lvds_bitslip_0_bitslip_rd),
+        .cal_mask(lvds_ctl_0_cal_mask),
+        .cal_word(lvds_ctl_0_cal_word),
+        .cal_word_wstb(lvds_ctl_0_cal_word_wstb),
+        .clk(clk_192_1),
+        .dbg_lvds_lane(lvds_bitslip_0_dbg_lvds_lane),
+        .input_bus(advanced_io_wizard_0_data_to_fabric_data_a),
+        .lane_select(lvds_ctl_lane_select),
+        .lvds_bus(lvds_bitslip_0_lvds_bus),
+        .resetn(resetn_192));
+  top_level_lvds_ctl_0_0 lvds_ctl
+       (.S_AXI_ARADDR(S_AXI_araddr),
+        .S_AXI_ARPROT(S_AXI_arprot),
+        .S_AXI_ARREADY(S_AXI_arready),
+        .S_AXI_ARVALID(S_AXI_arvalid),
+        .S_AXI_AWADDR(S_AXI_awaddr),
+        .S_AXI_AWPROT(S_AXI_awprot),
+        .S_AXI_AWREADY(S_AXI_awready),
+        .S_AXI_AWVALID(S_AXI_awvalid),
+        .S_AXI_BREADY(S_AXI_bready),
+        .S_AXI_BRESP(S_AXI_bresp),
+        .S_AXI_BVALID(S_AXI_bvalid),
+        .S_AXI_RDATA(S_AXI_rdata),
+        .S_AXI_RREADY(S_AXI_rready),
+        .S_AXI_RRESP(S_AXI_rresp),
+        .S_AXI_RVALID(S_AXI_rvalid),
+        .S_AXI_WDATA(S_AXI_wdata),
+        .S_AXI_WREADY(S_AXI_wready),
+        .S_AXI_WSTRB(S_AXI_wstrb),
+        .S_AXI_WVALID(S_AXI_wvalid),
+        .align_err({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,lvds_align_detect_0_align_err}),
+        .cal_bitslip_rd(lvds_bitslip_0_bitslip_rd),
+        .cal_delay_rd({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .cal_mask(lvds_ctl_0_cal_mask),
+        .cal_word(lvds_ctl_0_cal_word),
+        .cal_word_wstb(lvds_ctl_0_cal_word_wstb),
+        .cal_write_en(lvds_advio_mgr_cal_write_en),
+        .clear_errors_stb(lvds_ctl_clear_errors_stb),
+        .clk(clk_192_1),
+        .framing_errors({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .lane_select(lvds_ctl_lane_select),
+        .max_lane_skew({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .missing_hdr_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .missing_hdr_tuser({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .missing_hdr_tvalid(1'b0),
+        .prbs_err({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .reset_hssio(lvds_ctl_reset_hssio),
+        .resetn(resetn_192));
+endmodule
+
 module pl_rtl_imp_QFYSB7
    (CHIP_GPIO13,
     CHIP_GPIO15,
@@ -359,8 +656,12 @@ module pl_rtl_imp_QFYSB7
     CHIP_VDDA,
     CHIP_VDDIO,
     CHIP_VDDLVDS,
+    LVDS_BANKA_clk_n,
+    LVDS_BANKA_clk_p,
     LVDS_CLK_clk_n,
     LVDS_CLK_clk_p,
+    LVDS_DN,
+    LVDS_DP,
     LVL_TRSL_OE_N,
     M_AXI_RAM0_PCI_araddr,
     M_AXI_RAM0_PCI_arburst,
@@ -501,8 +802,12 @@ module pl_rtl_imp_QFYSB7
   output CHIP_VDDA;
   output CHIP_VDDIO;
   output CHIP_VDDLVDS;
+  input [0:0]LVDS_BANKA_clk_n;
+  input [0:0]LVDS_BANKA_clk_p;
   output [0:0]LVDS_CLK_clk_n;
   output [0:0]LVDS_CLK_clk_p;
+  input [7:0]LVDS_DN;
+  input [7:0]LVDS_DP;
   output LVL_TRSL_OE_N;
   output [63:0]M_AXI_RAM0_PCI_araddr;
   output [1:0]M_AXI_RAM0_PCI_arburst;
@@ -663,8 +968,12 @@ module pl_rtl_imp_QFYSB7
   wire CHIP_VDDA;
   wire CHIP_VDDIO;
   wire CHIP_VDDLVDS;
+  wire [0:0]LVDS_BANKA_clk_n;
+  wire [0:0]LVDS_BANKA_clk_p;
   wire [0:0]LVDS_CLK_clk_n;
   wire [0:0]LVDS_CLK_clk_p;
+  wire [7:0]LVDS_DN;
+  wire [7:0]LVDS_DP;
   wire LVL_TRSL_OE_N;
   wire [63:0]M_AXI_RAM0_PCI_araddr;
   wire [1:0]M_AXI_RAM0_PCI_arburst;
@@ -794,6 +1103,25 @@ module pl_rtl_imp_QFYSB7
   wire S_AXI_1_WREADY;
   wire [3:0]S_AXI_1_WSTRB;
   wire S_AXI_1_WVALID;
+  wire [7:0]S_AXI_2_ARADDR;
+  wire [2:0]S_AXI_2_ARPROT;
+  wire S_AXI_2_ARREADY;
+  wire S_AXI_2_ARVALID;
+  wire [7:0]S_AXI_2_AWADDR;
+  wire [2:0]S_AXI_2_AWPROT;
+  wire S_AXI_2_AWREADY;
+  wire S_AXI_2_AWVALID;
+  wire S_AXI_2_BREADY;
+  wire [1:0]S_AXI_2_BRESP;
+  wire S_AXI_2_BVALID;
+  wire [31:0]S_AXI_2_RDATA;
+  wire S_AXI_2_RREADY;
+  wire [1:0]S_AXI_2_RRESP;
+  wire S_AXI_2_RVALID;
+  wire [31:0]S_AXI_2_WDATA;
+  wire S_AXI_2_WREADY;
+  wire [3:0]S_AXI_2_WSTRB;
+  wire S_AXI_2_WVALID;
   wire [15:0]S_AXI_CTL_1_ARADDR;
   wire [2:0]S_AXI_CTL_1_ARPROT;
   wire [0:0]S_AXI_CTL_1_ARREADY;
@@ -837,6 +1165,8 @@ module pl_rtl_imp_QFYSB7
   wire axi_uart_bridge_M_AXI_WREADY;
   wire [3:0]axi_uart_bridge_M_AXI_WSTRB;
   wire axi_uart_bridge_M_AXI_WVALID;
+  wire clk_192_1;
+  wire clk_192_resetn_192;
   wire clk_200;
   wire clk_250;
   wire [0:0]dummy_intr_dout;
@@ -1201,8 +1531,10 @@ module pl_rtl_imp_QFYSB7
   clk_192_imp_1JPME8P clk_192
        (.LVDS_CLK_clk_n(LVDS_CLK_clk_n),
         .LVDS_CLK_clk_p(LVDS_CLK_clk_p),
+        .clk_192(clk_192_1),
         .clk_200(clk_200),
-        .resetn(aresetn));
+        .resetn(aresetn),
+        .resetn_192(clk_192_resetn_192));
   constants_imp_RUOC73 constants
        (.CHIP_GPIO13(CHIP_GPIO13),
         .CHIP_GPIO15(CHIP_GPIO15),
@@ -1231,19 +1563,25 @@ module pl_rtl_imp_QFYSB7
         .M00_AXI_wready(icn_ctrl_M00_AXI_WREADY),
         .M00_AXI_wstrb(icn_ctrl_M00_AXI_WSTRB),
         .M00_AXI_wvalid(icn_ctrl_M00_AXI_WVALID),
-        .M01_AXI_arready(1'b0),
-        .M01_AXI_awready(1'b0),
-        .M01_AXI_bid(1'b0),
-        .M01_AXI_bresp({1'b0,1'b0}),
-        .M01_AXI_buser(1'b0),
-        .M01_AXI_bvalid(1'b0),
-        .M01_AXI_rdata(1'b0),
-        .M01_AXI_rid(1'b0),
-        .M01_AXI_rlast(1'b0),
-        .M01_AXI_rresp({1'b0,1'b0}),
-        .M01_AXI_ruser(1'b0),
-        .M01_AXI_rvalid(1'b0),
-        .M01_AXI_wready(1'b0),
+        .M01_AXI_araddr(S_AXI_2_ARADDR),
+        .M01_AXI_arprot(S_AXI_2_ARPROT),
+        .M01_AXI_arready(S_AXI_2_ARREADY),
+        .M01_AXI_arvalid(S_AXI_2_ARVALID),
+        .M01_AXI_awaddr(S_AXI_2_AWADDR),
+        .M01_AXI_awprot(S_AXI_2_AWPROT),
+        .M01_AXI_awready(S_AXI_2_AWREADY),
+        .M01_AXI_awvalid(S_AXI_2_AWVALID),
+        .M01_AXI_bready(S_AXI_2_BREADY),
+        .M01_AXI_bresp(S_AXI_2_BRESP),
+        .M01_AXI_bvalid(S_AXI_2_BVALID),
+        .M01_AXI_rdata(S_AXI_2_RDATA),
+        .M01_AXI_rready(S_AXI_2_RREADY),
+        .M01_AXI_rresp(S_AXI_2_RRESP),
+        .M01_AXI_rvalid(S_AXI_2_RVALID),
+        .M01_AXI_wdata(S_AXI_2_WDATA),
+        .M01_AXI_wready(S_AXI_2_WREADY),
+        .M01_AXI_wstrb(S_AXI_2_WSTRB),
+        .M01_AXI_wvalid(S_AXI_2_WVALID),
         .M02_AXI_araddr(S_AXI_CTL_1_ARADDR),
         .M02_AXI_arprot(S_AXI_CTL_1_ARPROT),
         .M02_AXI_arready(S_AXI_CTL_1_ARREADY),
@@ -1398,11 +1736,38 @@ module pl_rtl_imp_QFYSB7
         .S01_AXI_wstrb(axi_uart_bridge_M_AXI_WSTRB),
         .S01_AXI_wvalid(axi_uart_bridge_M_AXI_WVALID),
         .aclk(clk_250),
+        .aclk1(clk_192_1),
         .aresetn(aresetn));
+  lvds_imp_1LT6GK4 lvds
+       (.LVDS_BANKA_clk_n(LVDS_BANKA_clk_n),
+        .LVDS_BANKA_clk_p(LVDS_BANKA_clk_p),
+        .LVDS_DN(LVDS_DN),
+        .LVDS_DP(LVDS_DP),
+        .S_AXI_araddr(S_AXI_2_ARADDR),
+        .S_AXI_arprot(S_AXI_2_ARPROT),
+        .S_AXI_arready(S_AXI_2_ARREADY),
+        .S_AXI_arvalid(S_AXI_2_ARVALID),
+        .S_AXI_awaddr(S_AXI_2_AWADDR),
+        .S_AXI_awprot(S_AXI_2_AWPROT),
+        .S_AXI_awready(S_AXI_2_AWREADY),
+        .S_AXI_awvalid(S_AXI_2_AWVALID),
+        .S_AXI_bready(S_AXI_2_BREADY),
+        .S_AXI_bresp(S_AXI_2_BRESP),
+        .S_AXI_bvalid(S_AXI_2_BVALID),
+        .S_AXI_rdata(S_AXI_2_RDATA),
+        .S_AXI_rready(S_AXI_2_RREADY),
+        .S_AXI_rresp(S_AXI_2_RRESP),
+        .S_AXI_rvalid(S_AXI_2_RVALID),
+        .S_AXI_wdata(S_AXI_2_WDATA),
+        .S_AXI_wready(S_AXI_2_WREADY),
+        .S_AXI_wstrb(S_AXI_2_WSTRB),
+        .S_AXI_wvalid(S_AXI_2_WVALID),
+        .clk_192(clk_192_1),
+        .resetn_192(clk_192_resetn_192));
   assign ilconstant_0_dout = 1'h1;
 endmodule
 
-(* CORE_GENERATION_INFO = "top_level,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=58,numReposBlks=46,numNonXlnxBlks=0,numHierBlks=12,maxHierDepth=4,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=21,numPkgbdBlks=1,bdsource=USER,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top_level.hwdef" *) 
+(* CORE_GENERATION_INFO = "top_level,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=73,numReposBlks=59,numNonXlnxBlks=0,numHierBlks=14,maxHierDepth=4,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=27,numPkgbdBlks=1,bdsource=USER,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top_level.hwdef" *) 
 module top_level
    (CHIP_GPIO13,
     CHIP_GPIO15,
@@ -1421,8 +1786,12 @@ module top_level
     CHIP_VDDA,
     CHIP_VDDIO,
     CHIP_VDDLVDS,
+    LVDS_BANKA_clk_n,
+    LVDS_BANKA_clk_p,
     LVDS_CLK_clk_n,
     LVDS_CLK_clk_p,
+    LVDS_DN,
+    LVDS_DP,
     LVL_TRSL_OE_N,
     UART_rxd,
     UART_txd,
@@ -1567,8 +1936,12 @@ module top_level
   output CHIP_VDDA;
   output CHIP_VDDIO;
   output CHIP_VDDLVDS;
+  input [0:0]LVDS_BANKA_clk_n;
+  input [0:0]LVDS_BANKA_clk_p;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 LVDS_CLK CLK_N" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME LVDS_CLK, CAN_DEBUG false, FREQ_HZ 100000000" *) output [0:0]LVDS_CLK_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 LVDS_CLK CLK_P" *) output [0:0]LVDS_CLK_clk_p;
+  input [7:0]LVDS_DN;
+  input [7:0]LVDS_DP;
   output LVL_TRSL_OE_N;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART RxD" *) (* X_INTERFACE_MODE = "Master" *) input UART_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART TxD" *) output UART_txd;
@@ -2084,8 +2457,12 @@ module top_level
   wire CIPS_0_pl_clk0;
   wire CIPS_0_pl_resetn1;
   (* HARD_CONN = "true" *) wire CIPS_0_pmc_axi_noc_axi0_clk;
+  wire [0:0]LVDS_BANKA_clk_n;
+  wire [0:0]LVDS_BANKA_clk_p;
   wire [0:0]LVDS_CLK_clk_n;
   wire [0:0]LVDS_CLK_clk_p;
+  wire [7:0]LVDS_DN;
+  wire [7:0]LVDS_DP;
   wire LVL_TRSL_OE_N;
   wire UART_rxd;
   wire UART_txd;
@@ -3304,8 +3681,12 @@ module top_level
         .CHIP_VDDA(CHIP_VDDA),
         .CHIP_VDDIO(CHIP_VDDIO),
         .CHIP_VDDLVDS(CHIP_VDDLVDS),
+        .LVDS_BANKA_clk_n(LVDS_BANKA_clk_n),
+        .LVDS_BANKA_clk_p(LVDS_BANKA_clk_p),
         .LVDS_CLK_clk_n(LVDS_CLK_clk_n),
         .LVDS_CLK_clk_p(LVDS_CLK_clk_p),
+        .LVDS_DN(LVDS_DN),
+        .LVDS_DP(LVDS_DP),
         .LVL_TRSL_OE_N(LVL_TRSL_OE_N),
         .M_AXI_RAM0_PCI_araddr(pl_rtl_M_AXI_SYSRAM_ARADDR),
         .M_AXI_RAM0_PCI_arburst(pl_rtl_M_AXI_SYSRAM_ARBURST),

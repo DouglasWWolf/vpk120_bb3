@@ -151,7 +151,11 @@ module top_level (
   CHIP_GPIO15,
   CHIP_GPIO13,
   CHIP_GPIO15_DIR,
-  CHIP_PA_SYNC
+  CHIP_PA_SYNC,
+  LVDS_DP,
+  LVDS_DN,
+  LVDS_BANKA_clk_p,
+  LVDS_BANKA_clk_n
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:lpddr4:1.0 ch0_lpddr4_trip1 DQ_A" *)
@@ -467,6 +471,14 @@ module top_level (
   output [0:0]CHIP_GPIO15_DIR;
   (* X_INTERFACE_IGNORE = "true" *)
   input CHIP_PA_SYNC;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input [7:0]LVDS_DP;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input [7:0]LVDS_DN;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input [0:0]LVDS_BANKA_clk_p;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input [0:0]LVDS_BANKA_clk_n;
 
   // stub module has no contents
 

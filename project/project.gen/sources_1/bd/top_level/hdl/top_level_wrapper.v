@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Fri Aug  7 18:44:46 2026
+//Date        : Sat Sep 12 17:40:11 2026
 //Host        : wolf-super-server running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target top_level_wrapper.bd
 //Design      : top_level_wrapper
@@ -28,8 +28,12 @@ module top_level_wrapper
     CHIP_VDDA,
     CHIP_VDDIO,
     CHIP_VDDLVDS,
+    LVDS_BANKA_clk_n,
+    LVDS_BANKA_clk_p,
     LVDS_CLK_clk_n,
     LVDS_CLK_clk_p,
+    LVDS_DN,
+    LVDS_DP,
     LVL_TRSL_OE_N,
     UART_rxd,
     UART_txd,
@@ -174,8 +178,12 @@ module top_level_wrapper
   output CHIP_VDDA;
   output CHIP_VDDIO;
   output CHIP_VDDLVDS;
+  input [0:0]LVDS_BANKA_clk_n;
+  input [0:0]LVDS_BANKA_clk_p;
   output [0:0]LVDS_CLK_clk_n;
   output [0:0]LVDS_CLK_clk_p;
+  input [7:0]LVDS_DN;
+  input [7:0]LVDS_DP;
   output LVL_TRSL_OE_N;
   input UART_rxd;
   output UART_txd;
@@ -321,8 +329,12 @@ module top_level_wrapper
   wire CHIP_VDDA;
   wire CHIP_VDDIO;
   wire CHIP_VDDLVDS;
+  wire [0:0]LVDS_BANKA_clk_n;
+  wire [0:0]LVDS_BANKA_clk_p;
   wire [0:0]LVDS_CLK_clk_n;
   wire [0:0]LVDS_CLK_clk_p;
+  wire [7:0]LVDS_DN;
+  wire [7:0]LVDS_DP;
   wire LVL_TRSL_OE_N;
   wire UART_rxd;
   wire UART_txd;
@@ -469,8 +481,12 @@ module top_level_wrapper
         .CHIP_VDDA(CHIP_VDDA),
         .CHIP_VDDIO(CHIP_VDDIO),
         .CHIP_VDDLVDS(CHIP_VDDLVDS),
+        .LVDS_BANKA_clk_n(LVDS_BANKA_clk_n),
+        .LVDS_BANKA_clk_p(LVDS_BANKA_clk_p),
         .LVDS_CLK_clk_n(LVDS_CLK_clk_n),
         .LVDS_CLK_clk_p(LVDS_CLK_clk_p),
+        .LVDS_DN(LVDS_DN),
+        .LVDS_DP(LVDS_DP),
         .LVL_TRSL_OE_N(LVL_TRSL_OE_N),
         .UART_rxd(UART_rxd),
         .UART_txd(UART_txd),

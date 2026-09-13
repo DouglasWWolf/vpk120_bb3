@@ -1,0 +1,45 @@
+source api
+
+lane=$1
+
+test -z $lane && lane=0
+step=10
+
+# Compute the lane-mask
+mask=$(( 1 << lane ))
+
+# Select the lane
+axi LVDS_LANE_SELECT $lane
+
+# Program the lane-mask
+axi LVDS_CAL_MASK $mask
+
+cal_word=0
+
+while [ $cal_word -le 4095 ]; do
+
+    echo CAL_WORD $cal_word
+
+    # Program the calibration word
+    axi LVDS_CAL_WORD $cal_word
+    sleep .1
+
+    # Clear alignment errors
+    axi LVDS_CLEAR_ERRORS 1
+
+    # Wait for alignment errors to accumulate
+    sleep .001
+
+    # Fetch the alignment errors
+    errors=$(get LVDS_ALIGN_ERR)
+
+    # Does our selected lane have an error?
+    err=$(( errors & mask ))
+
+    if [ $err -eq 0 ]; then
+        echo "Found calibration at $cal_word"
+        exit 0
+    fi
+
+    cal_word=$((cal_word + step))
+done

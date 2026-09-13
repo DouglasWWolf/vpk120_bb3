@@ -219,5 +219,166 @@
 #define REG_CHIP_POWER_STATE                                         0x00000000a4004004ULL
 
 
+//
+// Register:    LVDS_CAL_WEN
+// Size:        32-bits
+// Type:        Read only
+// Description: Calibration write-enable
+//              This must be non-zero before writing to LVDS_CAL_WORD
+//
+#define LVDS_CAL_WEN                                                 0x00000000a4005000ULL
+
+
+//
+// Register:    LVDS_CAL_WORD
+// Size:        32-bits
+// Type:        Read/Write
+// Description: Writing to this register writes the specified calibration word to each
+//              LVDS lane selected in register LVDS_CAL_MASK.  Do not write to this register
+//              unless LVDS_CAL_WEN is non-zero
+//              
+//              Reading from this register returns the calibration word for the lane
+//              selected by LVDS_LANE_SELECT
+//              
+//              Valid calibration words are 0 thru 4095 (i.e., 0x0000 thru 0xFFF)
+//              
+//              > For informational purposes only:  Bits 11:9 are a bitslip value (0 thru 7)
+//              >                                   Bits  8:0 are a delay tap (0 thru 0x1FF)
+//
+#define LVDS_CAL_WORD                                                0x00000000a4005004ULL
+
+
+//
+// Register:    LVDS_LANE_SELECT
+// Size:        32-bits
+// Type:        Read/Write
+// Description: Selects the LVDS lane that will be read when reading LVDS_CAL_WORD
+//              Valid values are 0 thru 63
+//
+#define LVDS_LANE_SELECT                                             0x00000000a4005008ULL
+
+
+//
+// Register:    LVDS_RESET_HSSIO
+// Size:        32-bits
+// Type:        Read/Write
+// Description: Writing a 1 to this register places the FPGA's "High Speed Serial I/O" logic
+//              in reset.    Writing a 0 takes the HSSIO logic out of reset.
+//
+#define LVDS_RESET_HSSIO                                             0x00000000a400500cULL
+
+
+//
+// Register:    LVDS_CLEAR_ERRORS
+// Size:        32-bits
+// Type:        Write only
+// Description: Writing a 1 clears the error bits in LVDS_ALIGN_ERR and LVDS_PRBS_ERR
+//
+#define LVDS_CLEAR_ERRORS                                            0x00000000a4005010ULL
+
+
+//
+// Register:    LVDS_FRAME_HEADER
+// Size:        32-bits
+// Type:        Read/Write
+// Description: The four-byte frame-header pattern that the sensor-chip generates.
+//              The value of this register must match the value in sensor-chip register SRDWR_HEADER_PATTERN.
+//              Default value is 0x0FAA0FAA
+//
+#define LVDS_FRAME_HEADER                                            0x00000000a4005014ULL
+
+
+//
+// Register:    LVDS_HDR_MATCH_BITS
+// Size:        32-bits
+// Type:        Read/Write
+// Description: Defines the number of bits of LVDS_FRAME_HDR that must match the data in the LVDS
+//              lane in order for LVDS lane data to be recognized as a frame-header.
+//              Valid values are 1 thru 32.  Default value is 32.
+//
+#define LVDS_HDR_MATCH_BITS                                          0x00000000a4005018ULL
+
+
+//
+// Register:    LVDS_FRAMING_ERRS
+// Size:        32-bits
+// Type:        Read only
+// Description: Count of the number of LVDS frames in which at least one LVDS lane was
+//              missing a frame header.
+//              This value is cleared by a full system reset
+//
+#define LVDS_FRAMING_ERRS                                            0x00000000a400501cULL
+
+
+//
+// Register:    LVDS_MAX_LANE_SKEW
+// Size:        32-bits
+// Type:        Read only
+// Description: The maximum lane-to-lane skew measured during frame-header detection.
+//              This value is cleared by a full system reset.
+//
+#define LVDS_MAX_LANE_SKEW                                           0x00000000a4005020ULL
+
+
+//
+// Register:    LVDS_MISS_HDR_STATUS
+// Size:        32-bits
+// Type:        Read only
+// Description: The status of the "missing header" registers LVDS_MISS_HDR_FRAME and
+//              LVDS_MISS_HDR_LANES.  Reading this register (when it returns a 1)
+//              causes valid data to be latched into the above mentioned registers
+//
+#define LVDS_MISS_HDR_STATUS                                         0x00000000a4005024ULL
+
+
+//
+// Register:    LVDS_MISS_HDR_FRAME
+// Size:        32-bits
+// Type:        Read only
+// Description: If the last read of LVDS_MISS_HDR_STATUS returned a 1, this register
+//              contains the frame number of the frame that had missing frame headers
+//
+#define LVDS_MISS_HDR_FRAME                                          0x00000000a4005028ULL
+
+
+//
+// Register:    LVDS_MISS_HDR_LANES
+// Size:        64-bits
+// Type:        Read only
+// Description: If the last read of LVDS_MISS_HDR_STATUS returned a 1, this register
+//              contains a bitmap of which LVDS lanes were missing headers.
+//
+#define LVDS_MISS_HDR_LANES                                          0x40000000a400502cULL
+
+
+//
+// Register:    LVDS_CAL_MASK
+// Size:        64-bits
+// Type:        Read/Write
+// Description: Determines which LVDS lanes the next write to LVDS_CAL_WORD will affect.
+//
+#define LVDS_CAL_MASK                                                0x40000000a4005040ULL
+
+
+//
+// Register:    LVDS_ALIGN_ERR
+// Size:        64-bits
+// Type:        Read only
+// Description: A bitmap of which LVDS lanes detected a failure of the LVDS alignment pattern
+//              This is cleared by writing a 1 to register LVDS_CLEAR_ERRORS.
+//
+#define LVDS_ALIGN_ERR                                               0x40000000a4005048ULL
+
+
+//
+// Register:    LVDS_PRBS_ERR
+// Size:        64-bits
+// Type:        Read only
+// Description: A bitmap of which LVDS lanes detected a failure of PRBS checking
+//              This is cleared by writing a 1 to register LVDS_CLEAR_ERRORS.
+//
+#define LVDS_PRBS_ERR                                                0x40000000a4005050ULL
+
+
 
 #endif

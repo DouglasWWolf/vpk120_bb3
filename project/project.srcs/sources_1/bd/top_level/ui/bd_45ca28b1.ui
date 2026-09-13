@@ -1,0 +1,97 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.01681",
+   "Default View_TopLeft":"-311,-7",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_clk_192 -pg 1 -lvl 0 -x -10 -y 100 -defaultsOSRD
+preplace port port-id_intf_rdy -pg 1 -lvl 3 -x 1370 -y 60 -defaultsOSRD
+preplace port port-id_bank0_pll_locked -pg 1 -lvl 3 -x 1370 -y 180 -defaultsOSRD
+preplace port port-id_rst -pg 1 -lvl 0 -x -10 -y 180 -defaultsOSRD
+preplace portBus dly_rdy -pg 1 -lvl 3 -x 1370 -y 200 -defaultsOSRD
+preplace portBus phy_rdy -pg 1 -lvl 3 -x 1370 -y 220 -defaultsOSRD
+preplace portBus fifo_empty -pg 1 -lvl 3 -x 1370 -y 240 -defaultsOSRD
+preplace portBus LVDS_DP -pg 1 -lvl 0 -x -10 -y 420 -defaultsOSRD
+preplace portBus LVDS_DN -pg 1 -lvl 0 -x -10 -y 440 -defaultsOSRD
+preplace portBus data_to_fabric_data_a -pg 1 -lvl 3 -x 1370 -y 260 -defaultsOSRD
+preplace portBus LVDS_BANKA_clk_p -pg 1 -lvl 0 -x -10 -y 620 -defaultsOSRD
+preplace portBus LVDS_BANKA_clk_n -pg 1 -lvl 0 -x -10 -y 640 -defaultsOSRD
+preplace portBus rxtx_ld_data_a -pg 1 -lvl 0 -x -10 -y 580 -defaultsOSRD
+preplace portBus rxen_vtc_data_a -pg 1 -lvl 0 -x -10 -y 600 -defaultsOSRD
+preplace portBus rxtx_cntvaluein_data_a -pg 1 -lvl 0 -x -10 -y 460 -defaultsOSRD
+preplace inst zero_8 -pg 1 -lvl 1 -x 640 -y 500 -defaultsOSRD -pinBusDir dout right -pinBusY dout 20R
+preplace inst zero_9 -pg 1 -lvl 1 -x 640 -y 680 -defaultsOSRD -pinBusDir dout right -pinBusY dout 20R
+preplace inst zero_1 -pg 1 -lvl 1 -x 640 -y 780 -defaultsOSRD -pinBusDir dout right -pinBusY dout 20R
+preplace inst lvds_startup -pg 1 -lvl 1 -x 640 -y 300 -defaultsOSRD -pinDir clk left -pinY clk 20L -pinDir reset_out right -pinY reset_out 20R
+preplace inst advanced_io_wizard -pg 1 -lvl 2 -x 1090 -y 140 -swap {0 3 1 11 5 4 13 14 15 20 6 12 16 7 8 9 2 17 18 19 27 21 22 25 23 26 24 10 28 29 30 31 32 33 34 35 36 37 38} -defaultsOSRD -pinDir intf_rdy right -pinY intf_rdy 20R -pinDir ctrl_clk left -pinY ctrl_clk 60L -pinDir en_vtc left -pinY en_vtc 20L -pinDir fifo_rd_clk left -pinY fifo_rd_clk 120L -pinDir rst left -pinY rst 100L -pinDir bank0_pll_clkout0 left -pinY bank0_pll_clkout0 80L -pinDir bank0_pll_clkout2 right -pinY bank0_pll_clkout2 140R -pinDir pll0_clkout0 right -pinY pll0_clkout0 160R -pinDir bank0_pll_clkout3 right -pinY bank0_pll_clkout3 180R -pinDir bank0_pll_clkoutphy right -pinY bank0_pll_clkoutphy 200R -pinDir bank0_pll_locked right -pinY bank0_pll_locked 40R -pinDir bank0_pll_clkin left -pinY bank0_pll_clkin 140L -pinDir bank0_pll_rst_pll left -pinY bank0_pll_rst_pll 180L -pinBusDir dly_rdy right -pinBusY dly_rdy 60R -pinBusDir phy_rdy right -pinBusY phy_rdy 80R -pinBusDir fifo_empty right -pinBusY fifo_empty 100R -pinBusDir fifo_rd_en left -pinBusY fifo_rd_en 40L -pinBusDir data_a_p left -pinBusY data_a_p 280L -pinBusDir data_a_n left -pinBusY data_a_n 300L -pinBusDir rxtx_cntvaluein_data_a left -pinBusY rxtx_cntvaluein_data_a 320L -pinBusDir rxtx_cntvalueout_data_a right -pinBusY rxtx_cntvalueout_data_a 220R -pinBusDir rxtx_ce_data_a left -pinBusY rxtx_ce_data_a 340L -pinBusDir rxtx_inc_data_a left -pinBusY rxtx_inc_data_a 360L -pinBusDir rxtx_ld_data_a left -pinBusY rxtx_ld_data_a 440L -pinBusDir rxtx_sel_data_a left -pinBusY rxtx_sel_data_a 380L -pinBusDir rxen_vtc_data_a left -pinBusY rxen_vtc_data_a 460L -pinBusDir txen_vtc_data_a left -pinBusY txen_vtc_data_a 400L -pinBusDir data_to_fabric_data_a right -pinBusY data_to_fabric_data_a 120R -pinBusDir Strobe_0_p left -pinBusY Strobe_0_p 480L -pinBusDir Strobe_0_n left -pinBusY Strobe_0_n 500L -pinBusDir rxtx_cntvaluein_Strobe_0 left -pinBusY rxtx_cntvaluein_Strobe_0 560L -pinBusDir rxtx_cntvalueout_Strobe_0 right -pinBusY rxtx_cntvalueout_Strobe_0 240R -pinBusDir rxtx_ce_Strobe_0 left -pinBusY rxtx_ce_Strobe_0 580L -pinBusDir rxtx_inc_Strobe_0 left -pinBusY rxtx_inc_Strobe_0 600L -pinBusDir rxtx_ld_Strobe_0 left -pinBusY rxtx_ld_Strobe_0 620L -pinBusDir rxtx_sel_Strobe_0 left -pinBusY rxtx_sel_Strobe_0 640L -pinBusDir rxen_vtc_Strobe_0 left -pinBusY rxen_vtc_Strobe_0 660L -pinBusDir txen_vtc_Strobe_0 left -pinBusY txen_vtc_Strobe_0 680L -pinBusDir data_to_fabric_Strobe_0 right -pinBusY data_to_fabric_Strobe_0 260R
+preplace inst lvds_advio_reset_mgr -pg 1 -lvl 1 -x 640 -y -50 -defaultsOSRD -pinBusDir dbg_fsm_state right -pinBusY dbg_fsm_state 20R -pinDir clk left -pinY clk 20L -pinDir soft_reset left -pinY soft_reset 40L -pinDir async_intf_rdy left -pinY async_intf_rdy 60L -pinDir async_bank0_pll_locked left -pinY async_bank0_pll_locked 80L -pinBusDir async_fifo_empty left -pinBusY async_fifo_empty 100L -pinBusDir async_dly_rdy left -pinBusY async_dly_rdy 120L -pinBusDir fifo_rd_en right -pinBusY fifo_rd_en 40R -pinDir en_vtc right -pinY en_vtc 60R -pinDir rst right -pinY rst 80R
+preplace netloc LVDS_BANKA_clk_n_1 1 0 2 NJ 640 NJ
+preplace netloc LVDS_BANKA_clk_p_1 1 0 2 NJ 620 NJ
+preplace netloc LVDS_DN_1 1 0 2 NJ 440 NJ
+preplace netloc advanced_io_wizard_0_bank0_pll_clkout0 1 1 1 840 200n
+preplace netloc advanced_io_wizard_0_data_to_fabric_data_a 1 2 1 NJ 260
+preplace netloc advanced_io_wizard_0_dly_rdy 1 2 1 N 200
+preplace netloc advanced_io_wizard_0_fifo_empty 1 2 1 N 240
+preplace netloc advanced_io_wizard_0_intf_rdy 1 2 1 1330 60n
+preplace netloc advanced_io_wizard_0_phy_rdy 1 2 1 NJ 220
+preplace netloc advanced_io_wizard_bank0_pll_locked 1 2 1 NJ 180
+preplace netloc clk_192_1 1 0 2 440 260 840
+preplace netloc data_a_p_0_1 1 0 2 NJ 420 NJ
+preplace netloc rxen_vtc_data_a_1 1 0 2 NJ 600 NJ
+preplace netloc rxtx_cntvaluein_data_a_1 1 0 2 NJ 460 NJ
+preplace netloc rxtx_ld_data_a_1 1 0 2 NJ 580 NJ
+preplace netloc zero_0_dout 1 1 1 840 720n
+preplace netloc zero_8_dout 1 1 1 840 480n
+preplace netloc zero_9_dout 1 1 1 NJ 700
+preplace netloc zero_dout 1 1 1 N 320
+levelinfo -pg 1 -10 640 1090 1370
+pagesize -pg 1 -db -bbox -sgen -270 -140 1620 880
+",
+   "No Loops_ScaleFactor":"0.715976",
+   "No Loops_TopLeft":"-367,3",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_clk_192 -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
+preplace port port-id_intf_rdy -pg 1 -lvl 3 -x 730 -y 260 -defaultsOSRD
+preplace port port-id_bank0_pll_locked -pg 1 -lvl 3 -x 730 -y 380 -defaultsOSRD
+preplace portBus dly_rdy -pg 1 -lvl 3 -x 730 -y 400 -defaultsOSRD
+preplace portBus phy_rdy -pg 1 -lvl 3 -x 730 -y 420 -defaultsOSRD
+preplace portBus fifo_empty -pg 1 -lvl 3 -x 730 -y 440 -defaultsOSRD
+preplace portBus LVDS_DP -pg 1 -lvl 0 -x 0 -y 330 -defaultsOSRD
+preplace portBus LVDS_DN -pg 1 -lvl 0 -x 0 -y 350 -defaultsOSRD
+preplace portBus data_to_fabric_data_a -pg 1 -lvl 3 -x 730 -y 480 -defaultsOSRD
+preplace portBus LVDS_BANKA_clk_p -pg 1 -lvl 0 -x 0 -y 470 -defaultsOSRD
+preplace portBus LVDS_BANKA_clk_n -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD
+preplace inst one -pg 1 -lvl 1 -x 120 -y 50 -defaultsOSRD
+preplace inst zero_8 -pg 1 -lvl 1 -x 120 -y 410 -defaultsOSRD
+preplace inst const_511 -pg 1 -lvl 1 -x 120 -y 270 -defaultsOSRD
+preplace inst zero_9 -pg 1 -lvl 1 -x 120 -y 550 -defaultsOSRD
+preplace inst zero_1 -pg 1 -lvl 1 -x 120 -y 650 -defaultsOSRD
+preplace inst lvds_startup -pg 1 -lvl 1 -x 120 -y 170 -defaultsOSRD
+preplace inst advanced_io_wizard -pg 1 -lvl 2 -x 480 -y 390 -defaultsOSRD
+preplace netloc LVDS_BANKA_clk_n_1 1 0 2 NJ 490 NJ
+preplace netloc LVDS_BANKA_clk_p_1 1 0 2 NJ 470 NJ
+preplace netloc LVDS_DN_1 1 0 2 NJ 350 230J
+preplace netloc advanced_io_wizard_0_bank0_pll_clkout0 1 1 2 250 90 710
+preplace netloc advanced_io_wizard_0_bank0_pll_locked 1 2 1 NJ 380
+preplace netloc advanced_io_wizard_0_data_to_fabric_data_a 1 2 1 NJ 480
+preplace netloc advanced_io_wizard_0_dly_rdy 1 2 1 NJ 400
+preplace netloc advanced_io_wizard_0_fifo_empty 1 2 1 NJ 440
+preplace netloc advanced_io_wizard_0_intf_rdy 1 2 1 NJ 260
+preplace netloc advanced_io_wizard_0_phy_rdy 1 2 1 NJ 420
+preplace netloc clk_192_1 1 0 2 20 110 230
+preplace netloc data_a_p_0_1 1 0 2 NJ 330 220J
+preplace netloc one_dout 1 1 1 NJ 270
+preplace netloc one_dout1 1 1 1 240J 50n
+preplace netloc zero_0_dout 1 1 1 250 530n
+preplace netloc zero_8_dout 1 1 1 250 350n
+preplace netloc zero_9_dout 1 1 1 220J 510n
+preplace netloc zero_dout 1 1 1 220 170n
+levelinfo -pg 1 0 120 480 730
+pagesize -pg 1 -db -bbox -sgen -200 0 980 700
+"
+}
+0
