@@ -16,7 +16,7 @@ module lvds_advio_reset_mgr # (parameter BITS = 9)
     output[1:0] dbg_fsm_state,
 
     input clk,
-    input soft_reset,
+    input async_soft_reset,
 
     input           async_intf_rdy,
     input           async_bank0_pll_locked,
@@ -38,6 +38,7 @@ wire[BITS-1:0] dly_rdy;
 wire[BITS-1:0] fifo_empty;
 wire           bank0_pll_locked;
 wire           intf_rdy;
+wire           soft_reset;
 
 reg[1:0] fsm_state;
 reg[7:0] sleep;
@@ -148,6 +149,24 @@ i_sync_bank0_pll_locked
     .dest_out   (bank0_pll_locked),
     .dest_clk   (clk)
 );
+
+
+xpm_cdc_single #
+(
+    .DEST_SYNC_FF   (4), 
+    .INIT_SYNC_FF   (0), 
+    .SIM_ASSERT_CHK (0),
+    .SRC_INPUT_REG  (0)  
+)
+i_sync_soft_reset
+(
+    .src_clk    (),  
+    .src_in     (async_soft_reset),
+    .dest_out   (soft_reset),
+    .dest_clk   (clk)
+);
+
+
 
 assign dbg_fsm_state = fsm_state;
 

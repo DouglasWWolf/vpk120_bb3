@@ -28,7 +28,7 @@
       </spirit:parameters>
     </spirit:busInterface>
     <spirit:busInterface>
-      <spirit:name>soft_reset</spirit:name>
+      <spirit:name>async_soft_reset</spirit:name>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
       <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
       <spirit:slave/>
@@ -38,7 +38,7 @@
             <spirit:name>RST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>soft_reset</spirit:name>
+            <spirit:name>async_soft_reset</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
       </spirit:portMaps>
@@ -77,7 +77,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a13b469d</spirit:value>
+            <spirit:value>6381825b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -90,7 +90,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a13b469d</spirit:value>
+            <spirit:value>6381825b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -135,7 +135,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>soft_reset</spirit:name>
+        <spirit:name>async_soft_reset</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -297,7 +297,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2026-09-13T00:35:27Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2026-10-01T00:29:20Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>

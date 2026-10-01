@@ -380,5 +380,153 @@
 #define LVDS_PRBS_ERR                                                0x40000000a4005050ULL
 
 
+//
+// Register:    MC_RFD_ADDR
+// Size:        64-bits
+// Type:        Read/Write
+// Description: Address of remote frame data buffer
+//
+#define MC_RFD_ADDR                                                  0x40000000a4007000ULL
+
+
+//
+// Register:    MC_RFD_SIZE
+// Size:        64-bits
+// Type:        Read/Write
+// Description: Size of remote frame data buffer
+//
+#define MC_RFD_SIZE                                                  0x40000000a4007008ULL
+
+
+//
+// Register:    MC_RMD_ADDR
+// Size:        64-bits
+// Type:        Read/Write
+// Description: Address of remote meta data buffer
+//
+#define MC_RMD_ADDR                                                  0x40000000a4007010ULL
+
+
+//
+// Register:    MC_RMD_SIZE
+// Size:        64-bits
+// Type:        Read/Write
+// Description: Size of remote meta data buffer
+//
+#define MC_RMD_SIZE                                                  0x40000000a4007018ULL
+
+
+//
+// Register:    MC_RFC_ADDR
+// Size:        64-bits
+// Type:        Read/Write
+// Description: Address where the remote frame counter should be stored
+//
+#define MC_RFC_ADDR                                                  0x40000000a4007020ULL
+
+
+//
+// Register:    MC_FRAME_SIZE
+// Size:        32-bits
+// Type:        Read/Write
+// Description: Frame size in bytes (typically 0x40_0000)
+//
+#define MC_FRAME_SIZE                                                0x00000000a4007028ULL
+
+
+//
+// Register:    MC_PACKET_SIZE
+// Size:        32-bits
+// Type:        Read/Write
+// Description: Frame data packet size (typically 0x1000)
+//
+#define MC_PACKET_SIZE                                               0x00000000a400702cULL
+
+
+//
+// Register:    MC_PACKETS_PER_GROUP
+// Size:        32-bits
+// Type:        Read/Write
+// Description: Number of packets in a transmit group (typicall 4)
+//
+#define MC_PACKETS_PER_GROUP                                         0x00000000a4007030ULL
+
+
+//
+// Register:    MC_FRAME_COUNT_0
+// Size:        32-bits
+// Type:        Read only
+// Description: Number of frames transmitted on channel 0
+//
+#define MC_FRAME_COUNT_0                                             0x00000000a400703cULL
+
+
+//
+// Register:    MC_FRAME_COUNT_1
+// Size:        32-bits
+// Type:        Read only
+// Description: Number of frames transmitted on channel 0
+//
+#define MC_FRAME_COUNT_1                                             0x00000000a4007040ULL
+
+
+//
+// Register:    MC_MD_UDP_PORT
+// Size:        32-bits
+// Type:        Read/Write
+// Description: UDP destination port for metadata packets
+//
+#define MC_MD_UDP_PORT                                               0x00000000a4007044ULL
+
+
+//
+// Register:    MC_FC_UDP_PORT
+// Size:        32-bits
+// Type:        Read/Write
+// Description: UDP destination port for frame-counter packets
+//
+#define MC_FC_UDP_PORT                                               0x00000000a4007048ULL
+
+
+//
+// Register:    MC_FD_UDP_PORT_BASE
+// Size:        32-bits
+// Type:        Read/Write
+// Description: UDP destination base port for frame-data packets.
+//              Actual port numbers will be FD_UDP_BASE_PORT thru
+//              FD_UDP_BASE_PORT + FD_BUCKET_COUNT - 1
+//
+#define MC_FD_UDP_PORT_BASE                                          0x00000000a400704cULL
+
+
+//
+// Register:    MC_FRAMES_PER_PERIOD
+// Size:        32-bits
+// Type:        Read/Write
+// Description: The number of frames in a port-steering period
+//              Typically this is the number of frames in a bright-cycle.
+//
+#define MC_FRAMES_PER_PERIOD                                         0x00000000a4007050ULL
+
+
+//
+// Register:    MC_FD_BUCKET_SIZE
+// Size:        32-bits
+// Type:        Read/Write
+// Description: How many different "buckets" are there for data-frames?
+//              Each "bucket" is associated with a different UDP destination port.
+//
+#define MC_FD_BUCKET_SIZE                                            0x00000000a4007054ULL
+
+
+//
+// Register:    MC_FD_BUCKET_COUNT
+// Size:        32-bits
+// Type:        Read/Write
+// Description: How many frames will fit into a single data-frame "bucket"?
+//
+#define MC_FD_BUCKET_COUNT                                           0x00000000a4007058ULL
+
+
 
 #endif

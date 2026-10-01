@@ -130,6 +130,18 @@ module top_level (
   UART_txd,
   LVDS_CLK_clk_n,
   LVDS_CLK_clk_p,
+  qsfp0_gt_grx_n,
+  qsfp0_gt_grx_p,
+  qsfp0_gt_gtx_n,
+  qsfp0_gt_gtx_p,
+  qsfp1_gt_grx_n,
+  qsfp1_gt_grx_p,
+  qsfp1_gt_gtx_n,
+  qsfp1_gt_gtx_p,
+  qsfp0_clk_clk_n,
+  qsfp0_clk_clk_p,
+  qsfp1_clk_clk_n,
+  qsfp1_clk_clk_p,
   CHIP_SPI_CSN,
   CHIP_SPI_MOSI,
   CHIP_SPI_SCK,
@@ -155,7 +167,10 @@ module top_level (
   LVDS_DP,
   LVDS_DN,
   LVDS_BANKA_clk_p,
-  LVDS_BANKA_clk_n
+  LVDS_BANKA_clk_n,
+  rx0_aligned,
+  qsfp_lpmode,
+  rx1_aligned
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:lpddr4:1.0 ch0_lpddr4_trip1 DQ_A" *)
@@ -427,6 +442,38 @@ module top_level (
   output [0:0]LVDS_CLK_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 LVDS_CLK CLK_P" *)
   output [0:0]LVDS_CLK_clk_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp0_gt GRX_N" *)
+  (* X_INTERFACE_MODE = "master qsfp0_gt" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME qsfp0_gt, CAN_DEBUG false" *)
+  input [3:0]qsfp0_gt_grx_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp0_gt GRX_P" *)
+  input [3:0]qsfp0_gt_grx_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp0_gt GTX_N" *)
+  output [3:0]qsfp0_gt_gtx_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp0_gt GTX_P" *)
+  output [3:0]qsfp0_gt_gtx_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp1_gt GRX_N" *)
+  (* X_INTERFACE_MODE = "master qsfp1_gt" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME qsfp1_gt, CAN_DEBUG false" *)
+  input [3:0]qsfp1_gt_grx_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp1_gt GRX_P" *)
+  input [3:0]qsfp1_gt_grx_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp1_gt GTX_N" *)
+  output [3:0]qsfp1_gt_gtx_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp1_gt GTX_P" *)
+  output [3:0]qsfp1_gt_gtx_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 qsfp0_clk CLK_N" *)
+  (* X_INTERFACE_MODE = "slave qsfp0_clk" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME qsfp0_clk, CAN_DEBUG false, FREQ_HZ 156250000" *)
+  input [0:0]qsfp0_clk_clk_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 qsfp0_clk CLK_P" *)
+  input [0:0]qsfp0_clk_clk_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 qsfp1_clk CLK_N" *)
+  (* X_INTERFACE_MODE = "slave qsfp1_clk" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME qsfp1_clk, CAN_DEBUG false, FREQ_HZ 156250000" *)
+  input [0:0]qsfp1_clk_clk_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 qsfp1_clk CLK_P" *)
+  input [0:0]qsfp1_clk_clk_p;
   (* X_INTERFACE_IGNORE = "true" *)
   output CHIP_SPI_CSN;
   (* X_INTERFACE_IGNORE = "true" *)
@@ -479,6 +526,12 @@ module top_level (
   input [0:0]LVDS_BANKA_clk_p;
   (* X_INTERFACE_IGNORE = "true" *)
   input [0:0]LVDS_BANKA_clk_n;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output rx0_aligned;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output qsfp_lpmode;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output rx1_aligned;
 
   // stub module has no contents
 

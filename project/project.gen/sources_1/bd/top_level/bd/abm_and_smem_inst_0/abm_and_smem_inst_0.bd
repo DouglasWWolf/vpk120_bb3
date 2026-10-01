@@ -44,8 +44,7 @@
         },
         "abm_cc": "",
         "ctl_cc": ""
-      },
-      "axis_ila_0": ""
+      }
     },
     "interface_ports": {
       "S_AXI_RAM0_ETH": {
@@ -10452,21 +10451,6 @@
             ]
           }
         }
-      },
-      "axis_ila_0": {
-        "vlnv": "xilinx.com:ip:axis_ila:1.3",
-        "ip_revision": "0",
-        "xci_name": "abm_and_smem_inst_0_axis_ila_0_0",
-        "xci_path": "ip/abm_and_smem_inst_0_axis_ila_0_0/abm_and_smem_inst_0_axis_ila_0_0.xci",
-        "inst_hier_path": "axis_ila_0",
-        "parameters": {
-          "C_DATA_DEPTH": {
-            "value": "4096"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "5"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -10556,31 +10540,22 @@
           "abm_and_smem_ctl/spi_busy"
         ]
       },
-      "chip_spi_mux_free_pclk": {
-        "ports": [
-          "chip_spi_mux/free_pclk",
-          "axis_ila_0/probe0"
-        ]
-      },
       "chip_spi_mux_spi_cs_n": {
         "ports": [
           "chip_spi_mux/spi_cs_n",
-          "pin_spi_cs_n",
-          "axis_ila_0/probe2"
+          "pin_spi_cs_n"
         ]
       },
       "chip_spi_mux_spi_mosi": {
         "ports": [
           "chip_spi_mux/spi_mosi",
-          "pin_spi_mosi",
-          "axis_ila_0/probe3"
+          "pin_spi_mosi"
         ]
       },
       "chip_spi_mux_spi_pclk": {
         "ports": [
           "chip_spi_mux/spi_pclk",
-          "pin_spi_pclk",
-          "axis_ila_0/probe1"
+          "pin_spi_pclk"
         ]
       },
       "chip_spi_rdata_0": {
@@ -10643,7 +10618,6 @@
           "chipif_cdc/chipif_clk",
           "smem_writer/clk",
           "chip_spi_mux/clk",
-          "axis_ila_0/clk",
           "abm_and_smem_ctl/clk"
         ]
       },
@@ -10652,7 +10626,6 @@
           "chipif_cdc/chipif_resetn",
           "smem_writer/resetn",
           "chip_spi_mux/resetn",
-          "axis_ila_0/probe4",
           "abm_and_smem_ctl/resetn"
         ]
       },

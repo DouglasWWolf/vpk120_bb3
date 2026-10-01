@@ -1,0 +1,17 @@
+source api
+
+# Make sure we have a calibration word
+if [ -z $1 ]; then
+   echo "Calibration word required"
+   exit 1
+fi
+
+# If the user didn't supply a lane number use 0
+lane=$2
+test -z $lane && lane=0
+
+lane_map=$(( 1 << lane ))
+
+axi LVDS_LANE_SELECT $lane
+axi LVDS_CAL_MASK $lane_map
+axi LVDS_CAL_WORD $1

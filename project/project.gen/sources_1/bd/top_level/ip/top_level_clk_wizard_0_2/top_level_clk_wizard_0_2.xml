@@ -1157,7 +1157,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
-          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CLOCK_CLK_OUT1.PHASE">90.0</spirit:value>
+          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CLOCK_CLK_OUT1.PHASE">0.0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1221,7 +1221,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:10a69ff0</spirit:value>
+            <spirit:value>9:526e598a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3096,7 +3096,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="REAL">
         <spirit:name>C_CLKOUT1_ACTUAL_PHASE</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT1_ACTUAL_PHASE">90.000</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT1_ACTUAL_PHASE">0.000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="REAL">
         <spirit:name>C_CLKOUT2_ACTUAL_PHASE</spirit:name>
@@ -4825,7 +4825,7 @@
     <spirit:parameter>
       <spirit:name>CLKOUT_REQUESTED_PHASE</spirit:name>
       <spirit:displayName>Requested Phase</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT_REQUESTED_PHASE" spirit:order="99">90,0.000,0.000,0.000,0.000,0.000,0.000</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT_REQUESTED_PHASE" spirit:order="99">0,0.000,0.000,0.000,0.000,0.000,0.000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT_REQUESTED_DUTY_CYCLE</spirit:name>
@@ -5246,7 +5246,7 @@
     <spirit:parameter>
       <spirit:name>CLKOUT1_PHASE</spirit:name>
       <spirit:displayName>Phase</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT1_PHASE" spirit:order="139" spirit:minimum="-360.0" spirit:maximum="360.0">90.000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT1_PHASE" spirit:order="139" spirit:minimum="-360.0" spirit:maximum="360.0">0.000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

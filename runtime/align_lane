@@ -3,7 +3,7 @@ source api
 lane=$1
 
 test -z $lane && lane=0
-step=10
+step=100
 
 # Compute the lane-mask
 mask=$(( 1 << lane ))
@@ -34,7 +34,7 @@ while [ $cal_word -le 4095 ]; do
     errors=$(get LVDS_ALIGN_ERR)
 
     # Does our selected lane have an error?
-    err=$(( errors & mask ))
+    err=$(( errors & mask )) 
 
     if [ $err -eq 0 ]; then
         echo "Found calibration at $cal_word"
@@ -42,4 +42,7 @@ while [ $cal_word -le 4095 ]; do
     fi
 
     cal_word=$((cal_word + step))
+
+#    echo "Press <ENTER>"
+#    read _
 done

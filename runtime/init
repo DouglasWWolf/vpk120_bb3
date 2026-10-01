@@ -1,6 +1,49 @@
+source api
+
+
+
+packet_steering=0
+#==============================================================================
+# Configure mindy-core
+#==============================================================================
+config_mindy_core()
+{
+    # These are mandatory settings for correct functioning of mindy-core
+    axi MC_FRAME_SIZE        0x400000
+    axi MC_PACKET_SIZE       0x1000
+    axi MC_PACKETS_PER_GROUP 4
+
+    # These are arbitrary values and determined by the receiving server
+    axi MC_RFD_ADDR     0x100000000
+    axi MC_RFD_SIZE     0x100000000
+    axi MC_RMD_ADDR     0x200000000
+    axi MC_RMD_SIZE     0x100000000
+    axi MC_RFC_ADDR     0x300000000
+
+    if [ $packet_steering -eq 0 ]; then
+        axi MC_MD_UDP_PORT       32002
+        axi MC_FC_UDP_PORT       32002
+        axi MC_FD_UDP_PORT_BASE  32002
+        axi MC_FRAMES_PER_PERIOD 1
+        axi MC_FD_BUCKET_SIZE    1
+        axi MC_FD_BUCKET_COUNT   1
+    else
+        axi MC_MD_UDP_PORT       8000
+        axi MC_FC_UDP_PORT       9000
+        axi MC_FD_UDP_PORT_BASE  10000
+        axi MC_FRAMES_PER_PERIOD 10
+        axi MC_FD_BUCKET_SIZE    2
+        axi MC_FD_BUCKET_COUNT   4
+    fi
+}
+#==============================================================================
+
+
 test $(pcireg 0x1000 -dec) -eq $((0xFFFFFFFF)) && hot_reset
 ./chip on
 sleep 1
 ./enable_capture
-sudo ./lvds_align -verbose
+sudo ./lvds_align.arm -verbose -lanes 8
+config_mindy_core
+
 

@@ -9,5 +9,7 @@
 create_clock -name lpddr4_clk1_clk_p -period 4.992 [get_ports lpddr4_clk1_clk_p]
 create_clock -name lpddr4_clk2_clk_p -period 4.992 [get_ports lpddr4_clk2_clk_p]
 create_clock -name lpddr4_clk3_clk_p -period 4.992 [get_ports lpddr4_clk3_clk_p]
+create_clock -name qsfp0_clk_clk_p -period 6.400 [get_ports qsfp0_clk_clk_p]
+create_clock -name qsfp1_clk_clk_p -period 6.400 [get_ports qsfp1_clk_clk_p]
 
 ################################################################################

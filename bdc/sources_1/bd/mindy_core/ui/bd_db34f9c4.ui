@@ -1,0 +1,105 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-512,-60",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port AXIS_FD1 -pg 1 -lvl 2 -x 740 -y 80 -defaultsOSRD -right
+preplace port AXIS_MD1 -pg 1 -lvl 2 -x 740 -y 60 -defaultsOSRD -right
+preplace port M_AXI1 -pg 1 -lvl 2 -x 740 -y 100 -defaultsOSRD
+preplace port AXIS_FD0 -pg 1 -lvl 2 -x 740 -y 460 -defaultsOSRD -right
+preplace port AXIS_MD0 -pg 1 -lvl 0 -x 0 -y 440 -defaultsOSRD
+preplace port M_AXI0 -pg 1 -lvl 2 -x 740 -y 440 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 460 -defaultsOSRD
+preplace port port-id_sys_resetn -pg 1 -lvl 0 -x 0 -y 480 -defaultsOSRD
+preplace portBus FRAME_COUNT1 -pg 1 -lvl 2 -x 740 -y 120 -defaultsOSRD
+preplace portBus PACKET_SIZE -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace portBus FRAME_SIZE -pg 1 -lvl 0 -x 0 -y 500 -defaultsOSRD
+preplace portBus FD_RING_ADDR -pg 1 -lvl 0 -x 0 -y 520 -defaultsOSRD
+preplace portBus FD_RING_SIZE -pg 1 -lvl 0 -x 0 -y 540 -defaultsOSRD
+preplace portBus MD_RING_ADDR -pg 1 -lvl 0 -x 0 -y 560 -defaultsOSRD
+preplace portBus MD_RING_SIZE -pg 1 -lvl 0 -x 0 -y 580 -defaultsOSRD
+preplace portBus FC_ADDR -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace portBus FRAME_COUNT0 -pg 1 -lvl 2 -x 740 -y 480 -defaultsOSRD
+preplace portBus MD_UDP_PORT -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace portBus FC_UDP_PORT -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace portBus FD_UDP_PORT_BASE -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace portBus FRAMES_PER_PERIOD -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace portBus FD_BUCKET_COUNT -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace portBus FD_BUCKET_SIZE -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace inst rdmx_shim_1 -pg 1 -lvl 1 -x 510 -y 40 -swap {5 1 2 3 4 0 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 54 55 47 46 56 57 58 59 60 48 45 49 50 51 52 53 61} -defaultsOSRD -pinDir AXIS_FD right -pinY AXIS_FD 40R -pinDir AXIS_MD right -pinY AXIS_MD 20R -pinDir M_AXI right -pinY M_AXI 60R -pinDir clk left -pinY clk 180L -pinDir resetn left -pinY resetn 200L -pinBusDir FRAME_COUNT right -pinBusY FRAME_COUNT 80R -pinBusDir PACKET_SIZE left -pinBusY PACKET_SIZE 40L -pinBusDir FRAME_SIZE left -pinBusY FRAME_SIZE 220L -pinBusDir FD_RING_ADDR left -pinBusY FD_RING_ADDR 240L -pinBusDir FD_RING_SIZE left -pinBusY FD_RING_SIZE 260L -pinBusDir MD_RING_ADDR left -pinBusY MD_RING_ADDR 280L -pinBusDir MD_RING_SIZE left -pinBusY MD_RING_SIZE 300L -pinBusDir FC_ADDR left -pinBusY FC_ADDR 60L -pinBusDir MD_UDP_PORT left -pinBusY MD_UDP_PORT 20L -pinBusDir FC_UDP_PORT left -pinBusY FC_UDP_PORT 80L -pinBusDir FD_UDP_PORT_BASE left -pinBusY FD_UDP_PORT_BASE 100L -pinBusDir FRAMES_PER_PERIOD left -pinBusY FRAMES_PER_PERIOD 120L -pinBusDir FD_BUCKET_COUNT left -pinBusY FD_BUCKET_COUNT 140L -pinBusDir FD_BUCKET_SIZE left -pinBusY FD_BUCKET_SIZE 160L -pinDir eof right -pinY eof 100R
+preplace inst rdmx_shim_0 -pg 1 -lvl 1 -x 510 -y 420 -swap {9 1 2 3 4 5 6 7 8 0 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 54 55 47 46 56 57 58 59 60 48 45 49 50 51 52 53 61} -defaultsOSRD -pinDir AXIS_FD right -pinY AXIS_FD 40R -pinDir AXIS_MD left -pinY AXIS_MD 20L -pinDir M_AXI right -pinY M_AXI 20R -pinDir clk left -pinY clk 200L -pinDir resetn left -pinY resetn 220L -pinBusDir FRAME_COUNT right -pinBusY FRAME_COUNT 60R -pinBusDir PACKET_SIZE left -pinBusY PACKET_SIZE 60L -pinBusDir FRAME_SIZE left -pinBusY FRAME_SIZE 240L -pinBusDir FD_RING_ADDR left -pinBusY FD_RING_ADDR 260L -pinBusDir FD_RING_SIZE left -pinBusY FD_RING_SIZE 280L -pinBusDir MD_RING_ADDR left -pinBusY MD_RING_ADDR 300L -pinBusDir MD_RING_SIZE left -pinBusY MD_RING_SIZE 320L -pinBusDir FC_ADDR left -pinBusY FC_ADDR 80L -pinBusDir MD_UDP_PORT left -pinBusY MD_UDP_PORT 40L -pinBusDir FC_UDP_PORT left -pinBusY FC_UDP_PORT 100L -pinBusDir FD_UDP_PORT_BASE left -pinBusY FD_UDP_PORT_BASE 120L -pinBusDir FRAMES_PER_PERIOD left -pinBusY FRAMES_PER_PERIOD 140L -pinBusDir FD_BUCKET_COUNT left -pinBusY FD_BUCKET_COUNT 160L -pinBusDir FD_BUCKET_SIZE left -pinBusY FD_BUCKET_SIZE 180L -pinDir eof right -pinY eof 80R
+preplace netloc FC_ADDR_1 1 0 1 260 100n
+preplace netloc FD_RING_ADDR_1 1 0 1 220 280n
+preplace netloc FD_RING_SIZE_1 1 0 1 40 300n
+preplace netloc FRAME_SIZE_1 1 0 1 200 260n
+preplace netloc MD_RING_ADDR_1 1 0 1 60 320n
+preplace netloc MD_RING_SIZE_1 1 0 1 80 340n
+preplace netloc PACKET_SIZE_1 1 0 1 280 80n
+preplace netloc rdmx_shim_0_FRAME_COUNT 1 1 1 NJ 480
+preplace netloc rdmx_shim_1_FRAME_COUNT 1 1 1 NJ 120
+preplace netloc sys_clk_1 1 0 1 160 220n
+preplace netloc sys_resetn_1 1 0 1 180 240n
+preplace netloc MD_UDP_PORT_1 1 0 1 300 60n
+preplace netloc FC_UDP_PORT_1 1 0 1 240 120n
+preplace netloc FD_UDP_PORT_BASE_1 1 0 1 140 140n
+preplace netloc FRAMES_PER_PERIOD_1 1 0 1 120 160n
+preplace netloc FD_BUCKET_COUNT_1 1 0 1 100 180n
+preplace netloc FD_BUCKET_SIZE_1 1 0 1 20 200n
+preplace netloc AXIS_FD0_1 1 1 1 N 460
+preplace netloc AXIS_FD1_1 1 1 1 N 80
+preplace netloc AXIS_MD0_1 1 0 1 NJ 440
+preplace netloc AXIS_MD1_1 1 1 1 N 60
+preplace netloc rdmx_shim_0_M_AXI 1 1 1 NJ 440
+preplace netloc rdmx_shim_1_M_AXI 1 1 1 NJ 100
+levelinfo -pg 1 0 510 740
+pagesize -pg 1 -db -bbox -sgen -250 0 950 800
+",
+   "No Loops_ScaleFactor":"1.0",
+   "No Loops_TopLeft":"-743,-180",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port AXIS_FD1 -pg 1 -lvl 0 -x 0 -y 50 -defaultsOSRD
+preplace port AXIS_MD1 -pg 1 -lvl 0 -x 0 -y 70 -defaultsOSRD
+preplace port M_AXI1 -pg 1 -lvl 2 -x 460 -y 130 -defaultsOSRD
+preplace port AXIS_FD0 -pg 1 -lvl 0 -x 0 -y 350 -defaultsOSRD
+preplace port AXIS_MD0 -pg 1 -lvl 0 -x 0 -y 370 -defaultsOSRD
+preplace port M_AXI0 -pg 1 -lvl 2 -x 460 -y 430 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 390 -defaultsOSRD
+preplace port port-id_sys_resetn -pg 1 -lvl 0 -x 0 -y 410 -defaultsOSRD
+preplace portBus FRAME_COUNT1 -pg 1 -lvl 2 -x 460 -y 150 -defaultsOSRD
+preplace portBus PACKET_SIZE -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
+preplace portBus FRAME_SIZE -pg 1 -lvl 0 -x 0 -y 430 -defaultsOSRD
+preplace portBus FD_RING_ADDR -pg 1 -lvl 0 -x 0 -y 450 -defaultsOSRD
+preplace portBus FD_RING_SIZE -pg 1 -lvl 0 -x 0 -y 470 -defaultsOSRD
+preplace portBus MD_RING_ADDR -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD
+preplace portBus MD_RING_SIZE -pg 1 -lvl 0 -x 0 -y 510 -defaultsOSRD
+preplace portBus FC_ADDR -pg 1 -lvl 0 -x 0 -y 250 -defaultsOSRD
+preplace portBus FRAME_COUNT0 -pg 1 -lvl 2 -x 460 -y 450 -defaultsOSRD
+preplace inst rdmx_shim_1 -pg 1 -lvl 1 -x 270 -y 150 -defaultsOSRD
+preplace inst rdmx_shim_0 -pg 1 -lvl 1 -x 270 -y 450 -defaultsOSRD
+preplace netloc sys_clk_1 1 0 1 40 90n
+preplace netloc sys_resetn_1 1 0 1 60 110n
+preplace netloc rdmx_shim_1_FRAME_COUNT 1 1 1 NJ 150
+preplace netloc PACKET_SIZE_1 1 0 1 100 130n
+preplace netloc FRAME_SIZE_1 1 0 1 90 150n
+preplace netloc FD_RING_ADDR_1 1 0 1 80 170n
+preplace netloc FD_RING_SIZE_1 1 0 1 70 190n
+preplace netloc MD_RING_ADDR_1 1 0 1 50 210n
+preplace netloc MD_RING_SIZE_1 1 0 1 30 230n
+preplace netloc FC_ADDR_1 1 0 1 20 250n
+preplace netloc rdmx_shim_0_FRAME_COUNT 1 1 1 NJ 450
+preplace netloc AXIS_FD1_1 1 0 1 NJ 50
+preplace netloc AXIS_MD1_1 1 0 1 NJ 70
+preplace netloc rdmx_shim_1_M_AXI 1 1 1 NJ 130
+preplace netloc AXIS_FD0_1 1 0 1 NJ 350
+preplace netloc AXIS_MD0_1 1 0 1 NJ 370
+preplace netloc rdmx_shim_0_M_AXI 1 1 1 NJ 430
+levelinfo -pg 1 0 270 460
+pagesize -pg 1 -db -bbox -sgen -180 0 640 600
+"
+}
+0

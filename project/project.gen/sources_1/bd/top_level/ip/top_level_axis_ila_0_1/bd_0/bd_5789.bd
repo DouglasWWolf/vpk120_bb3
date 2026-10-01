@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x614E43BA9EF05938",
+      "boundary_crc": "0x614E43BA1539DCDD",
       "design_src": "SBD",
       "device": "xcvp1202-vsva2785-2MP-e-S",
       "name": "bd_5789",
@@ -36,12 +36,18 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "ASSOCIATED_BUSIF": {
+            "value": "SLOT_0_AXI"
+          },
+          "ASSOCIATED_RESET": {
+            "value": "resetn"
+          },
           "CLK_DOMAIN": {
-            "value": "bd_987a_pspmc_0_0_pl0_ref_clk",
+            "value": "top_level_clk_wizard_0_2_clk_192",
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
-            "value": "250000000",
+            "value": "192000000",
             "value_src": "default_prop"
           },
           "FREQ_TOLERANCE_HZ": {

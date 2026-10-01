@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Sat Sep 12 17:40:11 2026
+//Date        : Wed Sep 30 17:34:38 2026
 //Host        : wolf-super-server running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target top_level_wrapper.bd
 //Design      : top_level_wrapper
@@ -160,7 +160,22 @@ module top_level_wrapper
     lpddr4_clk2_clk_n,
     lpddr4_clk2_clk_p,
     lpddr4_clk3_clk_n,
-    lpddr4_clk3_clk_p);
+    lpddr4_clk3_clk_p,
+    qsfp0_clk_clk_n,
+    qsfp0_clk_clk_p,
+    qsfp0_gt_grx_n,
+    qsfp0_gt_grx_p,
+    qsfp0_gt_gtx_n,
+    qsfp0_gt_gtx_p,
+    qsfp1_clk_clk_n,
+    qsfp1_clk_clk_p,
+    qsfp1_gt_grx_n,
+    qsfp1_gt_grx_p,
+    qsfp1_gt_gtx_n,
+    qsfp1_gt_gtx_p,
+    qsfp_lpmode,
+    rx0_aligned,
+    rx1_aligned);
   output [0:0]CHIP_GPIO13;
   output [0:0]CHIP_GPIO15;
   output [0:0]CHIP_GPIO15_DIR;
@@ -311,6 +326,21 @@ module top_level_wrapper
   input lpddr4_clk2_clk_p;
   input lpddr4_clk3_clk_n;
   input lpddr4_clk3_clk_p;
+  input [0:0]qsfp0_clk_clk_n;
+  input [0:0]qsfp0_clk_clk_p;
+  input [3:0]qsfp0_gt_grx_n;
+  input [3:0]qsfp0_gt_grx_p;
+  output [3:0]qsfp0_gt_gtx_n;
+  output [3:0]qsfp0_gt_gtx_p;
+  input [0:0]qsfp1_clk_clk_n;
+  input [0:0]qsfp1_clk_clk_p;
+  input [3:0]qsfp1_gt_grx_n;
+  input [3:0]qsfp1_gt_grx_p;
+  output [3:0]qsfp1_gt_gtx_n;
+  output [3:0]qsfp1_gt_gtx_p;
+  output qsfp_lpmode;
+  output rx0_aligned;
+  output rx1_aligned;
 
   wire [0:0]CHIP_GPIO13;
   wire [0:0]CHIP_GPIO15;
@@ -462,6 +492,21 @@ module top_level_wrapper
   wire lpddr4_clk2_clk_p;
   wire lpddr4_clk3_clk_n;
   wire lpddr4_clk3_clk_p;
+  wire [0:0]qsfp0_clk_clk_n;
+  wire [0:0]qsfp0_clk_clk_p;
+  wire [3:0]qsfp0_gt_grx_n;
+  wire [3:0]qsfp0_gt_grx_p;
+  wire [3:0]qsfp0_gt_gtx_n;
+  wire [3:0]qsfp0_gt_gtx_p;
+  wire [0:0]qsfp1_clk_clk_n;
+  wire [0:0]qsfp1_clk_clk_p;
+  wire [3:0]qsfp1_gt_grx_n;
+  wire [3:0]qsfp1_gt_grx_p;
+  wire [3:0]qsfp1_gt_gtx_n;
+  wire [3:0]qsfp1_gt_gtx_p;
+  wire qsfp_lpmode;
+  wire rx0_aligned;
+  wire rx1_aligned;
 
   top_level top_level_i
        (.CHIP_GPIO13(CHIP_GPIO13),
@@ -613,5 +658,20 @@ module top_level_wrapper
         .lpddr4_clk2_clk_n(lpddr4_clk2_clk_n),
         .lpddr4_clk2_clk_p(lpddr4_clk2_clk_p),
         .lpddr4_clk3_clk_n(lpddr4_clk3_clk_n),
-        .lpddr4_clk3_clk_p(lpddr4_clk3_clk_p));
+        .lpddr4_clk3_clk_p(lpddr4_clk3_clk_p),
+        .qsfp0_clk_clk_n(qsfp0_clk_clk_n),
+        .qsfp0_clk_clk_p(qsfp0_clk_clk_p),
+        .qsfp0_gt_grx_n(qsfp0_gt_grx_n),
+        .qsfp0_gt_grx_p(qsfp0_gt_grx_p),
+        .qsfp0_gt_gtx_n(qsfp0_gt_gtx_n),
+        .qsfp0_gt_gtx_p(qsfp0_gt_gtx_p),
+        .qsfp1_clk_clk_n(qsfp1_clk_clk_n),
+        .qsfp1_clk_clk_p(qsfp1_clk_clk_p),
+        .qsfp1_gt_grx_n(qsfp1_gt_grx_n),
+        .qsfp1_gt_grx_p(qsfp1_gt_grx_p),
+        .qsfp1_gt_gtx_n(qsfp1_gt_gtx_n),
+        .qsfp1_gt_gtx_p(qsfp1_gt_gtx_p),
+        .qsfp_lpmode(qsfp_lpmode),
+        .rx0_aligned(rx0_aligned),
+        .rx1_aligned(rx1_aligned));
 endmodule

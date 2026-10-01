@@ -1,0 +1,57 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-441,-208",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port S_AXI -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port axis_md -pg 1 -lvl 3 -x 640 -y 160 -defaultsOSRD
+preplace port port-id_CHIP_PA_SYNC -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port port-id_clk_192 -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 3 -x 640 -y 180 -defaultsOSRD -right
+preplace portBus CHIP_GPIO15_DIR -pg 1 -lvl 3 -x 640 -y 60 -defaultsOSRD
+preplace portBus CHIP_GPIO13 -pg 1 -lvl 3 -x 640 -y 280 -defaultsOSRD
+preplace portBus CHIP_GPIO15 -pg 1 -lvl 3 -x 640 -y 300 -defaultsOSRD
+preplace portBus CHIP_GPIO_BYTE_DIR -pg 1 -lvl 3 -x 640 -y 320 -defaultsOSRD
+preplace portBus CHIP_RS256 -pg 1 -lvl 3 -x 640 -y 260 -defaultsOSRD
+preplace portBus CHIP_RS0 -pg 1 -lvl 3 -x 640 -y 100 -defaultsOSRD
+preplace inst one -pg 1 -lvl 1 -x 180 -y 40 -defaultsOSRD -pinBusDir dout right -pinBusY dout 20R
+preplace inst zero -pg 1 -lvl 1 -x 180 -y 480 -defaultsOSRD -pinBusDir dout right -pinBusY dout 20R
+preplace inst cdc_pa_sync -pg 1 -lvl 1 -x 180 -y 360 -defaultsOSRD -pinDir src_clk right -pinY src_clk 20R -pinDir dest_clk left -pinY dest_clk 20L -pinBusDir src_in left -pinBusY src_in 40L -pinBusDir dest_out right -pinBusY dest_out 40R
+preplace inst pa_sync_ila -pg 1 -lvl 2 -x 490 -y 360 -defaultsOSRD -pinDir clk left -pinY clk 20L -pinBusDir probe0 left -pinBusY probe0 40L
+preplace inst framegen_ctl -pg 1 -lvl 1 -x 180 -y 140 -defaultsOSRD -pinDir axis_md right -pinY axis_md 20R -pinDir S_AXI left -pinY S_AXI 20L -pinDir clk left -pinY clk 100L -pinDir resetn right -pinY resetn 40R -pinDir pa_sync_raw left -pinY pa_sync_raw 120L -pinDir rs0 right -pinY rs0 60R -pinDir rs256 right -pinY rs256 120R
+preplace inst lvds_cdc -pg 1 -lvl 2 -x 490 -y 140 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 20L -pinDir M_AXIS right -pinY M_AXIS 20R -pinDir s_axis_aresetn left -pinY s_axis_aresetn 40L -pinDir s_axis_aclk left -pinY s_axis_aclk 60L -pinDir m_axis_aclk right -pinY m_axis_aclk 40R
+preplace netloc CHIP_PA_SYNC_1 1 0 1 30 260n
+preplace netloc cdc_pa_sync_dest_out 1 1 1 N 400
+preplace netloc clk_192_1 1 0 2 50 320 330
+preplace netloc framegen_ctl_rs0 1 1 2 310J 100 NJ
+preplace netloc framegen_ctl_rs256 1 1 2 NJ 260 NJ
+preplace netloc one_dout 1 1 2 330 60 NJ
+preplace netloc sys_clk_1 1 2 1 NJ 180
+preplace netloc zero_dout 1 1 2 350 320 620J
+preplace netloc S_AXI_1 1 0 1 NJ 160
+preplace netloc framegen_ctl_axis_md 1 1 1 N 160
+preplace netloc lvds_cdc_M_AXIS 1 2 1 NJ 160
+levelinfo -pg 1 0 180 490 640
+pagesize -pg 1 -db -bbox -sgen -160 0 880 560
+",
+   "No Loops_ScaleFactor":"1.0",
+   "No Loops_TopLeft":"-456,-83",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_CHIP_GPIO15_DIR -pg 1 -lvl 2 -x 200 -y 60 -defaultsOSRD
+preplace port port-id_CHIP_GPIO13 -pg 1 -lvl 2 -x 200 -y 140 -defaultsOSRD
+preplace port port-id_CHIP_GPIO15 -pg 1 -lvl 2 -x 200 -y 160 -defaultsOSRD
+preplace port port-id_CHIP_GPIO_BYTE_DIR -pg 1 -lvl 2 -x 200 -y 120 -defaultsOSRD
+preplace inst one -pg 1 -lvl 1 -x 90 -y 60 -defaultsOSRD
+preplace inst zero -pg 1 -lvl 1 -x 90 -y 160 -defaultsOSRD
+preplace netloc one_dout 1 1 1 NJ 60
+preplace netloc zero_dout 1 1 1 180J 120n
+levelinfo -pg 1 0 90 200
+pagesize -pg 1 -db -bbox -sgen 0 0 410 220
+"
+}
+0

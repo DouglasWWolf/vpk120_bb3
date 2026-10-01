@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Sat Sep 12 17:40:11 2026
+//Date        : Wed Sep 30 17:34:38 2026
 //Host        : wolf-super-server running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target top_level.bd
 //Design      : top_level
@@ -148,47 +148,40 @@ module advio_imp_1LMY484
   wire [0:0]LVDS_BANKA_clk_p;
   wire [7:0]LVDS_DN;
   wire [7:0]LVDS_DP;
-  wire advanced_io_wizard_0_bank0_pll_clkout0;
   wire advanced_io_wizard_0_intf_rdy;
   wire advanced_io_wizard_bank0_pll_locked;
   wire [8:0]advanced_io_wizard_dly_rdy;
   wire [8:0]advanced_io_wizard_fifo_empty;
-  wire [8:0]advanced_io_wizard_phy_rdy;
-  wire clk_192_1;
+  wire clk_192;
   wire [63:0]data_to_fabric_data_a;
-  wire [1:0]lvds_advio_reset_mgr_dbg_fsm_state;
   wire lvds_advio_reset_mgr_en_vtc;
   wire [8:0]lvds_advio_reset_mgr_fifo_rd_en;
   wire lvds_advio_reset_mgr_rst;
-  wire rst_1;
   wire [7:0]rxen_vtc_data_a;
   wire [71:0]rxtx_cntvaluein_data_a;
   wire [7:0]rxtx_ld_data_a;
+  wire soft_reset;
   wire [0:0]zero_0_dout;
   wire [7:0]zero_8_dout;
   wire [8:0]zero_9_dout;
   wire zero_dout;
 
-  assign clk_192_1 = clk_192;
-  assign rst_1 = soft_reset;
   top_level_advanced_io_wizard_0_0 advanced_io_wizard
        (.Strobe_0_n(LVDS_BANKA_clk_n),
         .Strobe_0_p(LVDS_BANKA_clk_p),
-        .bank0_pll_clkin(clk_192_1),
-        .bank0_pll_clkout0(advanced_io_wizard_0_bank0_pll_clkout0),
+        .bank0_pll_clkin(clk_192),
         .bank0_pll_locked(advanced_io_wizard_bank0_pll_locked),
         .bank0_pll_rst_pll(zero_dout),
-        .ctrl_clk(advanced_io_wizard_0_bank0_pll_clkout0),
+        .ctrl_clk(clk_192),
         .data_a_n(LVDS_DN),
         .data_a_p(LVDS_DP),
         .data_to_fabric_data_a(data_to_fabric_data_a),
         .dly_rdy(advanced_io_wizard_dly_rdy),
         .en_vtc(lvds_advio_reset_mgr_en_vtc),
         .fifo_empty(advanced_io_wizard_fifo_empty),
-        .fifo_rd_clk(clk_192_1),
+        .fifo_rd_clk(clk_192),
         .fifo_rd_en(lvds_advio_reset_mgr_fifo_rd_en),
         .intf_rdy(advanced_io_wizard_0_intf_rdy),
-        .phy_rdy(advanced_io_wizard_phy_rdy),
         .rst(lvds_advio_reset_mgr_rst),
         .rxen_vtc_Strobe_0(zero_0_dout),
         .rxen_vtc_data_a(rxen_vtc_data_a),
@@ -204,31 +197,18 @@ module advio_imp_1LMY484
         .rxtx_sel_data_a(zero_8_dout),
         .txen_vtc_Strobe_0(zero_0_dout),
         .txen_vtc_data_a(zero_8_dout));
-  top_level_axis_ila_0_4 axis_ila_0
-       (.clk(clk_192_1),
-        .probe0(rst_1),
-        .probe1(lvds_advio_reset_mgr_dbg_fsm_state),
-        .probe2(advanced_io_wizard_0_intf_rdy),
-        .probe3(lvds_advio_reset_mgr_en_vtc),
-        .probe4(advanced_io_wizard_bank0_pll_locked),
-        .probe5(lvds_advio_reset_mgr_rst),
-        .probe6(lvds_advio_reset_mgr_fifo_rd_en),
-        .probe7(advanced_io_wizard_fifo_empty),
-        .probe8(advanced_io_wizard_phy_rdy),
-        .probe9(advanced_io_wizard_dly_rdy));
   top_level_lvds_advio_reset_mgr_0_0 lvds_advio_reset_mgr
        (.async_bank0_pll_locked(advanced_io_wizard_bank0_pll_locked),
         .async_dly_rdy(advanced_io_wizard_dly_rdy),
         .async_fifo_empty(advanced_io_wizard_fifo_empty),
         .async_intf_rdy(advanced_io_wizard_0_intf_rdy),
-        .clk(clk_192_1),
-        .dbg_fsm_state(lvds_advio_reset_mgr_dbg_fsm_state),
+        .async_soft_reset(soft_reset),
+        .clk(clk_192),
         .en_vtc(lvds_advio_reset_mgr_en_vtc),
         .fifo_rd_en(lvds_advio_reset_mgr_fifo_rd_en),
-        .rst(lvds_advio_reset_mgr_rst),
-        .soft_reset(rst_1));
+        .rst(lvds_advio_reset_mgr_rst));
   top_level_lvds_startup_0_0 lvds_startup
-       (.clk(clk_192_1),
+       (.clk(clk_192),
         .reset_out(zero_dout));
   assign zero_0_dout = 1'h0;
   assign zero_8_dout = 8'h00;
@@ -420,7 +400,7 @@ module clk_192_imp_1JPME8P
         .src_arst(resetn));
 endmodule
 
-module constants_imp_RUOC73
+module frame_gen_imp_10O9CVK
    (CHIP_GPIO13,
     CHIP_GPIO15,
     CHIP_GPIO15_DIR,
@@ -428,7 +408,30 @@ module constants_imp_RUOC73
     CHIP_PA_SYNC,
     CHIP_RS0,
     CHIP_RS256,
-    clk);
+    S_AXI_araddr,
+    S_AXI_arprot,
+    S_AXI_arready,
+    S_AXI_arvalid,
+    S_AXI_awaddr,
+    S_AXI_awprot,
+    S_AXI_awready,
+    S_AXI_awvalid,
+    S_AXI_bready,
+    S_AXI_bresp,
+    S_AXI_bvalid,
+    S_AXI_rdata,
+    S_AXI_rready,
+    S_AXI_rresp,
+    S_AXI_rvalid,
+    S_AXI_wdata,
+    S_AXI_wready,
+    S_AXI_wstrb,
+    S_AXI_wvalid,
+    axis_md_tdata,
+    axis_md_tready,
+    axis_md_tvalid,
+    clk_192,
+    sys_clk);
   output [0:0]CHIP_GPIO13;
   output [0:0]CHIP_GPIO15;
   output [0:0]CHIP_GPIO15_DIR;
@@ -436,29 +439,211 @@ module constants_imp_RUOC73
   input CHIP_PA_SYNC;
   output [0:0]CHIP_RS0;
   output [0:0]CHIP_RS256;
-  input clk;
+  input [7:0]S_AXI_araddr;
+  input [2:0]S_AXI_arprot;
+  output S_AXI_arready;
+  input S_AXI_arvalid;
+  input [7:0]S_AXI_awaddr;
+  input [2:0]S_AXI_awprot;
+  output S_AXI_awready;
+  input S_AXI_awvalid;
+  input S_AXI_bready;
+  output [1:0]S_AXI_bresp;
+  output S_AXI_bvalid;
+  output [31:0]S_AXI_rdata;
+  input S_AXI_rready;
+  output [1:0]S_AXI_rresp;
+  output S_AXI_rvalid;
+  input [31:0]S_AXI_wdata;
+  output S_AXI_wready;
+  input [3:0]S_AXI_wstrb;
+  input S_AXI_wvalid;
+  output [511:0]axis_md_tdata;
+  input axis_md_tready;
+  output axis_md_tvalid;
+  input clk_192;
+  input sys_clk;
 
+  wire [0:0]CHIP_GPIO15;
   wire [0:0]CHIP_GPIO15_DIR;
   wire CHIP_PA_SYNC;
-  wire [0:0]CHIP_RS256;
+  wire \^CHIP_RS0 ;
+  wire \^CHIP_RS256 ;
+  wire [7:0]S_AXI_araddr;
+  wire [2:0]S_AXI_arprot;
+  wire S_AXI_arready;
+  wire S_AXI_arvalid;
+  wire [7:0]S_AXI_awaddr;
+  wire [2:0]S_AXI_awprot;
+  wire S_AXI_awready;
+  wire S_AXI_awvalid;
+  wire S_AXI_bready;
+  wire [1:0]S_AXI_bresp;
+  wire S_AXI_bvalid;
+  wire [31:0]S_AXI_rdata;
+  wire S_AXI_rready;
+  wire [1:0]S_AXI_rresp;
+  wire S_AXI_rvalid;
+  wire [31:0]S_AXI_wdata;
+  wire S_AXI_wready;
+  wire [3:0]S_AXI_wstrb;
+  wire S_AXI_wvalid;
+  wire [511:0]axis_md_tdata;
+  wire axis_md_tready;
+  wire axis_md_tvalid;
   wire [0:0]cdc_pa_sync_dest_out;
-  wire clk_1;
+  wire clk_192_1;
+  wire [511:0]framegen_ctl_axis_md_TDATA;
+  wire framegen_ctl_axis_md_TREADY;
+  wire framegen_ctl_axis_md_TVALID;
+  wire sys_clk;
 
-  assign CHIP_GPIO13[0] = CHIP_RS256;
-  assign CHIP_GPIO15[0] = CHIP_RS256;
-  assign CHIP_GPIO_BYTE_DIR[0] = CHIP_RS256;
-  assign CHIP_RS0[0] = CHIP_RS256;
-  assign clk_1 = clk;
+  assign CHIP_GPIO13[0] = CHIP_GPIO15;
+  assign CHIP_GPIO_BYTE_DIR[0] = CHIP_GPIO15;
+  assign CHIP_RS0[0] = \^CHIP_RS0 ;
+  assign CHIP_RS256[0] = \^CHIP_RS256 ;
+  assign clk_192_1 = clk_192;
   top_level_xpm_cdc_gen_0_1 cdc_pa_sync
-       (.dest_clk(clk_1),
+       (.dest_clk(clk_192_1),
         .dest_out(cdc_pa_sync_dest_out),
-        .src_clk(CHIP_RS256),
+        .src_clk(CHIP_GPIO15),
         .src_in(CHIP_PA_SYNC));
+  top_level_framegen_ctl_0_0 framegen_ctl
+       (.S_AXI_ARADDR(S_AXI_araddr),
+        .S_AXI_ARPROT(S_AXI_arprot),
+        .S_AXI_ARREADY(S_AXI_arready),
+        .S_AXI_ARVALID(S_AXI_arvalid),
+        .S_AXI_AWADDR(S_AXI_awaddr),
+        .S_AXI_AWPROT(S_AXI_awprot),
+        .S_AXI_AWREADY(S_AXI_awready),
+        .S_AXI_AWVALID(S_AXI_awvalid),
+        .S_AXI_BREADY(S_AXI_bready),
+        .S_AXI_BRESP(S_AXI_bresp),
+        .S_AXI_BVALID(S_AXI_bvalid),
+        .S_AXI_RDATA(S_AXI_rdata),
+        .S_AXI_RREADY(S_AXI_rready),
+        .S_AXI_RRESP(S_AXI_rresp),
+        .S_AXI_RVALID(S_AXI_rvalid),
+        .S_AXI_WDATA(S_AXI_wdata),
+        .S_AXI_WREADY(S_AXI_wready),
+        .S_AXI_WSTRB(S_AXI_wstrb),
+        .S_AXI_WVALID(S_AXI_wvalid),
+        .axis_md_tdata(framegen_ctl_axis_md_TDATA),
+        .axis_md_tready(framegen_ctl_axis_md_TREADY),
+        .axis_md_tvalid(framegen_ctl_axis_md_TVALID),
+        .clk(clk_192_1),
+        .pa_sync_raw(CHIP_PA_SYNC),
+        .resetn(CHIP_GPIO15_DIR),
+        .rs0(\^CHIP_RS0 ),
+        .rs256(\^CHIP_RS256 ));
+  top_level_lvds_cdc_0 lvds_cdc
+       (.m_axis_aclk(sys_clk),
+        .m_axis_tdata(axis_md_tdata),
+        .m_axis_tready(axis_md_tready),
+        .m_axis_tvalid(axis_md_tvalid),
+        .s_axis_aclk(clk_192_1),
+        .s_axis_aresetn(CHIP_GPIO15_DIR),
+        .s_axis_tdata(framegen_ctl_axis_md_TDATA),
+        .s_axis_tready(framegen_ctl_axis_md_TREADY),
+        .s_axis_tvalid(framegen_ctl_axis_md_TVALID));
   assign CHIP_GPIO15_DIR = 1'h1;
   top_level_axis_ila_0_1 pa_sync_ila
-       (.clk(clk_1),
+       (.clk(clk_192_1),
         .probe0(cdc_pa_sync_dest_out));
-  assign CHIP_RS256 = 1'h0;
+  assign CHIP_GPIO15 = 1'h0;
+endmodule
+
+module lvds_datapath_imp_18MX6XT
+   (axis_out_tdata,
+    axis_out_tready,
+    axis_out_tvalid,
+    clk_192,
+    dbg_header_detected,
+    frame_header,
+    framing_errors,
+    lvds_in,
+    match_bits,
+    max_lane_skew,
+    missing_hdr_tdata,
+    missing_hdr_tready,
+    missing_hdr_tuser,
+    missing_hdr_tvalid,
+    resetn,
+    sys_clk);
+  output [511:0]axis_out_tdata;
+  input axis_out_tready;
+  output axis_out_tvalid;
+  input clk_192;
+  output [63:0]dbg_header_detected;
+  input [31:0]frame_header;
+  output [31:0]framing_errors;
+  input [63:0]lvds_in;
+  input [5:0]match_bits;
+  output [7:0]max_lane_skew;
+  output [31:0]missing_hdr_tdata;
+  input missing_hdr_tready;
+  output [63:0]missing_hdr_tuser;
+  output missing_hdr_tvalid;
+  input resetn;
+  input sys_clk;
+
+  wire [511:0]axis_out_tdata;
+  wire axis_out_tready;
+  wire axis_out_tvalid;
+  wire clk_192;
+  wire [63:0]dbg_header_detected;
+  wire [31:0]frame_header;
+  wire [31:0]framing_errors;
+  wire [511:0]lvds_8to64_0_lvds_out;
+  wire [511:0]lvds_framer_lvds_out;
+  wire [63:0]lvds_framer_valid;
+  wire [63:0]lvds_in;
+  wire [511:0]lvds_lane_sync_axis_out1_TDATA;
+  wire lvds_lane_sync_axis_out1_TVALID;
+  wire [5:0]match_bits;
+  wire [7:0]max_lane_skew;
+  wire [31:0]missing_hdr_tdata;
+  wire missing_hdr_tready;
+  wire [63:0]missing_hdr_tuser;
+  wire missing_hdr_tvalid;
+  wire resetn;
+  wire sys_clk;
+
+  top_level_lvds_8to64_0_0 lvds_8to64
+       (.clk(clk_192),
+        .lvds_in(lvds_in),
+        .lvds_out(lvds_8to64_0_lvds_out));
+  top_level_axis_data_fifo_0_0 lvds_cdc
+       (.m_axis_aclk(sys_clk),
+        .m_axis_tdata(axis_out_tdata),
+        .m_axis_tready(axis_out_tready),
+        .m_axis_tvalid(axis_out_tvalid),
+        .s_axis_aclk(clk_192),
+        .s_axis_aresetn(resetn),
+        .s_axis_tdata(lvds_lane_sync_axis_out1_TDATA),
+        .s_axis_tvalid(lvds_lane_sync_axis_out1_TVALID));
+  top_level_lvds_framer_0_0 lvds_framer
+       (.clk(clk_192),
+        .dbg_header_detected(dbg_header_detected),
+        .frame_header(frame_header),
+        .framing_errors(framing_errors),
+        .lvds_in(lvds_8to64_0_lvds_out),
+        .lvds_out(lvds_framer_lvds_out),
+        .match_bits(match_bits),
+        .max_lane_skew(max_lane_skew),
+        .missing_hdr_tdata(missing_hdr_tdata),
+        .missing_hdr_tready(missing_hdr_tready),
+        .missing_hdr_tuser(missing_hdr_tuser),
+        .missing_hdr_tvalid(missing_hdr_tvalid),
+        .resetn(resetn),
+        .valid(lvds_framer_valid));
+  top_level_lvds_lane_sync_0_0 lvds_lane_sync
+       (.axis_out_tdata(lvds_lane_sync_axis_out1_TDATA),
+        .axis_out_tvalid(lvds_lane_sync_axis_out1_TVALID),
+        .clk(clk_192),
+        .in_valid(lvds_framer_valid),
+        .lvds_in(lvds_framer_lvds_out),
+        .resetn(resetn));
 endmodule
 
 module lvds_imp_1LT6GK4
@@ -485,8 +670,11 @@ module lvds_imp_1LT6GK4
     S_AXI_wready,
     S_AXI_wstrb,
     S_AXI_wvalid,
+    axis_out_tdata,
+    axis_out_tready,
+    axis_out_tvalid,
     clk_192,
-    resetn_192);
+    sys_clk);
   input [0:0]LVDS_BANKA_clk_n;
   input [0:0]LVDS_BANKA_clk_p;
   input [7:0]LVDS_DN;
@@ -510,8 +698,11 @@ module lvds_imp_1LT6GK4
   output S_AXI_wready;
   input [3:0]S_AXI_wstrb;
   input S_AXI_wvalid;
+  output [511:0]axis_out_tdata;
+  input axis_out_tready;
+  output axis_out_tvalid;
   input clk_192;
-  input resetn_192;
+  input sys_clk;
 
   wire [0:0]LVDS_BANKA_clk_n;
   wire [0:0]LVDS_BANKA_clk_p;
@@ -537,6 +728,9 @@ module lvds_imp_1LT6GK4
   wire [3:0]S_AXI_wstrb;
   wire S_AXI_wvalid;
   wire [63:0]advanced_io_wizard_0_data_to_fabric_data_a;
+  wire [511:0]axis_out_tdata;
+  wire axis_out_tready;
+  wire axis_out_tvalid;
   wire clk_192_1;
   wire [2:0]lvds_advio_mgr_cal_write_en;
   wire [71:0]lvds_advio_mgr_rx_cntvaluein;
@@ -550,9 +744,20 @@ module lvds_imp_1LT6GK4
   wire [11:0]lvds_ctl_0_cal_word;
   wire lvds_ctl_0_cal_word_wstb;
   wire lvds_ctl_clear_errors_stb;
+  wire [31:0]lvds_ctl_frame_header;
+  wire [5:0]lvds_ctl_hdr_match_bits;
   wire [5:0]lvds_ctl_lane_select;
   wire lvds_ctl_reset_hssio;
-  wire resetn_192;
+  wire [63:0]lvds_datapath_dbg_header_detected;
+  wire [31:0]lvds_framer_framing_errors;
+  wire [7:0]lvds_framer_max_lane_skew;
+  wire [31:0]lvds_framer_missing_hdr_TDATA;
+  wire lvds_framer_missing_hdr_TREADY;
+  wire [63:0]lvds_framer_missing_hdr_TUSER;
+  wire lvds_framer_missing_hdr_TVALID;
+  wire [7:0]lvds_prbs15_check_0_prbs_err;
+  wire [0:0]lvds_resetn_dout;
+  wire sys_clk;
 
   assign clk_192_1 = clk_192;
   advio_imp_1LMY484 advio
@@ -566,24 +771,18 @@ module lvds_imp_1LT6GK4
         .rxtx_cntvaluein_data_a(lvds_advio_mgr_rx_cntvaluein),
         .rxtx_ld_data_a(lvds_advio_mgr_rx_ld),
         .soft_reset(lvds_ctl_reset_hssio));
-  top_level_axis_ila_0_2 axis_ila_0
+  top_level_axis_ila_0_2 axis_ila
        (.clk(clk_192_1),
-        .probe0(1'b0),
+        .probe0(lvds_datapath_dbg_header_detected),
         .probe1(lvds_bitslip_0_dbg_lvds_lane),
-        .probe2({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .probe3({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .probe4({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .probe5(advanced_io_wizard_0_data_to_fabric_data_a),
-        .probe6(1'b0),
-        .probe7(lvds_ctl_0_cal_word_wstb),
-        .probe8(lvds_bitslip_0_lvds_bus));
+        .probe2(lvds_bitslip_0_lvds_bus));
   top_level_lvds_advio_mgr_0_0 lvds_advio_mgr
        (.cal_mask(lvds_ctl_0_cal_mask),
         .cal_word(lvds_ctl_0_cal_word),
         .cal_word_wstb(lvds_ctl_0_cal_word_wstb),
         .cal_write_en(lvds_advio_mgr_cal_write_en),
         .clk(clk_192_1),
-        .resetn(resetn_192),
+        .resetn(lvds_resetn_dout),
         .rx_cntvaluein(lvds_advio_mgr_rx_cntvaluein),
         .rx_ld(lvds_advio_mgr_rx_ld),
         .rxen_vtc(lvds_advio_mgr_rxen_vtc));
@@ -602,7 +801,7 @@ module lvds_imp_1LT6GK4
         .input_bus(advanced_io_wizard_0_data_to_fabric_data_a),
         .lane_select(lvds_ctl_lane_select),
         .lvds_bus(lvds_bitslip_0_lvds_bus),
-        .resetn(resetn_192));
+        .resetn(lvds_resetn_dout));
   top_level_lvds_ctl_0_0 lvds_ctl
        (.S_AXI_ARADDR(S_AXI_araddr),
         .S_AXI_ARPROT(S_AXI_arprot),
@@ -632,15 +831,332 @@ module lvds_imp_1LT6GK4
         .cal_write_en(lvds_advio_mgr_cal_write_en),
         .clear_errors_stb(lvds_ctl_clear_errors_stb),
         .clk(clk_192_1),
-        .framing_errors({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .frame_header(lvds_ctl_frame_header),
+        .framing_errors(lvds_framer_framing_errors),
+        .hdr_match_bits(lvds_ctl_hdr_match_bits),
         .lane_select(lvds_ctl_lane_select),
-        .max_lane_skew({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .missing_hdr_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .missing_hdr_tuser({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .missing_hdr_tvalid(1'b0),
-        .prbs_err({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .max_lane_skew(lvds_framer_max_lane_skew),
+        .missing_hdr_tdata(lvds_framer_missing_hdr_TDATA),
+        .missing_hdr_tready(lvds_framer_missing_hdr_TREADY),
+        .missing_hdr_tuser(lvds_framer_missing_hdr_TUSER),
+        .missing_hdr_tvalid(lvds_framer_missing_hdr_TVALID),
+        .prbs_err({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,lvds_prbs15_check_0_prbs_err}),
         .reset_hssio(lvds_ctl_reset_hssio),
-        .resetn(resetn_192));
+        .resetn(lvds_resetn_dout));
+  lvds_datapath_imp_18MX6XT lvds_datapath
+       (.axis_out_tdata(axis_out_tdata),
+        .axis_out_tready(axis_out_tready),
+        .axis_out_tvalid(axis_out_tvalid),
+        .clk_192(clk_192_1),
+        .dbg_header_detected(lvds_datapath_dbg_header_detected),
+        .frame_header(lvds_ctl_frame_header),
+        .framing_errors(lvds_framer_framing_errors),
+        .lvds_in(lvds_bitslip_0_lvds_bus),
+        .match_bits(lvds_ctl_hdr_match_bits),
+        .max_lane_skew(lvds_framer_max_lane_skew),
+        .missing_hdr_tdata(lvds_framer_missing_hdr_TDATA),
+        .missing_hdr_tready(lvds_framer_missing_hdr_TREADY),
+        .missing_hdr_tuser(lvds_framer_missing_hdr_TUSER),
+        .missing_hdr_tvalid(lvds_framer_missing_hdr_TVALID),
+        .resetn(lvds_resetn_dout),
+        .sys_clk(sys_clk));
+  top_level_lvds_prbs15_check_0_0 lvds_prbs15_check_0
+       (.clear_errors(lvds_ctl_clear_errors_stb),
+        .clk(clk_192_1),
+        .lvds_bus(lvds_bitslip_0_lvds_bus),
+        .prbs_err(lvds_prbs15_check_0_prbs_err));
+  assign lvds_resetn_dout = 1'h1;
+endmodule
+
+module mc_qsfp_imp_1T1R239
+   (AXIS_FD_IN_tdata,
+    AXIS_FD_IN_tready,
+    AXIS_FD_IN_tvalid,
+    AXIS_MD_IN_tdata,
+    AXIS_MD_IN_tready,
+    AXIS_MD_IN_tvalid,
+    S_MC_CTL_araddr,
+    S_MC_CTL_arprot,
+    S_MC_CTL_arready,
+    S_MC_CTL_arvalid,
+    S_MC_CTL_awaddr,
+    S_MC_CTL_awprot,
+    S_MC_CTL_awready,
+    S_MC_CTL_awvalid,
+    S_MC_CTL_bready,
+    S_MC_CTL_bresp,
+    S_MC_CTL_bvalid,
+    S_MC_CTL_rdata,
+    S_MC_CTL_rready,
+    S_MC_CTL_rresp,
+    S_MC_CTL_rvalid,
+    S_MC_CTL_wdata,
+    S_MC_CTL_wready,
+    S_MC_CTL_wstrb,
+    S_MC_CTL_wvalid,
+    aresetn,
+    clk_250,
+    qsfp0_clk_clk_n,
+    qsfp0_clk_clk_p,
+    qsfp0_gt_grx_n,
+    qsfp0_gt_grx_p,
+    qsfp0_gt_gtx_n,
+    qsfp0_gt_gtx_p,
+    qsfp1_clk_clk_n,
+    qsfp1_clk_clk_p,
+    qsfp1_gt_grx_n,
+    qsfp1_gt_grx_p,
+    qsfp1_gt_gtx_n,
+    qsfp1_gt_gtx_p,
+    qsfp_lpmode,
+    rx0_aligned,
+    rx1_aligned,
+    s_qsfp_ctl_araddr,
+    s_qsfp_ctl_arprot,
+    s_qsfp_ctl_arready,
+    s_qsfp_ctl_arvalid,
+    s_qsfp_ctl_awaddr,
+    s_qsfp_ctl_awprot,
+    s_qsfp_ctl_awready,
+    s_qsfp_ctl_awvalid,
+    s_qsfp_ctl_bready,
+    s_qsfp_ctl_bresp,
+    s_qsfp_ctl_bvalid,
+    s_qsfp_ctl_rdata,
+    s_qsfp_ctl_rready,
+    s_qsfp_ctl_rresp,
+    s_qsfp_ctl_rvalid,
+    s_qsfp_ctl_wdata,
+    s_qsfp_ctl_wready,
+    s_qsfp_ctl_wstrb,
+    s_qsfp_ctl_wvalid);
+  input [511:0]AXIS_FD_IN_tdata;
+  output AXIS_FD_IN_tready;
+  input AXIS_FD_IN_tvalid;
+  input [511:0]AXIS_MD_IN_tdata;
+  output AXIS_MD_IN_tready;
+  input AXIS_MD_IN_tvalid;
+  input [7:0]S_MC_CTL_araddr;
+  input [2:0]S_MC_CTL_arprot;
+  output S_MC_CTL_arready;
+  input S_MC_CTL_arvalid;
+  input [7:0]S_MC_CTL_awaddr;
+  input [2:0]S_MC_CTL_awprot;
+  output S_MC_CTL_awready;
+  input S_MC_CTL_awvalid;
+  input S_MC_CTL_bready;
+  output [1:0]S_MC_CTL_bresp;
+  output S_MC_CTL_bvalid;
+  output [31:0]S_MC_CTL_rdata;
+  input S_MC_CTL_rready;
+  output [1:0]S_MC_CTL_rresp;
+  output S_MC_CTL_rvalid;
+  input [31:0]S_MC_CTL_wdata;
+  output S_MC_CTL_wready;
+  input [3:0]S_MC_CTL_wstrb;
+  input S_MC_CTL_wvalid;
+  input aresetn;
+  input clk_250;
+  input [0:0]qsfp0_clk_clk_n;
+  input [0:0]qsfp0_clk_clk_p;
+  input [3:0]qsfp0_gt_grx_n;
+  input [3:0]qsfp0_gt_grx_p;
+  output [3:0]qsfp0_gt_gtx_n;
+  output [3:0]qsfp0_gt_gtx_p;
+  input [0:0]qsfp1_clk_clk_n;
+  input [0:0]qsfp1_clk_clk_p;
+  input [3:0]qsfp1_gt_grx_n;
+  input [3:0]qsfp1_gt_grx_p;
+  output [3:0]qsfp1_gt_gtx_n;
+  output [3:0]qsfp1_gt_gtx_p;
+  output qsfp_lpmode;
+  output rx0_aligned;
+  output rx1_aligned;
+  input [7:0]s_qsfp_ctl_araddr;
+  input [2:0]s_qsfp_ctl_arprot;
+  output s_qsfp_ctl_arready;
+  input s_qsfp_ctl_arvalid;
+  input [7:0]s_qsfp_ctl_awaddr;
+  input [2:0]s_qsfp_ctl_awprot;
+  output s_qsfp_ctl_awready;
+  input s_qsfp_ctl_awvalid;
+  input s_qsfp_ctl_bready;
+  output [1:0]s_qsfp_ctl_bresp;
+  output s_qsfp_ctl_bvalid;
+  output [31:0]s_qsfp_ctl_rdata;
+  input s_qsfp_ctl_rready;
+  output [1:0]s_qsfp_ctl_rresp;
+  output s_qsfp_ctl_rvalid;
+  input [31:0]s_qsfp_ctl_wdata;
+  output s_qsfp_ctl_wready;
+  input [3:0]s_qsfp_ctl_wstrb;
+  input s_qsfp_ctl_wvalid;
+
+  wire [511:0]AXIS_FD_IN_tdata;
+  wire AXIS_FD_IN_tready;
+  wire AXIS_FD_IN_tvalid;
+  wire [511:0]AXIS_MD_IN_tdata;
+  wire AXIS_MD_IN_tready;
+  wire AXIS_MD_IN_tvalid;
+  wire [7:0]S_MC_CTL_araddr;
+  wire [2:0]S_MC_CTL_arprot;
+  wire S_MC_CTL_arready;
+  wire S_MC_CTL_arvalid;
+  wire [7:0]S_MC_CTL_awaddr;
+  wire [2:0]S_MC_CTL_awprot;
+  wire S_MC_CTL_awready;
+  wire S_MC_CTL_awvalid;
+  wire S_MC_CTL_bready;
+  wire [1:0]S_MC_CTL_bresp;
+  wire S_MC_CTL_bvalid;
+  wire [31:0]S_MC_CTL_rdata;
+  wire S_MC_CTL_rready;
+  wire [1:0]S_MC_CTL_rresp;
+  wire S_MC_CTL_rvalid;
+  wire [31:0]S_MC_CTL_wdata;
+  wire S_MC_CTL_wready;
+  wire [3:0]S_MC_CTL_wstrb;
+  wire S_MC_CTL_wvalid;
+  wire aresetn;
+  wire clk_250;
+  wire [0:0]qsfp0_clk_clk_n;
+  wire [0:0]qsfp0_clk_clk_p;
+  wire [3:0]qsfp0_gt_grx_n;
+  wire [3:0]qsfp0_gt_grx_p;
+  wire [3:0]qsfp0_gt_gtx_n;
+  wire [3:0]qsfp0_gt_gtx_p;
+  wire [0:0]qsfp1_clk_clk_n;
+  wire [0:0]qsfp1_clk_clk_p;
+  wire [3:0]qsfp1_gt_grx_n;
+  wire [3:0]qsfp1_gt_grx_p;
+  wire [3:0]qsfp1_gt_gtx_n;
+  wire [3:0]qsfp1_gt_gtx_p;
+  wire qsfp_lpmode;
+  wire rx0_aligned;
+  wire rx1_aligned;
+  wire [7:0]s_qsfp_ctl_araddr;
+  wire [2:0]s_qsfp_ctl_arprot;
+  wire s_qsfp_ctl_arready;
+  wire s_qsfp_ctl_arvalid;
+  wire [7:0]s_qsfp_ctl_awaddr;
+  wire [2:0]s_qsfp_ctl_awprot;
+  wire s_qsfp_ctl_awready;
+  wire s_qsfp_ctl_awvalid;
+  wire s_qsfp_ctl_bready;
+  wire [1:0]s_qsfp_ctl_bresp;
+  wire s_qsfp_ctl_bvalid;
+  wire [31:0]s_qsfp_ctl_rdata;
+  wire s_qsfp_ctl_rready;
+  wire [1:0]s_qsfp_ctl_rresp;
+  wire s_qsfp_ctl_rvalid;
+  wire [31:0]s_qsfp_ctl_wdata;
+  wire s_qsfp_ctl_wready;
+  wire [3:0]s_qsfp_ctl_wstrb;
+  wire s_qsfp_ctl_wvalid;
+  wire [511:0]tx0_user_1_TDATA;
+  wire [63:0]tx0_user_1_TKEEP;
+  wire tx0_user_1_TLAST;
+  wire tx0_user_1_TREADY;
+  wire tx0_user_1_TVALID;
+  wire [511:0]tx1_user_1_TDATA;
+  wire [63:0]tx1_user_1_TKEEP;
+  wire tx1_user_1_TLAST;
+  wire tx1_user_1_TREADY;
+  wire tx1_user_1_TVALID;
+
+  mindy_core_inst_0 mindy_core
+       (.AXIS_FD_IN_tdata(AXIS_FD_IN_tdata),
+        .AXIS_FD_IN_tready(AXIS_FD_IN_tready),
+        .AXIS_FD_IN_tvalid(AXIS_FD_IN_tvalid),
+        .AXIS_MD_IN_tdata(AXIS_MD_IN_tdata),
+        .AXIS_MD_IN_tready(AXIS_MD_IN_tready),
+        .AXIS_MD_IN_tvalid(AXIS_MD_IN_tvalid),
+        .AXIS_TX0_tdata(tx0_user_1_TDATA),
+        .AXIS_TX0_tkeep(tx0_user_1_TKEEP),
+        .AXIS_TX0_tlast(tx0_user_1_TLAST),
+        .AXIS_TX0_tready(tx0_user_1_TREADY),
+        .AXIS_TX0_tvalid(tx0_user_1_TVALID),
+        .AXIS_TX1_tdata(tx1_user_1_TDATA),
+        .AXIS_TX1_tkeep(tx1_user_1_TKEEP),
+        .AXIS_TX1_tlast(tx1_user_1_TLAST),
+        .AXIS_TX1_tready(tx1_user_1_TREADY),
+        .AXIS_TX1_tvalid(tx1_user_1_TVALID),
+        .S_AXI_CTL_araddr(S_MC_CTL_araddr),
+        .S_AXI_CTL_arprot(S_MC_CTL_arprot),
+        .S_AXI_CTL_arready(S_MC_CTL_arready),
+        .S_AXI_CTL_arvalid(S_MC_CTL_arvalid),
+        .S_AXI_CTL_awaddr(S_MC_CTL_awaddr),
+        .S_AXI_CTL_awprot(S_MC_CTL_awprot),
+        .S_AXI_CTL_awready(S_MC_CTL_awready),
+        .S_AXI_CTL_awvalid(S_MC_CTL_awvalid),
+        .S_AXI_CTL_bready(S_MC_CTL_bready),
+        .S_AXI_CTL_bresp(S_MC_CTL_bresp),
+        .S_AXI_CTL_bvalid(S_MC_CTL_bvalid),
+        .S_AXI_CTL_rdata(S_MC_CTL_rdata),
+        .S_AXI_CTL_rready(S_MC_CTL_rready),
+        .S_AXI_CTL_rresp(S_MC_CTL_rresp),
+        .S_AXI_CTL_rvalid(S_MC_CTL_rvalid),
+        .S_AXI_CTL_wdata(S_MC_CTL_wdata),
+        .S_AXI_CTL_wready(S_MC_CTL_wready),
+        .S_AXI_CTL_wstrb(S_MC_CTL_wstrb),
+        .S_AXI_CTL_wvalid(S_MC_CTL_wvalid),
+        .sys_clk(clk_250),
+        .sys_resetn(aresetn));
+  vpk120_eth2x100_inst_0 vpk120_eth2x100
+       (.qsfp0_clk_clk_n(qsfp0_clk_clk_n),
+        .qsfp0_clk_clk_p(qsfp0_clk_clk_p),
+        .qsfp0_gt_grx_n(qsfp0_gt_grx_n),
+        .qsfp0_gt_grx_p(qsfp0_gt_grx_p),
+        .qsfp0_gt_gtx_n(qsfp0_gt_gtx_n),
+        .qsfp0_gt_gtx_p(qsfp0_gt_gtx_p),
+        .qsfp1_clk_clk_n(qsfp1_clk_clk_n),
+        .qsfp1_clk_clk_p(qsfp1_clk_clk_p),
+        .qsfp1_gt_grx_n(qsfp1_gt_grx_n),
+        .qsfp1_gt_grx_p(qsfp1_gt_grx_p),
+        .qsfp1_gt_gtx_n(qsfp1_gt_gtx_n),
+        .qsfp1_gt_gtx_p(qsfp1_gt_gtx_p),
+        .qsfp_lpmode(qsfp_lpmode),
+        .rx0_aligned(rx0_aligned),
+        .rx0_user_clk(clk_250),
+        .rx0_user_tready(1'b1),
+        .rx1_aligned(rx1_aligned),
+        .rx1_user_clk(clk_250),
+        .rx1_user_tready(1'b1),
+        .s_axi_aresetn(aresetn),
+        .s_axi_clk(clk_250),
+        .s_axi_ctl_araddr(s_qsfp_ctl_araddr),
+        .s_axi_ctl_arprot(s_qsfp_ctl_arprot),
+        .s_axi_ctl_arready(s_qsfp_ctl_arready),
+        .s_axi_ctl_arvalid(s_qsfp_ctl_arvalid),
+        .s_axi_ctl_awaddr(s_qsfp_ctl_awaddr),
+        .s_axi_ctl_awprot(s_qsfp_ctl_awprot),
+        .s_axi_ctl_awready(s_qsfp_ctl_awready),
+        .s_axi_ctl_awvalid(s_qsfp_ctl_awvalid),
+        .s_axi_ctl_bready(s_qsfp_ctl_bready),
+        .s_axi_ctl_bresp(s_qsfp_ctl_bresp),
+        .s_axi_ctl_bvalid(s_qsfp_ctl_bvalid),
+        .s_axi_ctl_rdata(s_qsfp_ctl_rdata),
+        .s_axi_ctl_rready(s_qsfp_ctl_rready),
+        .s_axi_ctl_rresp(s_qsfp_ctl_rresp),
+        .s_axi_ctl_rvalid(s_qsfp_ctl_rvalid),
+        .s_axi_ctl_wdata(s_qsfp_ctl_wdata),
+        .s_axi_ctl_wready(s_qsfp_ctl_wready),
+        .s_axi_ctl_wstrb(s_qsfp_ctl_wstrb),
+        .s_axi_ctl_wvalid(s_qsfp_ctl_wvalid),
+        .tx0_user_clk(clk_250),
+        .tx0_user_resetn(aresetn),
+        .tx0_user_tdata(tx0_user_1_TDATA),
+        .tx0_user_tkeep(tx0_user_1_TKEEP),
+        .tx0_user_tlast(tx0_user_1_TLAST),
+        .tx0_user_tready(tx0_user_1_TREADY),
+        .tx0_user_tvalid(tx0_user_1_TVALID),
+        .tx1_user_clk(clk_250),
+        .tx1_user_resetn(aresetn),
+        .tx1_user_tdata(tx1_user_1_TDATA),
+        .tx1_user_tkeep(tx1_user_1_TKEEP),
+        .tx1_user_tlast(tx1_user_1_TLAST),
+        .tx1_user_tready(tx1_user_1_TREADY),
+        .tx1_user_tvalid(tx1_user_1_TVALID));
 endmodule
 
 module pl_rtl_imp_QFYSB7
@@ -789,7 +1305,22 @@ module pl_rtl_imp_QFYSB7
     pin_spi_cs_n,
     pin_spi_miso,
     pin_spi_mosi,
-    pin_spi_pclk);
+    pin_spi_pclk,
+    qsfp0_clk_clk_n,
+    qsfp0_clk_clk_p,
+    qsfp0_gt_grx_n,
+    qsfp0_gt_grx_p,
+    qsfp0_gt_gtx_n,
+    qsfp0_gt_gtx_p,
+    qsfp1_clk_clk_n,
+    qsfp1_clk_clk_p,
+    qsfp1_gt_grx_n,
+    qsfp1_gt_grx_p,
+    qsfp1_gt_gtx_n,
+    qsfp1_gt_gtx_p,
+    qsfp_lpmode,
+    rx0_aligned,
+    rx1_aligned);
   output [0:0]CHIP_GPIO13;
   output [0:0]CHIP_GPIO15;
   output [0:0]CHIP_GPIO15_DIR;
@@ -936,6 +1467,21 @@ module pl_rtl_imp_QFYSB7
   input pin_spi_miso;
   output pin_spi_mosi;
   output pin_spi_pclk;
+  input [0:0]qsfp0_clk_clk_n;
+  input [0:0]qsfp0_clk_clk_p;
+  input [3:0]qsfp0_gt_grx_n;
+  input [3:0]qsfp0_gt_grx_p;
+  output [3:0]qsfp0_gt_gtx_n;
+  output [3:0]qsfp0_gt_gtx_p;
+  input [0:0]qsfp1_clk_clk_n;
+  input [0:0]qsfp1_clk_clk_p;
+  input [3:0]qsfp1_gt_grx_n;
+  input [3:0]qsfp1_gt_grx_p;
+  output [3:0]qsfp1_gt_gtx_n;
+  output [3:0]qsfp1_gt_gtx_p;
+  output qsfp_lpmode;
+  output rx0_aligned;
+  output rx1_aligned;
 
   wire [7:0]AXI_CLOCK_CTL_1_ARADDR;
   wire [2:0]AXI_CLOCK_CTL_1_ARPROT;
@@ -1122,6 +1668,25 @@ module pl_rtl_imp_QFYSB7
   wire S_AXI_2_WREADY;
   wire [3:0]S_AXI_2_WSTRB;
   wire S_AXI_2_WVALID;
+  wire [7:0]S_AXI_3_ARADDR;
+  wire [2:0]S_AXI_3_ARPROT;
+  wire S_AXI_3_ARREADY;
+  wire S_AXI_3_ARVALID;
+  wire [7:0]S_AXI_3_AWADDR;
+  wire [2:0]S_AXI_3_AWPROT;
+  wire S_AXI_3_AWREADY;
+  wire S_AXI_3_AWVALID;
+  wire S_AXI_3_BREADY;
+  wire [1:0]S_AXI_3_BRESP;
+  wire S_AXI_3_BVALID;
+  wire [31:0]S_AXI_3_RDATA;
+  wire S_AXI_3_RREADY;
+  wire [1:0]S_AXI_3_RRESP;
+  wire S_AXI_3_RVALID;
+  wire [31:0]S_AXI_3_WDATA;
+  wire S_AXI_3_WREADY;
+  wire [3:0]S_AXI_3_WSTRB;
+  wire S_AXI_3_WVALID;
   wire [15:0]S_AXI_CTL_1_ARADDR;
   wire [2:0]S_AXI_CTL_1_ARPROT;
   wire [0:0]S_AXI_CTL_1_ARREADY;
@@ -1141,6 +1706,25 @@ module pl_rtl_imp_QFYSB7
   wire [0:0]S_AXI_CTL_1_WREADY;
   wire [3:0]S_AXI_CTL_1_WSTRB;
   wire S_AXI_CTL_1_WVALID;
+  wire [7:0]S_AXI_CTL_2_ARADDR;
+  wire [2:0]S_AXI_CTL_2_ARPROT;
+  wire S_AXI_CTL_2_ARREADY;
+  wire S_AXI_CTL_2_ARVALID;
+  wire [7:0]S_AXI_CTL_2_AWADDR;
+  wire [2:0]S_AXI_CTL_2_AWPROT;
+  wire S_AXI_CTL_2_AWREADY;
+  wire S_AXI_CTL_2_AWVALID;
+  wire S_AXI_CTL_2_BREADY;
+  wire [1:0]S_AXI_CTL_2_BRESP;
+  wire S_AXI_CTL_2_BVALID;
+  wire [31:0]S_AXI_CTL_2_RDATA;
+  wire S_AXI_CTL_2_RREADY;
+  wire [1:0]S_AXI_CTL_2_RRESP;
+  wire S_AXI_CTL_2_RVALID;
+  wire [31:0]S_AXI_CTL_2_WDATA;
+  wire S_AXI_CTL_2_WREADY;
+  wire [3:0]S_AXI_CTL_2_WSTRB;
+  wire S_AXI_CTL_2_WVALID;
   wire UART_rxd;
   wire UART_txd;
   wire [2:0]UCI_ADC_CSN;
@@ -1166,10 +1750,12 @@ module pl_rtl_imp_QFYSB7
   wire [3:0]axi_uart_bridge_M_AXI_WSTRB;
   wire axi_uart_bridge_M_AXI_WVALID;
   wire clk_192_1;
-  wire clk_192_resetn_192;
   wire clk_200;
   wire clk_250;
   wire [0:0]dummy_intr_dout;
+  wire [511:0]frame_gen_axis_md_TDATA;
+  wire frame_gen_axis_md_TREADY;
+  wire frame_gen_axis_md_TVALID;
   wire [8:0]icn_ctrl_M00_AXI_ARADDR;
   wire icn_ctrl_M00_AXI_ARREADY;
   wire icn_ctrl_M00_AXI_ARVALID;
@@ -1225,8 +1811,30 @@ module pl_rtl_imp_QFYSB7
   wire icn_ctrl_M06_AXI_WREADY;
   wire [3:0]icn_ctrl_M06_AXI_WSTRB;
   wire icn_ctrl_M06_AXI_WVALID;
+  wire [7:0]icn_ctrl_M09_AXI_ARADDR;
+  wire [2:0]icn_ctrl_M09_AXI_ARPROT;
+  wire icn_ctrl_M09_AXI_ARREADY;
+  wire icn_ctrl_M09_AXI_ARVALID;
+  wire [7:0]icn_ctrl_M09_AXI_AWADDR;
+  wire [2:0]icn_ctrl_M09_AXI_AWPROT;
+  wire icn_ctrl_M09_AXI_AWREADY;
+  wire icn_ctrl_M09_AXI_AWVALID;
+  wire icn_ctrl_M09_AXI_BREADY;
+  wire [1:0]icn_ctrl_M09_AXI_BRESP;
+  wire icn_ctrl_M09_AXI_BVALID;
+  wire [31:0]icn_ctrl_M09_AXI_RDATA;
+  wire icn_ctrl_M09_AXI_RREADY;
+  wire [1:0]icn_ctrl_M09_AXI_RRESP;
+  wire icn_ctrl_M09_AXI_RVALID;
+  wire [31:0]icn_ctrl_M09_AXI_WDATA;
+  wire icn_ctrl_M09_AXI_WREADY;
+  wire [3:0]icn_ctrl_M09_AXI_WSTRB;
+  wire icn_ctrl_M09_AXI_WVALID;
   wire [0:0]ilconstant_0_dout;
   wire irq;
+  wire [511:0]lvds_axis_out_TDATA;
+  wire lvds_axis_out_TREADY;
+  wire lvds_axis_out_TVALID;
   wire pin_hsi_cmd;
   wire [31:0]pin_hsi_data;
   wire pin_hsi_pclk;
@@ -1235,6 +1843,21 @@ module pl_rtl_imp_QFYSB7
   wire pin_spi_miso;
   wire pin_spi_mosi;
   wire pin_spi_pclk;
+  wire [0:0]qsfp0_clk_clk_n;
+  wire [0:0]qsfp0_clk_clk_p;
+  wire [3:0]qsfp0_gt_grx_n;
+  wire [3:0]qsfp0_gt_grx_p;
+  wire [3:0]qsfp0_gt_gtx_n;
+  wire [3:0]qsfp0_gt_gtx_p;
+  wire [0:0]qsfp1_clk_clk_n;
+  wire [0:0]qsfp1_clk_clk_p;
+  wire [3:0]qsfp1_gt_grx_n;
+  wire [3:0]qsfp1_gt_grx_p;
+  wire [3:0]qsfp1_gt_gtx_n;
+  wire [3:0]qsfp1_gt_gtx_p;
+  wire qsfp_lpmode;
+  wire rx0_aligned;
+  wire rx1_aligned;
 
   abm_and_smem_inst_0 abm_and_smem
        (.AXI_CLOCK_CTL_araddr(AXI_CLOCK_CTL_1_ARADDR),
@@ -1533,9 +2156,9 @@ module pl_rtl_imp_QFYSB7
         .LVDS_CLK_clk_p(LVDS_CLK_clk_p),
         .clk_192(clk_192_1),
         .clk_200(clk_200),
-        .resetn(aresetn),
-        .resetn_192(clk_192_resetn_192));
-  constants_imp_RUOC73 constants
+        .resetn(aresetn));
+  assign dummy_intr_dout = 1'h0;
+  frame_gen_imp_10O9CVK frame_gen
        (.CHIP_GPIO13(CHIP_GPIO13),
         .CHIP_GPIO15(CHIP_GPIO15),
         .CHIP_GPIO15_DIR(CHIP_GPIO15_DIR),
@@ -1543,8 +2166,30 @@ module pl_rtl_imp_QFYSB7
         .CHIP_PA_SYNC(CHIP_PA_SYNC),
         .CHIP_RS0(CHIP_RS0),
         .CHIP_RS256(CHIP_RS256),
-        .clk(clk_250));
-  assign dummy_intr_dout = 1'h0;
+        .S_AXI_araddr(S_AXI_3_ARADDR),
+        .S_AXI_arprot(S_AXI_3_ARPROT),
+        .S_AXI_arready(S_AXI_3_ARREADY),
+        .S_AXI_arvalid(S_AXI_3_ARVALID),
+        .S_AXI_awaddr(S_AXI_3_AWADDR),
+        .S_AXI_awprot(S_AXI_3_AWPROT),
+        .S_AXI_awready(S_AXI_3_AWREADY),
+        .S_AXI_awvalid(S_AXI_3_AWVALID),
+        .S_AXI_bready(S_AXI_3_BREADY),
+        .S_AXI_bresp(S_AXI_3_BRESP),
+        .S_AXI_bvalid(S_AXI_3_BVALID),
+        .S_AXI_rdata(S_AXI_3_RDATA),
+        .S_AXI_rready(S_AXI_3_RREADY),
+        .S_AXI_rresp(S_AXI_3_RRESP),
+        .S_AXI_rvalid(S_AXI_3_RVALID),
+        .S_AXI_wdata(S_AXI_3_WDATA),
+        .S_AXI_wready(S_AXI_3_WREADY),
+        .S_AXI_wstrb(S_AXI_3_WSTRB),
+        .S_AXI_wvalid(S_AXI_3_WVALID),
+        .axis_md_tdata(frame_gen_axis_md_TDATA),
+        .axis_md_tready(frame_gen_axis_md_TREADY),
+        .axis_md_tvalid(frame_gen_axis_md_TVALID),
+        .clk_192(clk_192_1),
+        .sys_clk(clk_250));
   top_level_icn_ctrl_0 icn_ctrl
        (.M00_AXI_araddr(icn_ctrl_M00_AXI_ARADDR),
         .M00_AXI_arready(icn_ctrl_M00_AXI_ARREADY),
@@ -1677,6 +2322,63 @@ module pl_rtl_imp_QFYSB7
         .M06_AXI_wready(icn_ctrl_M06_AXI_WREADY),
         .M06_AXI_wstrb(icn_ctrl_M06_AXI_WSTRB),
         .M06_AXI_wvalid(icn_ctrl_M06_AXI_WVALID),
+        .M07_AXI_araddr(S_AXI_3_ARADDR),
+        .M07_AXI_arprot(S_AXI_3_ARPROT),
+        .M07_AXI_arready(S_AXI_3_ARREADY),
+        .M07_AXI_arvalid(S_AXI_3_ARVALID),
+        .M07_AXI_awaddr(S_AXI_3_AWADDR),
+        .M07_AXI_awprot(S_AXI_3_AWPROT),
+        .M07_AXI_awready(S_AXI_3_AWREADY),
+        .M07_AXI_awvalid(S_AXI_3_AWVALID),
+        .M07_AXI_bready(S_AXI_3_BREADY),
+        .M07_AXI_bresp(S_AXI_3_BRESP),
+        .M07_AXI_bvalid(S_AXI_3_BVALID),
+        .M07_AXI_rdata(S_AXI_3_RDATA),
+        .M07_AXI_rready(S_AXI_3_RREADY),
+        .M07_AXI_rresp(S_AXI_3_RRESP),
+        .M07_AXI_rvalid(S_AXI_3_RVALID),
+        .M07_AXI_wdata(S_AXI_3_WDATA),
+        .M07_AXI_wready(S_AXI_3_WREADY),
+        .M07_AXI_wstrb(S_AXI_3_WSTRB),
+        .M07_AXI_wvalid(S_AXI_3_WVALID),
+        .M08_AXI_araddr(S_AXI_CTL_2_ARADDR),
+        .M08_AXI_arprot(S_AXI_CTL_2_ARPROT),
+        .M08_AXI_arready(S_AXI_CTL_2_ARREADY),
+        .M08_AXI_arvalid(S_AXI_CTL_2_ARVALID),
+        .M08_AXI_awaddr(S_AXI_CTL_2_AWADDR),
+        .M08_AXI_awprot(S_AXI_CTL_2_AWPROT),
+        .M08_AXI_awready(S_AXI_CTL_2_AWREADY),
+        .M08_AXI_awvalid(S_AXI_CTL_2_AWVALID),
+        .M08_AXI_bready(S_AXI_CTL_2_BREADY),
+        .M08_AXI_bresp(S_AXI_CTL_2_BRESP),
+        .M08_AXI_bvalid(S_AXI_CTL_2_BVALID),
+        .M08_AXI_rdata(S_AXI_CTL_2_RDATA),
+        .M08_AXI_rready(S_AXI_CTL_2_RREADY),
+        .M08_AXI_rresp(S_AXI_CTL_2_RRESP),
+        .M08_AXI_rvalid(S_AXI_CTL_2_RVALID),
+        .M08_AXI_wdata(S_AXI_CTL_2_WDATA),
+        .M08_AXI_wready(S_AXI_CTL_2_WREADY),
+        .M08_AXI_wstrb(S_AXI_CTL_2_WSTRB),
+        .M08_AXI_wvalid(S_AXI_CTL_2_WVALID),
+        .M09_AXI_araddr(icn_ctrl_M09_AXI_ARADDR),
+        .M09_AXI_arprot(icn_ctrl_M09_AXI_ARPROT),
+        .M09_AXI_arready(icn_ctrl_M09_AXI_ARREADY),
+        .M09_AXI_arvalid(icn_ctrl_M09_AXI_ARVALID),
+        .M09_AXI_awaddr(icn_ctrl_M09_AXI_AWADDR),
+        .M09_AXI_awprot(icn_ctrl_M09_AXI_AWPROT),
+        .M09_AXI_awready(icn_ctrl_M09_AXI_AWREADY),
+        .M09_AXI_awvalid(icn_ctrl_M09_AXI_AWVALID),
+        .M09_AXI_bready(icn_ctrl_M09_AXI_BREADY),
+        .M09_AXI_bresp(icn_ctrl_M09_AXI_BRESP),
+        .M09_AXI_bvalid(icn_ctrl_M09_AXI_BVALID),
+        .M09_AXI_rdata(icn_ctrl_M09_AXI_RDATA),
+        .M09_AXI_rready(icn_ctrl_M09_AXI_RREADY),
+        .M09_AXI_rresp(icn_ctrl_M09_AXI_RRESP),
+        .M09_AXI_rvalid(icn_ctrl_M09_AXI_RVALID),
+        .M09_AXI_wdata(icn_ctrl_M09_AXI_WDATA),
+        .M09_AXI_wready(icn_ctrl_M09_AXI_WREADY),
+        .M09_AXI_wstrb(icn_ctrl_M09_AXI_WSTRB),
+        .M09_AXI_wvalid(icn_ctrl_M09_AXI_WVALID),
         .S00_AXI_araddr(S00_AXI_araddr),
         .S00_AXI_arburst(S00_AXI_arburst),
         .S00_AXI_arcache(S00_AXI_arcache),
@@ -1762,12 +2464,77 @@ module pl_rtl_imp_QFYSB7
         .S_AXI_wready(S_AXI_2_WREADY),
         .S_AXI_wstrb(S_AXI_2_WSTRB),
         .S_AXI_wvalid(S_AXI_2_WVALID),
+        .axis_out_tdata(lvds_axis_out_TDATA),
+        .axis_out_tready(lvds_axis_out_TREADY),
+        .axis_out_tvalid(lvds_axis_out_TVALID),
         .clk_192(clk_192_1),
-        .resetn_192(clk_192_resetn_192));
+        .sys_clk(clk_250));
+  mc_qsfp_imp_1T1R239 mc_qsfp
+       (.AXIS_FD_IN_tdata(lvds_axis_out_TDATA),
+        .AXIS_FD_IN_tready(lvds_axis_out_TREADY),
+        .AXIS_FD_IN_tvalid(lvds_axis_out_TVALID),
+        .AXIS_MD_IN_tdata(frame_gen_axis_md_TDATA),
+        .AXIS_MD_IN_tready(frame_gen_axis_md_TREADY),
+        .AXIS_MD_IN_tvalid(frame_gen_axis_md_TVALID),
+        .S_MC_CTL_araddr(S_AXI_CTL_2_ARADDR),
+        .S_MC_CTL_arprot(S_AXI_CTL_2_ARPROT),
+        .S_MC_CTL_arready(S_AXI_CTL_2_ARREADY),
+        .S_MC_CTL_arvalid(S_AXI_CTL_2_ARVALID),
+        .S_MC_CTL_awaddr(S_AXI_CTL_2_AWADDR),
+        .S_MC_CTL_awprot(S_AXI_CTL_2_AWPROT),
+        .S_MC_CTL_awready(S_AXI_CTL_2_AWREADY),
+        .S_MC_CTL_awvalid(S_AXI_CTL_2_AWVALID),
+        .S_MC_CTL_bready(S_AXI_CTL_2_BREADY),
+        .S_MC_CTL_bresp(S_AXI_CTL_2_BRESP),
+        .S_MC_CTL_bvalid(S_AXI_CTL_2_BVALID),
+        .S_MC_CTL_rdata(S_AXI_CTL_2_RDATA),
+        .S_MC_CTL_rready(S_AXI_CTL_2_RREADY),
+        .S_MC_CTL_rresp(S_AXI_CTL_2_RRESP),
+        .S_MC_CTL_rvalid(S_AXI_CTL_2_RVALID),
+        .S_MC_CTL_wdata(S_AXI_CTL_2_WDATA),
+        .S_MC_CTL_wready(S_AXI_CTL_2_WREADY),
+        .S_MC_CTL_wstrb(S_AXI_CTL_2_WSTRB),
+        .S_MC_CTL_wvalid(S_AXI_CTL_2_WVALID),
+        .aresetn(aresetn),
+        .clk_250(clk_250),
+        .qsfp0_clk_clk_n(qsfp0_clk_clk_n),
+        .qsfp0_clk_clk_p(qsfp0_clk_clk_p),
+        .qsfp0_gt_grx_n(qsfp0_gt_grx_n),
+        .qsfp0_gt_grx_p(qsfp0_gt_grx_p),
+        .qsfp0_gt_gtx_n(qsfp0_gt_gtx_n),
+        .qsfp0_gt_gtx_p(qsfp0_gt_gtx_p),
+        .qsfp1_clk_clk_n(qsfp1_clk_clk_n),
+        .qsfp1_clk_clk_p(qsfp1_clk_clk_p),
+        .qsfp1_gt_grx_n(qsfp1_gt_grx_n),
+        .qsfp1_gt_grx_p(qsfp1_gt_grx_p),
+        .qsfp1_gt_gtx_n(qsfp1_gt_gtx_n),
+        .qsfp1_gt_gtx_p(qsfp1_gt_gtx_p),
+        .qsfp_lpmode(qsfp_lpmode),
+        .rx0_aligned(rx0_aligned),
+        .rx1_aligned(rx1_aligned),
+        .s_qsfp_ctl_araddr(icn_ctrl_M09_AXI_ARADDR),
+        .s_qsfp_ctl_arprot(icn_ctrl_M09_AXI_ARPROT),
+        .s_qsfp_ctl_arready(icn_ctrl_M09_AXI_ARREADY),
+        .s_qsfp_ctl_arvalid(icn_ctrl_M09_AXI_ARVALID),
+        .s_qsfp_ctl_awaddr(icn_ctrl_M09_AXI_AWADDR),
+        .s_qsfp_ctl_awprot(icn_ctrl_M09_AXI_AWPROT),
+        .s_qsfp_ctl_awready(icn_ctrl_M09_AXI_AWREADY),
+        .s_qsfp_ctl_awvalid(icn_ctrl_M09_AXI_AWVALID),
+        .s_qsfp_ctl_bready(icn_ctrl_M09_AXI_BREADY),
+        .s_qsfp_ctl_bresp(icn_ctrl_M09_AXI_BRESP),
+        .s_qsfp_ctl_bvalid(icn_ctrl_M09_AXI_BVALID),
+        .s_qsfp_ctl_rdata(icn_ctrl_M09_AXI_RDATA),
+        .s_qsfp_ctl_rready(icn_ctrl_M09_AXI_RREADY),
+        .s_qsfp_ctl_rresp(icn_ctrl_M09_AXI_RRESP),
+        .s_qsfp_ctl_rvalid(icn_ctrl_M09_AXI_RVALID),
+        .s_qsfp_ctl_wdata(icn_ctrl_M09_AXI_WDATA),
+        .s_qsfp_ctl_wready(icn_ctrl_M09_AXI_WREADY),
+        .s_qsfp_ctl_wstrb(icn_ctrl_M09_AXI_WSTRB),
+        .s_qsfp_ctl_wvalid(icn_ctrl_M09_AXI_WVALID));
   assign ilconstant_0_dout = 1'h1;
 endmodule
 
-(* CORE_GENERATION_INFO = "top_level,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=73,numReposBlks=59,numNonXlnxBlks=0,numHierBlks=14,maxHierDepth=4,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=27,numPkgbdBlks=1,bdsource=USER,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top_level.hwdef" *) 
+(* CORE_GENERATION_INFO = "top_level,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=132,numReposBlks=108,numNonXlnxBlks=0,numHierBlks=24,maxHierDepth=4,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=56,numPkgbdBlks=3,bdsource=USER,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top_level.hwdef" *) 
 module top_level
    (CHIP_GPIO13,
     CHIP_GPIO15,
@@ -1918,7 +2685,22 @@ module top_level
     lpddr4_clk2_clk_n,
     lpddr4_clk2_clk_p,
     lpddr4_clk3_clk_n,
-    lpddr4_clk3_clk_p);
+    lpddr4_clk3_clk_p,
+    qsfp0_clk_clk_n,
+    qsfp0_clk_clk_p,
+    qsfp0_gt_grx_n,
+    qsfp0_gt_grx_p,
+    qsfp0_gt_gtx_n,
+    qsfp0_gt_gtx_p,
+    qsfp1_clk_clk_n,
+    qsfp1_clk_clk_p,
+    qsfp1_gt_grx_n,
+    qsfp1_gt_grx_p,
+    qsfp1_gt_gtx_n,
+    qsfp1_gt_gtx_p,
+    qsfp_lpmode,
+    rx0_aligned,
+    rx1_aligned);
   output [0:0]CHIP_GPIO13;
   output [0:0]CHIP_GPIO15;
   output [0:0]CHIP_GPIO15_DIR;
@@ -2069,6 +2851,21 @@ module top_level
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 lpddr4_clk2 CLK_P" *) input lpddr4_clk2_clk_p;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 lpddr4_clk3 CLK_N" *) (* X_INTERFACE_MODE = "Slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME lpddr4_clk3, CAN_DEBUG false, FREQ_HZ 200321000" *) input lpddr4_clk3_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 lpddr4_clk3 CLK_P" *) input lpddr4_clk3_clk_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 qsfp0_clk CLK_N" *) (* X_INTERFACE_MODE = "Slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME qsfp0_clk, CAN_DEBUG false, FREQ_HZ 156250000" *) input [0:0]qsfp0_clk_clk_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 qsfp0_clk CLK_P" *) input [0:0]qsfp0_clk_clk_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp0_gt GRX_N" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME qsfp0_gt, CAN_DEBUG false" *) input [3:0]qsfp0_gt_grx_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp0_gt GRX_P" *) input [3:0]qsfp0_gt_grx_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp0_gt GTX_N" *) output [3:0]qsfp0_gt_gtx_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp0_gt GTX_P" *) output [3:0]qsfp0_gt_gtx_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 qsfp1_clk CLK_N" *) (* X_INTERFACE_MODE = "Slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME qsfp1_clk, CAN_DEBUG false, FREQ_HZ 156250000" *) input [0:0]qsfp1_clk_clk_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 qsfp1_clk CLK_P" *) input [0:0]qsfp1_clk_clk_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp1_gt GRX_N" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME qsfp1_gt, CAN_DEBUG false" *) input [3:0]qsfp1_gt_grx_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp1_gt GRX_P" *) input [3:0]qsfp1_gt_grx_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp1_gt GTX_N" *) output [3:0]qsfp1_gt_gtx_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gt:1.0 qsfp1_gt GTX_P" *) output [3:0]qsfp1_gt_gtx_p;
+  output qsfp_lpmode;
+  output rx0_aligned;
+  output rx1_aligned;
 
   wire [0:0]CHIP_GPIO13;
   wire [0:0]CHIP_GPIO15;
@@ -2673,6 +3470,21 @@ module top_level
   wire [0:0]pl_rtl_M_AXI_SYSRAM_WVALID;
   wire pl_rtl_irq;
   wire [0:0]proc_sys_reset_0_peripheral_aresetn;
+  wire [0:0]qsfp0_clk_clk_n;
+  wire [0:0]qsfp0_clk_clk_p;
+  wire [3:0]qsfp0_gt_grx_n;
+  wire [3:0]qsfp0_gt_grx_p;
+  wire [3:0]qsfp0_gt_gtx_n;
+  wire [3:0]qsfp0_gt_gtx_p;
+  wire [0:0]qsfp1_clk_clk_n;
+  wire [0:0]qsfp1_clk_clk_p;
+  wire [3:0]qsfp1_gt_grx_n;
+  wire [3:0]qsfp1_gt_grx_p;
+  wire [3:0]qsfp1_gt_gtx_n;
+  wire [3:0]qsfp1_gt_gtx_p;
+  wire qsfp_lpmode;
+  wire rx0_aligned;
+  wire rx1_aligned;
 
   assign ch0_lpddr4_trip1_ck_c_a = \^ch0_lpddr4_trip1_ck_c_a [0];
   assign ch0_lpddr4_trip1_ck_c_b = \^ch0_lpddr4_trip1_ck_c_b [0];
@@ -3811,7 +4623,22 @@ module top_level
         .pin_spi_cs_n(CHIP_SPI_CSN),
         .pin_spi_miso(CHIP_SPI_MISO),
         .pin_spi_mosi(CHIP_SPI_MOSI),
-        .pin_spi_pclk(CHIP_SPI_SCK));
+        .pin_spi_pclk(CHIP_SPI_SCK),
+        .qsfp0_clk_clk_n(qsfp0_clk_clk_n),
+        .qsfp0_clk_clk_p(qsfp0_clk_clk_p),
+        .qsfp0_gt_grx_n(qsfp0_gt_grx_n),
+        .qsfp0_gt_grx_p(qsfp0_gt_grx_p),
+        .qsfp0_gt_gtx_n(qsfp0_gt_gtx_n),
+        .qsfp0_gt_gtx_p(qsfp0_gt_gtx_p),
+        .qsfp1_clk_clk_n(qsfp1_clk_clk_n),
+        .qsfp1_clk_clk_p(qsfp1_clk_clk_p),
+        .qsfp1_gt_grx_n(qsfp1_gt_grx_n),
+        .qsfp1_gt_grx_p(qsfp1_gt_grx_p),
+        .qsfp1_gt_gtx_n(qsfp1_gt_gtx_n),
+        .qsfp1_gt_gtx_p(qsfp1_gt_gtx_p),
+        .qsfp_lpmode(qsfp_lpmode),
+        .rx0_aligned(rx0_aligned),
+        .rx1_aligned(rx1_aligned));
   top_level_proc_sys_reset_0_0 proc_sys_reset
        (.aux_reset_in(1'b1),
         .dcm_locked(clk_wizard_0_locked),
